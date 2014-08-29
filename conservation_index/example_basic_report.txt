@@ -1,0 +1,43 @@
+  648:	AATAGGTTTGGTCCTAGCCTTTCTATTAGCTCTTAGTAAGATTACACATG
+      	--------------------------------------------------
+  698:	CAAGCATCCCCGTTCCAGTGAGTTCACCCTCTAAATCACCACGATCAAAA
+      	--------------------------------------------------
+  748:	GGGACAAGCATCAAGCACGCAGCAATGCAGCTCAAAACGCTTAGCCTAGC
+      	--------------------------------------------------
+  798:	CACACCCCCACGGGAAACAGCAGTGATTAACCTTTAGCAATAAACGAAAG
+      	--------------------------------------------------
+  848:	TTTAACTAAGCTATACTAACCCCAGGGTTGGTCAATTTCGTGCCAGCCAC
+      	--------------------------------------------------
+  898:	CGCGGTCACACGATTAACCCAAGTCAATAGAAGCCGGCGTAAAGAGTGTT
+      	--------------------------------------------------
+  948:	TTAGATCACCCCCTCCCCAATAAAGCTAAAACTCACCTGAGTTGTAAAAA
+      	--------------------------------------------------
+  998:	ACTCCAGTTGACACAAAATAGACTACGAAAGTGGCTTTAACATATCTGAA
+      	--------------------------------------------------
+ 1048:	CACACAATAGCTAAGACCCAAACTGGGATTAGATACCCCACTATGCTTAG
+      	--------------------------------------------------
+ 1098:	CCCTAAACCTCAACAGTTAAATCAACAAAACTGCTCGCCAGAACACTACG
+      	--------------------------------------------------
+ 1148:	AGCCACAGCTTAAAACTCAAAGGACCTGGCGGTGCTTCATATCCCTCTAG
+      	--------------------------------------------------
+ 1198:	AGGAGCCTGTTCTGTAATCGATAAACCCCGATCAACCTCACCACCTCTTG
+      	--------------------------------------------------
+ 1248:	CTCAGCCTATATACCGCCATCTTCAGCAAACCCTGATGAAGGCTACAAAG
+      	--------------------------------------------------
+ 1298:	TAAGCGCAAGTACCCACGTAAAGACGTTAGGTCAAGGTGTAGCCCATGAG
+      	--------------------------------------------------
+ 1348:	GTGGCAAGAAATGGGCTACATTTTCTACCCCAGAAAACTACGATAGCCCT
+      	--------------------------------------------------
+ 1398:	TATGAAACTTAAGGGTCGAAGGTGGATTTAGCAGTAAACTGAGAGTAGAG
+      	--------------------------------------------------
+ 1448:	TGCTTAGTTGAACAGGGCCCTGAAGCGCGTACACACCGCCCGTCACCCTC
+      	--------------------------------------------------
+ 1498:	CTCAAGTATACTTCAAAGGACATTTAACTAAAACCCCTACGCATTTATAT
+      	--------------------------------------------------
+ 1548:	AGAGGAGACAAGTCGTAACATGGTAAGTGTACTGGAAAGTGCACTTGGAC
+      	--------------------------------------------------
+ 1598:	GAAC
+      	----
+
+There are not any columns with a high degree of variation (< 75.00%) in the mtdna sequences.
+
