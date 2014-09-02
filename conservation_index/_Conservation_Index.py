@@ -216,9 +216,9 @@ class Report:
         """
         if not isinstance(seqs_type, str):
             raise TypeError('"seqs_type" argument should be a string')
-        if seqs_type not in ['mtDNA', 'amino acids']:
+        if seqs_type not in ['mtdna', 'amino acids']:
             raise ValueError(('"seqs_type" argument has an invalid value '
-                              "it should be 'mtDNA' or 'amino acids'"))
+                              "it should be 'mtdna' or 'amino acids'"))
         if not isinstance(stats, dict):
             raise TypeError('"stats" argument should be a dict')
         elif not all(isinstance(elem, list) for elem in stats.values()):
@@ -288,7 +288,8 @@ class Report:
 
         The condition should be 'greater' if we are looking for columns with
         a high degree of conservation or 'less' if we are looking for columns
-        with a high degree of variation.
+        with a high degree of variation. The special_columns argument should
+        only include columns which meet the given condition.
         """
         if not isinstance(condition, str):
             raise TypeError('"condition" argument should be a str')
@@ -308,7 +309,7 @@ class Report:
                                             threshold * 100, self._seqs_type))
                 elif condition.lower() == 'less':
                     header = ('\nThere are {:d} columns with a high degree of '
-                              'of variation (<{:6.2f}%) in the {:s} sequences:'
+                              'variation (<{:6.2f}%) in the {:s} sequences:'
                               '\n\n'.format(len(special_columns),
                                             threshold * 100, self._seqs_type))
                 else:
@@ -447,6 +448,9 @@ class Report:
         """
         if not isinstance(condition, str):
             raise TypeError('"condition" argument should be a str')
+        elif condition not in ['greater', 'less']:
+            raise ValueError(('"condition" argument has an invalid value it '
+                              "should be 'greater' or 'less'"))
         if not isinstance(threshold, float):
             raise TypeError('"threshold" argument should be a float')
 
@@ -495,4 +499,4 @@ class Report:
                                                           threshold,
                                                           special_columns)
 
-        return first_mod_str + '\n' + second_mod_str + '\n'
+        return first_mod_str + second_mod_str + '\n'

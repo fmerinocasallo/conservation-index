@@ -19,11 +19,12 @@
 #
 #-------------------------------------------------------------------------------
 """Translate a hmtDNA sequence into a peptide (amino acids sequence)."""
+from itertools import product
 from threading import Thread
 from _thread import LockType
 
 from Bio import Align
-from Bio.Alphabet import SingleLetterAlphabet
+from Bio.Alphabet.IUPAC import ExtendedIUPACProtein, IUPACAmbiguousDNA
 from Bio.SeqRecord import SeqRecord
 import Bio.Seq
 
@@ -40,6 +41,7 @@ class Protein_Translator (object):
         """
         Creates a Protein_Translator object
         """
+
         self._translation_table = {'AAT': 'N', 'AAC': 'N', 'AAY': 'N',
                                    'AAA': 'K', 'AAG': 'K', 'AAR': 'K',
                                    'ACT': 'T', 'ACC': 'T', 'ACA': 'T',
@@ -75,68 +77,70 @@ class Protein_Translator (object):
                                    'TTT': 'F', 'TTC': 'F', 'TTY': 'F',
                                    'TTA': 'L', 'TTG': 'L', 'TTR': 'L',
                                    'RAY': 'B',
-                                   'SAR': 'Z',
-                                   'NNN': 'X'}
+                                   'SAR': 'Z'}
 
-    def translate_columns(self, seqs):
+        # We complete the translate table with ...
+        nucleotides = IUPACAmbiguousDNA.letters
+        codons = set([''.join(trio)
+                      for trio in product(nucleotides, repeat=3)])
+        not_included = codons.difference(set(self._translation_table.keys()))
+        # ... those codons which does not represent any known amino acid ...
+        for key in not_included:
+            self._translation_table[key] = 'X'
+        # ... and those which does contain a gap
+        nucleotides += '-'
+        codons = set([''.join(trio)
+                      for trio in product(nucleotides, repeat=3)])
+        not_included = codons.difference(set(self._translation_table.keys()))
+        for key in not_included:
+            self._translation_table[key] = '='
+
+    def translate_sequences(self, mtDNA_seqs):
         """
         Translate a set of mtDNA sequences into peptides (amino acids
         sequences) which is then returned.
 
         Arguments:
-            - seqs              - set of sequences to be analyzed,
-                                  required (MultipleSeqAlignment)
+            - mtDNA_seqs    - set of mtDNA sequences to be translated,
+                              required (MultipleSeqAlignment)
         """
-        if not isinstance(seqs, Align.MultipleSeqAlignment):
-            raise TypeError('"seqs" argument should be a MultipleSeqAlignment')
+        if not isinstance(mtDNA_seqs, Align.MultipleSeqAlignment):
+            raise TypeError(('"mtDNA_seqs" argument should be a '
+                             'MultipleSeqAlignment'))
 
         peptides = []
-        for mtDNA in seqs:
+        for mtDNA in mtDNA_seqs:
             # It is required that the mtDNA sequence has a length multiple 
             # of three. If it is not, add trailing A before translation
             #FIXME According to Bio.Seq.translate() it should be trailing N
             if len(mtDNA) % 3 != 0:
+                print(("Partial codon, the mtDNA sequence's length is not a "
+                       'multiple of three. We add trailing A before '
+                       'translation'))
             #     print(('Last incomplete codon: {:s}'
             #            ''.format(mtDNA.seq[-(len(mtDNA) % 3):])))
-                mtDNA += 'A' * (3 - len(mtDNA) % 3)
+                mtDNA.seq += 'A' * (3 - len(mtDNA.seq) % 3)
             #     print('Last incomplete and regenerated codon: {:s}'
             #           ''.format(mtDNA.seq[-3:]))
 
             # incomplete_codons = {}
-            if mtDNA.seq.find('-') == -1:
-                # There is no gap in the sequence
-                peptide = Bio.Seq.translate(mtDNA.seq,
-                                            stop_symbol='-')
-                peptide.alphabet = SingleLetterAlphabet()
-                #FIXME Change SeqRecord's attributes
-                peptide = SeqRecord(peptide,
-                                    id=mtDNA.id,
-                                    name=mtDNA.name,
-                                    description=mtDNA.description)
-            else:
-                peptide = ''
-                sequence_size = len(mtDNA)
-                end = sequence_size - 2
-                # Translate the hmtDNA sequence into amino acids and
-                # store the position of the codons containing a gap
-                for i in range(0, end, 3):
-                    codon = str(mtDNA.seq[i:i+3])
-                    if codon.find('-') == -1:
-                        if codon in self._translation_table:
-                            peptide += self._translation_table[codon]
-                        else:
-                            peptide += 'X'
-                            # print('Unknown codon: {:s}\n'.format(codon))
-                    else:
-                        peptide += '='
-                        # incomplete_codons[start + i + 1] = codon
+            peptide = []
+            mtDNA_seq_length = len(mtDNA.seq)
+            end = mtDNA_seq_length - (mtDNA_seq_length % 3)
+            # Translate the hmtDNA sequence into amino acids and
+            # store the position of the codons containing a gap
+            seq = str(mtDNA.seq)
+            for i in range(0, end, 3):
+                codon = seq[i:i+3]
+                peptide.append(self._translation_table[codon])
 
 
-                #FIXME Change SeqRecord's attributes
-                peptide = SeqRecord(Bio.Seq.Seq(peptide),
-                                    id=mtDNA.id,
-                                    name=mtDNA.name,
-                                    description=mtDNA.description)
+            #FIXME Change SeqRecord's attributes
+            peptide = SeqRecord(Bio.Seq.Seq(''.join(peptide), 
+                                            ExtendedIUPACProtein()),
+                                id=mtDNA.id,
+                                name=mtDNA.name,
+                                description=mtDNA.description)
 
             peptides.append(peptide)
 
@@ -180,7 +184,7 @@ class PT_Thread(Thread):
         Function to be called when each thread starts its execution.
         """
         # Each thread have to translate a given set of mtDNA sequences
-        peptides = self._pt.translate_columns(self._mtDNA_seqs)
+        peptides = self._pt.translate_sequences(self._mtDNA_seqs)
         self._lock.acquire()
         try:
             self._peptides.extend(peptides)
