@@ -4,9 +4,15 @@
 #                'Conservation_Index', 'PT_Thread' and 'Report'.
 #
 # Author :  F. Merino-Casallo  ( fmerino@unizar.es )
-# Last version :  v1.0 ( 21/Aug/2014 )
+# Last version :  v1.1 ( 03/Sep/2014 )
 #-------------------------------------------------------------------------------
 # Historical report :
+#
+#   DATE :  03/Sep/2014
+#   VERSION :  v1.1
+#   AUTHOR(s) :  F. Merino-Casallo
+#   MODIFICATIONS :  Minor performance improvements on the Conservation_Index
+#                    and Report classes.
 #
 #   DATE :  21/Aug/2014
 #   VERSION :  v1.0
@@ -47,7 +53,7 @@ class Conservation_Index(object):
         # each element of the selected alphabet. Because we still does not
         # know how many sequences we are dealing with, we set all weights to
         # zero.
-        if self._seqs_type.lower() == 'mtdna':
+        if self._seqs_type == 'mtdna':
             self._weights = {'-': [['-'], 0],
                              'A': [['A'], 0],
                              'C': [['C'], 0],
@@ -64,7 +70,7 @@ class Conservation_Index(object):
                              'V': [['A', 'C', 'G'], 0],
                              'D': [['A', 'G', 'T'], 0],
                              'N': [['A', 'C', 'G', 'T'], 0]}
-        elif self._seqs_type.lower() == 'amino acids':
+        elif self._seqs_type == 'amino acids':
             self._weights = {'=': [['='],0],
                              'G': [['G'], 0],
                              'A': [['A'], 0],
@@ -140,7 +146,7 @@ class Conservation_Index(object):
 
         for seq in seqs:
             num_column = start_column
-            for column in seq[start_column:end_column].upper():
+            for column in seq.seq[start_column:end_column].upper():
                 for elem in self._weights[column][0]:
                     try:
                         stats[elem][num_column] += self._weights[column][1]
@@ -256,13 +262,15 @@ class Report:
         if not isinstance(report_type, str):
             raise TypeError('"report_type" argument should be a str')
 
-        if condition.lower() == 'greater' or condition.lower() == 'less':
-            if report_type.lower() == 'basic':
+        condition = condition.lower()
+        report_type = report_type.lower()
+        if condition == 'greater' or condition == 'less':
+            if report_type == 'basic':
                 max_values, special_values = tee(column, 2)
                 mfe = max(max_values, key=itemgetter(1))
 
                 return mfe, special_values
-            elif report_type.lower() == 'detailed':
+            elif report_type == 'detailed':
                 max_values, join_values, special_values = tee(column, 3)
                 mfe = max(max_values, key=itemgetter(1))
 
@@ -300,14 +308,15 @@ class Report:
         elif not all(isinstance(elem, tuple) for elem in special_columns):
             raise TypeError('"stats" argument should be a list of tuples')
 
+        condition = condition.lower()
         if special_columns:
             if len(special_columns) > 1:
-                if condition.lower() == 'greater':
+                if condition == 'greater':
                     header = ('\nThere are {:d} columns with a high degree of '
                               'conservation (>{:6.2f}%) in the {:s} sequences:'
                               '\n\n'.format(len(special_columns),
                                             threshold * 100, self._seqs_type))
-                elif condition.lower() == 'less':
+                elif condition == 'less':
                     header = ('\nThere are {:d} columns with a high degree of '
                               'variation (<{:6.2f}%) in the {:s} sequences:'
                               '\n\n'.format(len(special_columns),
@@ -317,11 +326,11 @@ class Report:
                                       "value it should be 'greater' or "
                                       "'less'"))
             else:
-                if condition.lower() == 'greater':
+                if condition == 'greater':
                     header = ('\nThere is 1 column with a high degree of '
                               'conservation (>{:6.2f}%) in the {:s} sequences:'
                               '\n\n'.format(threshold * 100, self._seqs_type))
-                elif condition.lower() == 'less':
+                elif condition == 'less':
                     header = ('\nThere is 1 column with a high degree of '
                               'variation (<{:6.2f}%) in the {:s} sequences:'
                               '\n\n'.format(threshold * 100, self._seqs_type))
@@ -342,11 +351,11 @@ class Report:
                            ''.format(record[0], ', '.join(elem_stats)))
             return header
         else:
-            if condition.lower() == 'greater':
+            if condition == 'greater':
                 return ('\nThere are not any columns with a high degree of '
                         'conservation (>{:6.2f}%) in the {:s} sequences.'
                         ''.format(threshold * 100, self._seqs_type))
-            elif condition.lower() == 'less':
+            elif condition == 'less':
                 return ('\nThere are not any columns with a high degree of '
                         'variation (<{:6.2f}%) in the {:s} sequences.'
                         ''.format(threshold * 100, self._seqs_type))
@@ -390,6 +399,7 @@ class Report:
         # (pos, it)
         special_columns = []
 
+        condition = condition.lower()
         num_column = self._start_column
         for column in report:
             mfe, special_values = self._get_data_for_column(condition, column,
@@ -404,14 +414,14 @@ class Report:
 
             first_mod_str += '{:s}'.format(mfe[0])
 
-            if condition.lower() == 'greater':
+            if condition == 'greater':
                 if mfe[1] > threshold:
                     first_mod_str_aux += '+'
                     stats = (num_column, special_values)
                     special_columns.append(stats)
                 else:
                     first_mod_str_aux += '-'
-            elif condition.lower() == 'less':
+            elif condition == 'less':
                 if mfe[1] < threshold:
                     first_mod_str_aux += '+'
                     stats = (num_column, special_values)
@@ -471,6 +481,7 @@ class Report:
         # (pos, it)
         special_columns = []
 
+        condition = condition.lower()
         num_column = self._start_column
         for column in report:
             mfe, join_values, \
@@ -484,9 +495,9 @@ class Report:
                                        if elem[0] != '-')
             first_mod_str += '\n'
             # We store which columns meet the given condition
-            if (condition.lower() == 'greater' and \
+            if (condition == 'greater' and \
                     mfe[1] > threshold) or \
-                (condition.lower() == 'less' and \
+                (condition == 'less' and \
                     mfe[1] < threshold):
                 stats = (num_column, special_values)
                 special_columns.append(stats)

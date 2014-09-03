@@ -4,9 +4,14 @@
 #                'Protein_Translator' and 'PT_Thread'.
 #
 # Author :  F. Merino-Casallo  ( fmerino@unizar.es )
-# Last version :  v1.0 ( 21/Aug/2014 )
+# Last version :  v1.1 ( 03/Sep/2014 )
 #-------------------------------------------------------------------------------
 # Historical report :
+#
+#   DATE :  03/Sep/2014
+#   VERSION :  v1.1
+#   AUTHOR(s) :  F. Merino-Casallo
+#   MODIFICATIONS :  Speed up and simplification of the translation process
 #
 #   DATE :  21/Aug/2014
 #   VERSION :  v1.0
@@ -24,6 +29,7 @@ from threading import Thread
 from _thread import LockType
 
 from Bio import Align
+from Bio.Alphabet import _get_base_alphabet, ProteinAlphabet
 from Bio.Alphabet.IUPAC import ExtendedIUPACProtein, IUPACAmbiguousDNA
 from Bio.SeqRecord import SeqRecord
 import Bio.Seq
@@ -110,30 +116,27 @@ class Protein_Translator (object):
 
         peptides = []
         for mtDNA in mtDNA_seqs:
+            if isinstance(_get_base_alphabet(mtDNA.seq.alphabet),
+                                             ProteinAlphabet):
+                raise ValueError("Proteins cannot be translated!")
+
+            mtDNA_seq = str(mtDNA.seq)
             # It is required that the mtDNA sequence has a length multiple 
             # of three. If it is not, add trailing A before translation
-            #FIXME According to Bio.Seq.translate() it should be trailing N
-            if len(mtDNA) % 3 != 0:
+            if len(mtDNA_seq) % 3 != 0:
                 print(("Partial codon, the mtDNA sequence's length is not a "
                        'multiple of three. We add trailing A before '
                        'translation'))
-            #     print(('Last incomplete codon: {:s}'
-            #            ''.format(mtDNA.seq[-(len(mtDNA) % 3):])))
-                mtDNA.seq += 'A' * (3 - len(mtDNA.seq) % 3)
-            #     print('Last incomplete and regenerated codon: {:s}'
-            #           ''.format(mtDNA.seq[-3:]))
+                mtDNA_seq += 'A' * (3 - (len(mtDNA_seq) % 3))
 
-            # incomplete_codons = {}
             peptide = []
-            mtDNA_seq_length = len(mtDNA.seq)
-            end = mtDNA_seq_length - (mtDNA_seq_length % 3)
-            # Translate the hmtDNA sequence into amino acids and
-            # store the position of the codons containing a gap
-            seq = str(mtDNA.seq)
+            end = len(mtDNA_seq) - 2
+            # Translate the hmtDNA sequence into amino acids
             for i in range(0, end, 3):
-                codon = seq[i:i+3]
-                peptide.append(self._translation_table[codon])
-
+                try:
+                    peptide.append(self._translation_table[mtDNA_seq[i:i+3]])
+                except KeyError:
+                    peptide.append('X')
 
             #FIXME Change SeqRecord's attributes
             peptide = SeqRecord(Bio.Seq.Seq(''.join(peptide), 
