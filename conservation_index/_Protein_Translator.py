@@ -85,6 +85,8 @@ class Protein_Translator (object):
                                    'RAY': 'B',
                                    'SAR': 'Z'}
 
+        #FIXME Analyze if using only one set and checking inside the for loop
+        # if the key has any gaps.
         # We complete the translate table with ...
         nucleotides = IUPACAmbiguousDNA.letters
         codons = set([''.join(trio)
