@@ -85,23 +85,19 @@ class Protein_Translator (object):
                                    'RAY': 'B',
                                    'SAR': 'Z'}
 
-        #FIXME Analyze if using only one set and checking inside the for loop
-        # if the key has any gaps.
-        # We complete the translate table with ...
-        nucleotides = IUPACAmbiguousDNA.letters
-        codons = set([''.join(trio)
-                      for trio in product(nucleotides, repeat=3)])
-        not_included = codons.difference(set(self._translation_table.keys()))
-        # ... those codons which does not represent any known amino acid ...
+        # We complete the translate table with those codons which do not
+        # represent any known amino acid and those which do contain at least
+        # one gap
+        nucleotides = IUPACAmbiguousDNA.letters +'-'
+        codons = frozenset([''.join(trio)
+                            for trio in product(nucleotides, repeat=3)])
+        included = frozenset(self._translation_table.keys())
+        not_included = codons.difference(included)
         for key in not_included:
-            self._translation_table[key] = 'X'
-        # ... and those which does contain a gap
-        nucleotides += '-'
-        codons = set([''.join(trio)
-                      for trio in product(nucleotides, repeat=3)])
-        not_included = codons.difference(set(self._translation_table.keys()))
-        for key in not_included:
-            self._translation_table[key] = '='
+            if key.find('-') != -1:
+                self._translation_table[key] = '='
+            else:
+                self._translation_table[key] = 'X'
 
     def translate_sequences(self, mtDNA_seqs):
         """
