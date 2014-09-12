@@ -40,7 +40,7 @@ def analyze(seqs_type, seqs_filename):
 
     return stats
 
-seqs_type = 'mtdna'
+seqs_type = 'nucleotides'
 seqs_filename = 'hmtDNA_rCRS_12S.fasta'
 stats = analyze(seqs_type, seqs_filename)
 

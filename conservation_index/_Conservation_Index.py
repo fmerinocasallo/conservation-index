@@ -53,7 +53,7 @@ class Conservation_Index(object):
         # each element of the selected alphabet. Because we still does not
         # know how many sequences we are dealing with, we set all weights to
         # zero.
-        if self._seqs_type == 'mtdna':
+        if self._seqs_type == 'nucleotides':
             self._weights = {'-': [['-'], 0],
                              'A': [['A'], 0],
                              'C': [['C'], 0],
@@ -222,9 +222,9 @@ class Report:
         """
         if not isinstance(seqs_type, str):
             raise TypeError('"seqs_type" argument should be a string')
-        if seqs_type not in ['mtdna', 'amino acids']:
+        if seqs_type not in ['nucleotides', 'amino acids']:
             raise ValueError(('"seqs_type" argument has an invalid value '
-                              "it should be 'mtdna' or 'amino acids'"))
+                              "it should be 'nucleotides' or 'amino acids'"))
         if not isinstance(stats, dict):
             raise TypeError('"stats" argument should be a dict')
         elif not all(isinstance(elem, list) for elem in stats.values()):

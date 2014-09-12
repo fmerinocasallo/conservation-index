@@ -23,7 +23,7 @@
 #   AUTHOR(s) :  F. Merino-Casallo
 #
 #-------------------------------------------------------------------------------
-"""Translate a hmtDNA sequence into a peptide (amino acids sequence)."""
+"""Translate a nucleotides sequence into an amino acids sequence."""
 from itertools import product
 from threading import Thread
 from _thread import LockType
@@ -99,95 +99,112 @@ class Protein_Translator (object):
             else:
                 self._translation_table[key] = 'X'
 
-    def translate_sequences(self, mtDNA_seqs):
+    def translate_sequences(self, nucleotides_seqs, info=''):
         """
-        Translate a set of mtDNA sequences into peptides (amino acids
-        sequences) which is then returned.
+        Translate a set of nucleotides sequences into amino acids sequences
+        which is then returned.
 
         Arguments:
-            - mtDNA_seqs    - set of mtDNA sequences to be translated,
-                              required (MultipleSeqAlignment)
+            - nucleotides_seqs  - set of nucleotides sequences to be
+                                  translated, required (MultipleSeqAlignment)
+            - info              - additional info about the set of nucleotides
+                                - sequences to be translated, optional (str)
         """
-        if not isinstance(mtDNA_seqs, Align.MultipleSeqAlignment):
-            raise TypeError(('"mtDNA_seqs" argument should be a '
+        if not isinstance(nucleotides_seqs, Align.MultipleSeqAlignment):
+            raise TypeError(('"nucleotides_seqs" argument should be a '
                              'MultipleSeqAlignment'))
+        if not isinstance(info, str):
+            raise TypeError('"info" argument should be a string')
 
-        peptides = []
-        for mtDNA in mtDNA_seqs:
-            if isinstance(_get_base_alphabet(mtDNA.seq.alphabet),
+        amino_acids_seqs = []
+        for nucleotides_seq in nucleotides_seqs:
+            if isinstance(_get_base_alphabet(nucleotides_seq.seq.alphabet),
                                              ProteinAlphabet):
                 raise ValueError("Proteins cannot be translated!")
 
-            mtDNA_seq = str(mtDNA.seq)
-            # It is required that the mtDNA sequence has a length multiple 
-            # of three. If it is not, add trailing A before translation
-            if len(mtDNA_seq) % 3 != 0:
-                print(("Partial codon, the mtDNA sequence's length is not a "
-                       'multiple of three. We add trailing A before '
+            seq = str(nucleotides_seq.seq)
+            # It is required that the sequence of nucleotides has a length
+            # multiple of three. If it is not, add trailing A before
+            # translation
+            if len(seq) % 3 != 0:
+                print(("Partial codon, the nucleotides sequence's length is "
+                       'not a multiple of three. We add trailing A before '
                        'translation'))
-                mtDNA_seq += 'A' * (3 - (len(mtDNA_seq) % 3))
+                seq += 'A' * (3 - (len(seq) % 3))
 
-            peptide = []
-            end = len(mtDNA_seq) - 2
-            # Translate the hmtDNA sequence into amino acids
+            amino_acids_seq = []
+            end = len(seq) - 2
+            # Translate the sequence of nucleotides into amino acids
             for i in range(0, end, 3):
                 try:
-                    peptide.append(self._translation_table[mtDNA_seq[i:i+3]])
+                    amino_acids_seq.append(self._translation_table[seq[i:i+3]])
                 except KeyError:
-                    peptide.append('X')
+                    amino_acids_seq.append('X')
 
-            #FIXME Change SeqRecord's attributes
-            peptide = SeqRecord(Bio.Seq.Seq(''.join(peptide), 
-                                            ExtendedIUPACProtein()),
-                                id=mtDNA.id,
-                                name=mtDNA.name,
-                                description=mtDNA.description)
+            amino_acids_seq_name = ('{:s}, {:s}, amino acids'
+                                    ''.format(nucleotides_seq.name, info))
+            amino_acids_seq_desc = ('{:s}, {:s}, amino acids'
+                                    ''.format(nucleotides_seq.description,
+                                              info))
+            amino_acids_seq = SeqRecord(Bio.Seq.Seq(''.join(amino_acids_seq), 
+                                                    ExtendedIUPACProtein()),
+                                        id=nucleotides_seq.id,
+                                        name=amino_acids_seq_name,
+                                        description=amino_acids_seq_desc
+                                       )
 
-            peptides.append(peptide)
+            amino_acids_seqs.append(amino_acids_seq)
 
-        return peptides
+        return amino_acids_seqs
 
 class PT_Thread(Thread):
     """
     """
-    def __init__(self, mtDNA_seqs, peptides, lock):
+    def __init__(self, nucleotides_seqs, amino_acids_seqs, lock, info=''):
         """
         Crates a PT_Thread.
 
         Arguments:
-            - mtDNA_seqs    - set of mtDNA sequences to be translated,
-                              required (MultipleSeqAlignment)
-            - peptides      - set of amino acids sequences,
-                              required (list)
-            - lock          - lock to control the access to the shared
-                              variable, peptides, required (Lock)
+            - nucleotides_seqs  - set of nucleotides sequences to be
+                                  translated, required (MultipleSeqAlignment)
+            - amino_acids_seqs  - set of amino acids sequences,
+                                  required (list)
+            - lock              - lock to control the access to the shared
+                                  variable, amino_acids_seqs, required (Lock)
+            - info              - additional info about the set of nucleotides
+                                - sequences to be translated, optional (str)
         """
-        if not isinstance(mtDNA_seqs, Align.MultipleSeqAlignment):
-            raise TypeError(('"mtDNA_seqs" argument should be a '
+        if not isinstance(nucleotides_seqs, Align.MultipleSeqAlignment):
+            raise TypeError(('"nucleotides_seqs" argument should be a '
                              'MultipleSeqAlignment'))
-        if not isinstance(peptides, list):
-            raise TypeError('"peptides" argument should be a list')
-        elif peptides:
-            raise ValueError('"peptides" argument should be an empty list')
+        if not isinstance(amino_acids_seqs, list):
+            raise TypeError('"amino_acids_seqs" argument should be a list')
+        elif amino_acids_seqs:
+            raise ValueError(('"amino_acids_seqs" argument should be an '
+                              'empty list'))
         if not isinstance(lock, LockType):
             raise TypeError('"lock" argument should be a Lock')
+        if not isinstance(info, str):
+            raise TypeError('"info" argument should be a string')
 
         # We assign to each thread the set of sequences to be translated
         # by itself
         Thread.__init__(self)
         self._pt = Protein_Translator()
-        self._mtDNA_seqs = mtDNA_seqs
-        self._peptides = peptides
+        self._nucleotides_seqs = nucleotides_seqs
+        self._amino_acids_seqs = amino_acids_seqs
         self._lock = lock
+        self._info = info
 
     def run(self):
         """
         Function to be called when each thread starts its execution.
         """
-        # Each thread have to translate a given set of mtDNA sequences
-        peptides = self._pt.translate_sequences(self._mtDNA_seqs)
+        # Each thread have to translate a given set of nucleotides sequences
+        amino_acids_seqs = self._pt.translate_sequences(self._nucleotides_seqs,
+                                                        self._info)
         self._lock.acquire()
         try:
-            self._peptides.extend(peptides)
+            self._amino_acids_seqs.extend(amino_acids_seqs)
         finally:
             self._lock.release()
