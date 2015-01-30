@@ -8,6 +8,13 @@
 #-------------------------------------------------------------------------------
 # Historical report :
 #
+#   DATE :  30/Jan/2015
+#   VERSION :  v3.0
+#   AUTHOR(s) :  F. Merino-Casallo
+#   MODIFICATIONS :  Added new method to estimate conservation index, now you
+#                    can use an entropy-based method. Furthermore, the Report
+#                    class has been updated using a new design.
+#
 #   DATE :  12/Nov/2014
 #   VERSION :  v2.1
 #   AUTHOR(s) :  F. Merino-Casallo
@@ -37,7 +44,6 @@
 #
 #-------------------------------------------------------------------------------
 """Estimate the CI for each column of the given set of sequences."""
-from itertools import tee
 from math import log
 from operator import itemgetter
 from threading import Thread
@@ -562,134 +568,176 @@ class Report:
         self._start_column = start_column
         self._ITEMS_PER_LINE = ITEMS_PER_LINE
 
-    def _get_data_for_column(self, condition, column, report_type):
+    @staticmethod
+    def _check_condition(report_type, condition, threshold, stats_column,
+                         wanted_columns, condition_met=''):
         """
-        Return the data needed to generate the chosen report for the given
-        column.
+        Check if the current column meet the given condition. If so, we
+        store its frequencies distribution to include it afterwards in
+        the summary of all the columns we are looking for in this
+        analysis.
 
         Arguments:
-            - condition         - condition to be met, required (str)
-            - column            - column extracted from the report,
-                                  required (zip)
             - report_type       - type of report, required (str)
-
-        The condition should be 'greater' if we are looking for columns with
-        a high degree of conservation or 'less' if we are looking for columns
-        with a high degree of variation. The report type should be 'basic'
-        or 'detailed'.
+            - condition         - condition to be met, required (str)
+            - threshold         - threshold to consider a column of interest,
+                                  required (float)
+            - stats_column      - list containing the results of the analysis
+                                  previously done, required(list)
+            - wanted_columns    - summary of the columns meeting the
+                                  condition given, required (str)
+            - condition_met     - set of symbols indicating which of the
+                                  columns of the consensus sequence meet the
+                                  given condition, optional (str)
         """
-        if not isinstance(condition, str):
-            raise TypeError('"condition" argument should be a str')
-        if not isinstance(column, zip):
-            raise TypeError('"column" argument should be a zip')
-        if not isinstance(report_type, str):
-            raise TypeError('"report_type" argument should be a str')
+        def summarize_column(wanted_columns):
+            """
+            Summarize the info previously retrieve through the analysis of
+            the given alignment for the current column.
 
-        if condition == 'greater' or condition == 'less':
-            if report_type == 'basic':
-                max_values, special_values = tee(column, 2)
-                # Retrieve the Most Frequent Residue for this column
-                mfr = max(max_values, key=itemgetter(1))
+            Arguments:
+                - wanted_columns- summary of the columns meeting the
+                                  condition given, required (str)
+            """
+            sorted_freqs = sorted(stats_column[2], key=itemgetter(0))
+            #FIXME Should I print elem.upper()?
+            distribution = ("'{:s}': {:8.4f}%"
+                            ''.format(elem[0], elem[1] * 100) \
+                                      for elem in sorted_freqs \
+                                      if elem[1] * 100 > 0.0)
+            #FIXME Remember to use the mod operator when printing
+            # the column
+            wanted_columns += ('> {:5d}: {:5.4f} ({:s})\n'
+                               ''.format(stats_column[0],
+                                         stats_column[1],
+                                         ', '.join(distribution)))
 
-                return mfr, special_values
-            elif report_type == 'detailed':
-                max_values, join_values, special_values = tee(column, 3)
-                mfr = max(max_values, key=itemgetter(1))
+            return wanted_columns
 
-                return mfr, join_values, special_values
+        #FIXME Should I check this, again?
+        # if not isinstance(report_type, str):
+        #      raise TypeError('"report_type" argument should be a string')
+        # if not isinstance(condition, str):
+        #      raise TypeError('"condition" argument should be a string')
+        # if not isinstance(threshold, float):
+        #     raise TypeError('"threshold" argument should be a float')
+        # if not isinstance(stats_column, list):
+        #     raise TypeError('"stats_column" argument should be a list')
+        # if not isinstance(wanted_columns, str):
+        #     raise TypeError('"wanted_columns" argument should be a string')
+        # if not isinstance(condition_met, str):
+        #     raise TypeError('"condition_met" argument should be a string')
+
+        if condition == 'greater':
+            if stats_column[1] > threshold:
+                if report_type == 'basic':
+                    condition_met += '+'
+                wanted_columns = summarize_column(wanted_columns)
             else:
-                raise ValueError(('"report_type" argument has an invalid value. '
-                                  "It should be 'basic' or 'detailed'"))
+                if report_type == 'basic':
+                    condition_met += '-'
+        elif condition == 'less':
+            if stats_column[1] < threshold:
+                if report_type == 'basic':
+                    condition_met += '+'
+                wanted_columns = summarize_column(wanted_columns)
+            else:
+                if report_type == 'basic':
+                    condition_met += '-'
         else:
-            raise ValueError(('"condition" argument has an invalid value. '
-                              "It should be 'greater' or 'less'"))
+            raise ValueError(('"condition" argument has an invalid '
+                              "value. It should be 'greater' or "
+                              "'less'"))
 
-    def _generate_header_second_mod(self, condition, threshold, cis,
-                                    special_columns):
+        if report_type == 'basic':
+            return condition_met, wanted_columns
+        elif report_type == 'detailed':
+            return wanted_columns
+        else:
+            raise ValueError(('"report_type" argument has an invalid'
+                              "value. It should be 'basic' or 'detailed'"))
+
+    def _summarize_wanted_columns(self, summary, condition, threshold,
+                                  wanted_columns):
         """
-        Return the header for the report's 2nd module.
+        Summarize which columns of the previously analyzed alignment meet the
+        given condition. It includes not only the number of columns found, but
+        also the conservation index of each one as well as their frequencies
+        distribution.
 
         Arguments:
+            - summary           - content of the report been generated,
+                                  required (str)
             - condition         - condition to be met, required (str)
             - threshold         - threshold to consider a column of
                                   interest, required (float)
-            - cis               - estimated conservation indices for each
-                                  column, required (list of float)
-            - special_columns   - columns which met the given condition
-                                  required (list of tuples)
-
-        The condition should be 'greater' if we are looking for columns with
-        a high degree of conservation or 'less' if we are looking for columns
-        with a high degree of variation. The special_columns argument should
-        only include columns which meet the given condition.
+            - wanted_columns    - summary of the columns meeting the
+                                  condition given, required (str)
         """
+        if not isinstance(summary, str):
+            raise TypeError('"summary" argument should be a string')
         if not isinstance(condition, str):
-            raise TypeError('"condition" argument should be a str')
+            raise TypeError('"condition" argument should be a string')
         if not isinstance(threshold, float):
             raise TypeError('"threshold" argument should be a float')
-        if not isinstance(cis, list):
-            raise TypeError('"cis" argument should be a list')
-        if not isinstance(special_columns, list):
-            raise TypeError('"special_columns" argument should be a list')
-        elif not all(isinstance(elem, tuple) for elem in special_columns):
-            raise TypeError('"freqs" argument should be a list of tuples')
+        if not isinstance(wanted_columns, str):
+            raise TypeError('"wanted_columns" argument should be a string')
 
-        if special_columns:
-            if len(special_columns) > 1:
+        num_wanted_columns = wanted_columns.count('>')
+        if num_wanted_columns > 0:
+            if num_wanted_columns > 1:
                 if condition == 'greater':
-                    header = ('\nThere are {:d} columns with a high degree of '
-                              'conservation (>{:6.2f}%) in the {:s} sequences:'
-                              '\n\n'.format(len(special_columns),
-                                            threshold * 100, self._seqs_type))
+                    summary += ('\nThere are {:d} columns with a high '
+                                'degree of conservation (>{:6.2f}%) in '
+                                'the {:s} sequences:\n\n'
+                                ''.format(num_wanted_columns,
+                                          threshold * 100,
+                                          self._seqs_type))
                 elif condition == 'less':
-                    header = ('\nThere are {:d} columns with a high degree of '
-                              'variation (<{:6.2f}%) in the {:s} sequences:'
-                              '\n\n'.format(len(special_columns),
-                                            threshold * 100, self._seqs_type))
+                    summary += ('\nThere are {:d} columns with a high '
+                                'degree of variation (<{:6.2f}%) in the '
+                                '{:s} sequences:\n\n'
+                                ''.format(num_wanted_columns,
+                                          threshold * 100,
+                                          self._seqs_type))
                 else:
-                    raise ValueError(('"condition" argument has an invalid '
-                                      "value. It should be 'greater' or "
-                                      "'less'"))
+                    raise ValueError(('"condition" argument has an '
+                                      'invalid value. It should be '
+                                      "'greater' or 'less'"))
             else:
                 if condition == 'greater':
-                    header = ('\nThere is 1 column with a high degree of '
-                              'conservation (>{:6.2f}%) in the {:s} sequences:'
-                              '\n\n'.format(threshold * 100, self._seqs_type))
+                    summary += ('\nThere is 1 column with a high degree '
+                                'of conservation (>{:6.2f}%) in the {:s} '
+                                'sequences:\n\n'
+                                ''.format(threshold * 100,
+                                          self._seqs_type))
                 elif condition == 'less':
-                    header = ('\nThere is 1 column with a high degree of '
-                              'variation (<{:6.2f}%) in the {:s} sequences:'
-                              '\n\n'.format(threshold * 100, self._seqs_type))
+                    summary += ('\nThere is 1 column with a high degree '
+                                'of variation (<{:6.2f}%) in the {:s} '
+                                'sequences:\n\n'
+                                ''.format(threshold * 100,
+                                          self._seqs_type))
                 else:
-                    raise ValueError(('"condition" argument has an invalid '
-                                      "value. It should be 'greater' or "
-                                      "'less'"))
-
-            num = 0
-            for record in special_columns:
-                sorted_record = sorted(record[1], key=itemgetter(0))
-                #FIXME Should I print elem.upper()?
-                elem_freqs = ("'{:s}': {:8.4f}%"
-                              ''.format(elem[0], elem[1] * 100)
-                                        for elem in sorted_record \
-                                        if elem[1] * 100 > 0.0)
-                #FIXME Remember to use the mod operator when printing
-                # the column
-                header += ('> {:5d}: {:8.4f} ({:s})\n'
-                           ''.format(record[0], cis[record[0] - self._start_column],
-                                     ', '.join(elem_freqs)))
-            return header
+                    raise ValueError(('"condition" argument has an '
+                                      'invalid value. It should be '
+                                      "'greater' or 'less'"))
+            summary += wanted_columns
         else:
             if condition == 'greater':
-                return ('\nThere are not any columns with a high degree of '
-                        'conservation (>{:6.2f}%) in the {:s} sequences.'
-                        ''.format(threshold * 100, self._seqs_type))
+                summary += ('\nThere are not any columns with a high degree '
+                            'of conservation (>{:6.2f}%) in the {:s} '
+                            'sequences.'
+                            ''.format(threshold * 100, self._seqs_type))
             elif condition == 'less':
-                return ('\nThere are not any columns with a high degree of '
-                        'variation (<{:6.2f}%) in the {:s} sequences.'
-                        ''.format(threshold * 100, self._seqs_type))
+                summary += ('\nThere are not any columns with a high degree '
+                            'of variation (<{:6.2f}%) in the {:s} sequences.'
+                            ''.format(threshold * 100, self._seqs_type))
             else:
-                raise ValueError(('"condition" argument has an invalid value. '
-                                  "It should be 'greater' or 'less'"))
+                raise ValueError(('"condition" argument has an invalid '
+                                  "value. It should be 'greater' or "
+                                  "'less'"))
+
+        return summary
 
     def generate_basic(self, condition, threshold):
         """
@@ -705,72 +753,51 @@ class Report:
         with a high degree of variation.
         """
         if not isinstance(condition, str):
-            raise TypeError('"condition" argument should be a str')
+            raise TypeError('"condition" argument should be a string')
         if not isinstance(threshold, float):
             raise TypeError('"threshold" argument should be a float')
 
-        report = [zip(self._freqs.keys(), values)
-                  for values in zip(*(self._freqs.values()))]
-
-        # In order to traverse the freqs' data structure just once,
-        # we build the different report's modules at the same time
-        # 1st module:
-        #   - Consensus Sequence (CS)
-        # 2nd module:
-        #   - Columns which meet the given condition
-        first_mod_str = ''
-        first_mod_str_aux = ''
-        second_mod_str = ''
-
-        # Because we want to notify the user with the CI distribution of each
-        # column which meet the given condition, we store them as follows:
-        # (pos, iter)
-        special_columns = []
-
         condition = condition.lower()
-        num_column = self._start_column
-        for column in report:
-            mfr, special_values = self._get_data_for_column(condition, column,
-                                                            'basic')
 
-            if (num_column - self._start_column) % self._ITEMS_PER_LINE == 0:
-                first_mod_str += first_mod_str_aux
-                first_mod_str += '\n{:5d}:\t'.format(num_column)
-                first_mod_str_aux = '\n      \t'
-            else:
-                pass
+        # We create a data structure containing a list of elements with each
+        # of them looking like this: (num_column, ci, freqs_residues)
+        num_columns = range(self._start_column,
+                            self._start_column + len(self._cis))
+        stats = list(zip(num_columns,
+                         self._cis,
+                         [list(zip(self._freqs.keys(), values))
+                                  for values in zip(*(self._freqs.values()))]))
 
-            first_mod_str += '{:s}'.format(mfr[0])
+        consensus_seq = ''
+        condition_met = ''
+        wanted_columns = ''
+        summary = ''
+        for stats_column in stats:
+            # If we have reach the given number of residues per line of the
+            # report, we update the summary been generated accordingly
+            if (stats_column[0] - self._start_column) % \
+                self._ITEMS_PER_LINE == 0:
+                summary += consensus_seq + condition_met 
+                summary += '\n{:5d}:\t'.format(stats_column[0])
+                consensus_seq = ''
+                condition_met = '\n      \t'
 
-            if condition == 'greater':
-                if mfr[1] > threshold:
-                    first_mod_str_aux += '+'
-                    freqs = (num_column, special_values)
-                    special_columns.append(freqs)
-                else:
-                    first_mod_str_aux += '-'
-            elif condition == 'less':
-                if mfr[1] < threshold:
-                    first_mod_str_aux += '+'
-                    freqs = (num_column, special_values)
-                    special_columns.append(freqs)
-                else:
-                    first_mod_str_aux += '-'
-            else:
-                raise ValueError(('"condition" argument has an invalid value. '
-                                  "It should be 'greater' or 'less'"))
+            consensus_seq += max(stats_column[2], key=itemgetter(1))[0]
 
-            num_column += 1
+            condition_met, \
+            wanted_columns = self._check_condition('basic', condition,
+                                                   threshold, stats_column,
+                                                   wanted_columns,
+                                                   condition_met)
 
-        first_mod_str += first_mod_str_aux
-        second_mod_str = self._generate_header_second_mod(condition,
-                                                          threshold,
-                                                          self._cis,
-                                                          special_columns)
+        # We have to append the last section of the consensus sequence at
+        # the end of the report been generated 
+        summary += consensus_seq + condition_met + '\n'
 
-        # We do not want to print a new line at the beginning of the report
-        # so we skip the 1st character
-        return first_mod_str[1:] + '\n' + second_mod_str + '\n'
+        summary = self._summarize_wanted_columns(summary, condition,
+                                                 threshold, wanted_columns)
+
+        return summary[1:]
 
     def generate_detailed(self, condition, threshold):
         """
@@ -786,61 +813,40 @@ class Report:
         with a high degree of variation.
         """
         if not isinstance(condition, str):
-            raise TypeError('"condition" argument should be a str')
+            raise TypeError('"condition" argument should be a string')
         elif condition not in ['greater', 'less']:
             raise ValueError(('"condition" argument has an invalid value. It '
                               "should be 'greater' or 'less'"))
         if not isinstance(threshold, float):
             raise TypeError('"threshold" argument should be a float')
 
-        report = [zip(self._freqs.keys(), values)
-                  for values in zip(*(self._freqs.values()))]
-
-        # In order to traverse the freqs' data structure just once,
-        # we build the differents modules of the report at the same time
-        # 1st module:
-        #   - Distribution of the CI for each column
-        # 2nd module:
-        #   - Columns which meet the given condition
-        first_mod_str = ''
-        second_mod_str = ''
-
-        # Because we want to notify the user with the CI distribution of each
-        # column which meet the given condition, we store them as follows:
-        # (pos, iter)
-        special_columns = []
-
         condition = condition.lower()
-        num_column = self._start_column
-        for column in report:
-            mfr, join_values, \
-            special_values = self._get_data_for_column(condition, column,
-                                                       'detailed')
 
-            sorted_join_values = sorted(join_values, key=itemgetter(0))
-            first_mod_str += '{:5d}:\t\t'.format(num_column)
+        # We create a data structure containing a list of elements with each
+        # of them looking like this: (num_column, ci, freqs_residues)
+        num_columns = range(self._start_column,
+                            self._start_column + len(self._cis))
+        stats = list(zip(num_columns,
+                         self._cis,
+                         [list(zip(self._freqs.keys(), values))
+                                  for values in zip(*(self._freqs.values()))]))
+
+        wanted_columns = ''
+        summary = ''
+        for stats_column in stats:
+            summary += '\n{:5d}:\t{:5.4f}\t\t'.format(stats_column[0],
+                                                   stats_column[1])
+            sorted_freqs = sorted(stats_column[2], key=itemgetter(0))
             #FIXME Should I print elem.upper()?
-            first_mod_str += '\t'.join(("'{:s}':\t{:8.4f}%"
-                                        ''.format(elem[0], elem[1]*100))
-                                       for elem in sorted_join_values \
-                                       if elem[0] != '-')
-            first_mod_str += '\n'
-            # We store which columns meet the given condition
-            if (condition == 'greater' and \
-                    mfr[1] > threshold) or \
-                (condition == 'less' and \
-                    mfr[1] < threshold):
-                freqs = (num_column, special_values)
-                special_columns.append(freqs)
-            else:
-                pass
+            summary += '\t'.join(("'{:s}':\t{:8.4f}%"
+                                  ''.format(elem[0], elem[1]*100))
+                                  for elem in sorted_freqs \
+                                  if elem[0] != '-')
+            wanted_columns = self._check_condition('detailed', condition,
+                                                   threshold, stats_column,
+                                                   wanted_columns)
 
-            num_column += 1
+        summary = self._summarize_wanted_columns(summary, condition,
+                                                 threshold, wanted_columns)
 
-        second_mod_str = self._generate_header_second_mod(condition,
-                                                          threshold,
-                                                          self._cis,
-                                                          special_columns)
-
-        return first_mod_str + second_mod_str + '\n'
-
+        return summary[1:]

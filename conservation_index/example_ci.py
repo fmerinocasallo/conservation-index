@@ -59,5 +59,5 @@ freqs, cis = analyze(seqs_type, seqs_filename, freqs_method, ci_method)
 report = Report(seqs_type, freqs, cis, hmtDNAData.genes['12S'][0])
 
 # print(report.generate_detailed('less', 0.95))
-print(report.generate_detailed('greater', 0.50))
-# print(report.generate_basic('less', 0.75))
+# print(report.generate_detailed('greater', 0.50))
+print(report.generate_basic('less', 0.75))
