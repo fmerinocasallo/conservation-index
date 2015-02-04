@@ -46,7 +46,7 @@
 """Estimate the CI for each column of the given set of sequences."""
 from math import log
 from operator import itemgetter
-from threading import Thread
+from threading import Barrier, Thread
 
 from Bio import Align, AlignIO
 
@@ -140,7 +140,7 @@ class Conservation_Index(object):
         # each element of the selected alphabet. Because we still does not
         # know how many sequences we are dealing with, we set all weights to
         # zero.
-        if self._seqs_type == 'nucleotides':
+        if self._seqs_type == 'dna':
             self._elem_weights = {'-': [['-'], 0],
                                   'a': [['a'], 0],
                                   'c': [['c'], 0],
@@ -157,7 +157,7 @@ class Conservation_Index(object):
                                   'v': [['a', 'c', 'g'], 0],
                                   'd': [['a', 'g', 't'], 0],
                                   'n': [['a', 'c', 'g', 't'], 0]}
-        elif self._seqs_type == 'amino acids':
+        elif self._seqs_type == 'protein':
             self._elem_weights = {'=': [['='],0],
                                   'g': [['g'], 0],
                                   'a': [['a'], 0],
@@ -203,7 +203,7 @@ class Conservation_Index(object):
             Set the correct element's weight for the unweighted frequencies'
             method.
             """
-            for elem, weights in self._elem_weights:
+            for elem, weights in self._elem_weights.items():
                 num_elems = len(weights[0])
                 self._elem_weights[elem][1] = 1 / (num_elems * num_seqs)
 
@@ -387,8 +387,9 @@ class Conservation_Index(object):
 
         def variance():
             """
+            Estimate conservation index using a variance-based measure.
             """
-            pass
+            
 
         if not isinstance(align, Align.MultipleSeqAlignment):
             raise TypeError('"align" argument should be a MultipleSeqAlignment')
@@ -420,13 +421,15 @@ class CI_Thread(Thread):
     """
 
     """
-    def __init__(self, seqs_type, align, columns_section,
+    def __init__(self, barrier, seqs_type, align, columns_section,
                  freq_method, freqs, ci_method, cis,
                  rows_section=(), align_weights=[]):
         """
         Creates a CI_Thread object.
 
         Arguments:
+            - barrier           - shared barrier to be used for syncronization
+                                  between threads, required (Barrier)
             - seqs_type         - type of sequences, required (str)
             - align             - set of sequences to be analyzed,
                                   required (MultipleSeqAlignment)
@@ -454,9 +457,11 @@ class CI_Thread(Thread):
         The sequences' weights should be a list of 0.0 with the same size as
         the number of sequences in the alignment
         """
+        if not isinstance(barrier, Barrier):
+            raise TypeError('"barrier" argument should be a Barrier')
         if not isinstance(seqs_type, str):
             raise TypeError('"seqs_type" argument should be a string')
-        if seqs_type.lower() not in ['nucleotides', 'amino acids']:
+        if seqs_type.lower() not in ['dna', 'protein']:
             raise ValueError(('"seqs_type" argument has an invalid value. '
                               "It should be 'nucleotides' or 'amino acids'"))
         if not isinstance(align, Align.MultipleSeqAlignment):
@@ -487,6 +492,7 @@ class CI_Thread(Thread):
         # We assign to each thread the section of the align to be analyzed
         # by itself and the data structure which stores the results ('freqs')
         Thread.__init__(self)
+        self._barrier = barrier
         self._ci = Conservation_Index(seqs_type)
         self._align = align
         self._columns_section = columns_section
@@ -513,6 +519,9 @@ class CI_Thread(Thread):
             self._ci.estimate_frequencies(self._align, self._columns_section,
                                           self._freqs, self._freq_method,
                                           self._align_weights)
+            # Wait until all the remaining threads have finished estimating
+            # frequencies
+            self._barrier.wait()
             self._ci.estimate_conservation_index(self._align,
                                                  self._columns_section,
                                                  self._freqs,
@@ -521,6 +530,9 @@ class CI_Thread(Thread):
         else: # self_freq_method == 'unweighted'
             self._ci.estimate_frequencies(self._align, self._columns_section,
                                           self._freqs, self._freq_method)
+            # Wait until all the remaining threads have finished estimating
+            # frequencies
+            self._barrier.wait()
             self._ci.estimate_conservation_index(self._align,
                                                  self._columns_section,
                                                  self._freqs,
@@ -548,7 +560,7 @@ class Report:
         """
         if not isinstance(seqs_type, str):
             raise TypeError('"seqs_type" argument should be a string')
-        if seqs_type.lower() not in ['nucleotides', 'amino acids']:
+        if seqs_type.lower() not in ['dna', 'protein']:
             raise ValueError(('"seqs_type" argument has an invalid value. '
                               "It should be 'nucleotides' or 'amino acids'"))
         if not isinstance(freqs, dict):

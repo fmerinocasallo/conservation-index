@@ -49,7 +49,7 @@ def analyze(seqs_type, seqs_filename, freq_method, ci_method):
 
     return freqs, cis
 
-seqs_type = 'nucleotides'
+seqs_type = 'dna'
 seqs_filename = 'hmtDNA_rCRS_12S.fasta'
 # seqs_filename = 'hmtDNA_rCRS_12S[0:3,0:10].fasta'
 freqs_method = 'weighted'
