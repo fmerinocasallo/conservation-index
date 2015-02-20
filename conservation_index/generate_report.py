@@ -8,7 +8,7 @@ from errno import ENOENT, EIO
 from math import ceil
 from os.path import basename, splitext
 import sys
-from threading import Barrier
+from threading import Barrier, Lock
 from multiprocessing import cpu_count
 
 from Bio import AlignIO
@@ -47,7 +47,7 @@ def read_arguments():
                         choices=['unweighted', 'weighted'],
                         help='method to be used to estimated frequencies')
     parser.add_argument('-cm', '--conservation_method', required=True,
-                        choices=['entropy'],
+                        choices=['entropy', 'variance'],
                         help='method to be used to estimated conservation')
     parser.add_argument('-co', '--condition', required=True,
                         choices=['greater', 'less'],
@@ -67,31 +67,51 @@ def analyze(seqs_type, seqs_filename, freq_method, ci_method):
     Analyze the set of sequences using every available cpu. Each column
     will be process by one of them.
     """
-    # Initialize the stats dictionary which is going to store the CI
-    # distribution for each column
-    
-    num_cpus = cpu_count()
+    num_cores = cpu_count() 
+
     align = AlignIO.read(seqs_filename, 'fasta')
     num_rows = len(align)
     num_columns = align.get_alignment_length()
-    freqs = {'-': [0.0] * num_columns, 
-             'a': [0.0] * num_columns, 'g': [0.0] * num_columns,
-             'c': [0.0] * num_columns, 't': [0.0] * num_columns}
+
+    if seqs_type == 'dna':
+        residues = ['-', 'a', 'g', 'c', 't']
+    elif seqs_type == 'protein':
+        residues = ['=', 'q', 'a', 'v', 'l', 'i', 'p', 'f', 'y', 'c', 'm', 'h',
+                    'k', 'r', 'w', 's', 't', 'd', 'e', 'n', 'q', 'b', 'z', '-',
+                    'x']
+    else:
+        raise ValueError('"seqs_type" argument has an invalid value. It '
+                         "should be 'dna' or 'protein'.")
+
+    # Initialize the freqs dictionary which is going to store the frequencies
+    # distribution for each column
+    freqs = {}
+    overall_freqs = {}
+    for residue in residues:
+        freqs[residue] = [0.0] * num_columns
+        overall_freqs[residue] = 0.0
+
+    # Initialize the cis list which is going to store the conservation
+    # for each column
     cis = [0.0 for k in range(0, num_columns)]
+    # Initialize the align_weights list which is going to store the
+    # weights associated with each sequence of the alignment
     align_weights = [0.0 for j in range(0, num_rows)]
 
     start_row = 0
     start_column = 0
-    rows_section_size = ceil(num_rows / num_cpus)
-    columns_section_size = ceil(num_columns / num_cpus)
+    rows_section_size = ceil(num_rows / num_cores)
+    columns_section_size = ceil(num_columns / num_cores)
     threads = []
-    barrier = Barrier(num_cpus)
-    for cpu in range(0, num_cpus):
+    barrier = Barrier(num_cores)
+    lock = Lock()
+    for cpu in range(0, num_cores):
         column_section = (start_column, start_column + columns_section_size)
         row_section = (start_row, start_row + rows_section_size)
-        threads.append(CI_Thread(barrier, seqs_type, align, column_section,
-                                 freq_method, freqs, ci_method, cis,
-                                 row_section, align_weights))
+        threads.append(CI_Thread(barrier, lock, seqs_type, align,
+                                 column_section, freq_method, freqs,
+                                 ci_method, cis, row_section,
+                                 align_weights, overall_freqs))
 
         threads[cpu].start()
 
@@ -127,6 +147,8 @@ def main():
 
     if args.conservation_method == 'entropy':
         ci_method = 'shannon entropy'
+    else:
+        ci_method = args.conservation_method
 
     freqs, cis = analyze(args.sequence_type, args.input_filename,
                          args.frequencies_method, ci_method)
