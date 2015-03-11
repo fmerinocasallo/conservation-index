@@ -1,4 +1,4 @@
-#! /usr/bin/python3.3
+#! /usr/bin/python3.4
 """Generate a report based on the analysis of the given alignment."""
 # Support for python2.7
 from __future__ import print_function
