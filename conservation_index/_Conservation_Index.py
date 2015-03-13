@@ -4,9 +4,30 @@
 #                'Conservation_Index', 'PT_Thread' and 'Report'.
 #
 # Author :  F. Merino-Casallo  ( fmerino@unizar.es )
-# Last version :  v1.1 ( 03/Sep/2014 )
+# Last version :  v4.2 ( 11/Mar/2015 )
 #-------------------------------------------------------------------------------
 # Historical report :
+# 
+#   DATE :  11/Mar/2015
+#   VERSION :  v4.2
+#   AUTHOR(s) :  F. Merino-Casallo
+#   MODIFICATIONS :  Changed the way conservation is calculated. Now we
+#                    are using independent processes instead of threads. This
+#                    let us avoid the GIL which was a complete pain in the ass.
+#
+#   DATE :  02/Mar/2015
+#   VERSION :  v4.1
+#   AUTHOR(s) :  F. Merino-Casallo
+#   MODIFICATIONS :  Changed the way frequencies' are calculated. Now we
+#                    are using independent processes instead of threads. This
+#                    let us avoid the GIL which was a complete pain in the ass.
+#
+#   DATE :  26/Feb/2015
+#   VERSION :  v4.0
+#   AUTHOR(s) :  F. Merino-Casallo
+#   MODIFICATIONS :  Changed the way sequences' weights are calculated. Now we
+#                    are using independent processes instead of threads. This
+#                    let us avoid the GIL which was a complete pain in the ass.
 #
 #   DATE :  19/Feb/2015
 #   VERSION :  v3.1
@@ -53,7 +74,6 @@
 from math import ceil, log, sqrt
 from multiprocessing import cpu_count, Pool
 from operator import itemgetter
-from threading import Barrier, Lock, Thread
 
 from Bio import Align, AlignIO
 
@@ -112,7 +132,8 @@ class Conservation_Index(object):
         Creates a Conservation_Index.
 
         Arguments:
-            - seqs_type         - type of sequences, required (str)
+            - seqs_type         - type of sequences,
+                                  required (str)
 
         The type of sequences should be one of those in PhyloDag.Data
         """
@@ -126,6 +147,7 @@ class Conservation_Index(object):
         # know how many sequences we are dealing with, we set all weights to
         # zero.
         if self._seqs_type == 'dna':
+            self._residues = ['-', 'a', 'c', 'g', 't']
             self._elem_weights = {'-': [['-'], 0],
                                   'a': [['a'], 0],
                                   'c': [['c'], 0],
@@ -143,6 +165,9 @@ class Conservation_Index(object):
                                   'd': [['a', 'g', 't'], 0],
                                   'n': [['a', 'c', 'g', 't'], 0]}
         elif self._seqs_type == 'protein':
+            self._residues = ['=', 'g', 'a', 'v', 'l', 'i', 'p', 'f', 'y', 'c',
+                              'm', 'h', 'k', 'r', 'w', 's', 't', 'd', 'e', 'n',
+                              'q', '-', 'x']
             self._elem_weights = {'=': [['='],0],
                                   'g': [['g'], 0],
                                   'a': [['a'], 0],
@@ -182,7 +207,8 @@ class Conservation_Index(object):
                                   required (int)
             - freq_method       - frequencies' calculation method,
                                   required (str)
-            - align_weights     - sequences' weights, optional (list of float)
+            - align_weights     - sequences' weights,
+                                  optional (list of float)
         """
         def unweighted_frequencies():
             """
@@ -219,39 +245,36 @@ class Conservation_Index(object):
             raise ValueError(('"freq_method" argument has an invalid value. '
                               "It should be 'unweighted' or 'weighted'"))
 
-    def calculate_weights(align):
-        #FIXME In order to improve our memory requirements, it has been proved
-        # that it is a better idea to use the path of the alignment as a parameter
-        # instead of the MultipleSeqAlignment object
+    def calculate_weights(self, filename):
         """
         Weigh a set of aligned sequences. Our aim is to compensate for over-
         representation among multiple aligned sequences.
 
         Arguments:
-            - align         - set of sequences to be analyzed,
-                              required (MultipleSeqAlignment)
+            - filename          - filename of the file which stores the
+                                  alignment to be analyzed,
+                                  required (str)
         """
 
-        def calculate_section_weights(align, section):
+        def calculate_section_weights(self, filename, section):
             """
             Weigh the given section (usually more than a single column) of a set
             of aligned sequences. Our aim is to compensate for over-
             representation among multiple aligned sequences.
 
             Arguments:
-                - align         - set of sequences to be analyzed,
-                                  required (MultipleSeqAlignment)
+                - filename      - filename of the file which stores the
+                                  alignment to be analyzed,
+                                  required (str)
                 - section       - section of each sequence to be analyzed,
                                   required (tuple)
             """
-            if not isinstance(align, Align.MultipleSeqAlignment):
-                raise TypeError('"align" argument should be a '
-                                'MultipleSeqAlignment')
+            if not isinstance(filename, str):
+                raise TypeError('"filename" argument should be a string.')
             if not isinstance(section, tuple):
                 raise TypeError('"section" argument should be a tuple')
 
-            start_column, end_column = _check_section(align, 'columns',
-                                                      section)
+            start_column, end_column = _check_section(align, 'columns', section)
             num_columns = end_column - start_column
             stats = [{} for k in range(0, num_columns)]
             # calculate stats (# diff. elems, reps each elem) for each column
@@ -271,9 +294,10 @@ class Conservation_Index(object):
 
             return weights
 
-        if not isinstance(align, Align.MultipleSeqAlignment):
-            raise TypeError('"align" argument should be a '
-                            'MultipleSeqAlignment')
+        if not isinstance(filename, str):
+            raise TypeError('"filename" argument should be a string.')
+
+        align = AlignIO.read(filename, 'fasta')
 
         num_cores = cpu_count()
         num_columns = align.get_alignment_length()
@@ -284,9 +308,10 @@ class Conservation_Index(object):
             results = []
             for start_column in range(0, num_columns, section_size):
                 section = (start_column, start_column + section_size)
-                results.append(pool.apply_async(calculate_section_weights,
-                               args=(align, section)))
+                results.append(pool.apply_async(calculate_section_weights_pick,
+                                                args=(self, align, section)))
 
+            # retrieve the results of each process
             sections_weights = [result.get() for result in results]
 
         weights = zip(*[section_weights for section_weights in \
@@ -294,90 +319,111 @@ class Conservation_Index(object):
 
         return [sum(seq_weights) for seq_weights in weights]
 
-    def calculate_frequencies(filename, freq_method, align_weight=None,
+    def calculate_frequencies(self, filename, freq_method, align_weight=None,
                               calc_overall_freqs=False):
-        #FIXME In order to improve our memory requirements, it has been proved
-        # that it is a better idea to use the path of the alignment as a
-        # parameter instead of the MultipleSeqAlignment object
         """
         Calculate frequencies of a set of aligned sequences.
 
         Arguments:
-            - align             - set of sequences to be analyzed,
-                                required (MultipleSeqAlignment)
+            - filename          - filename of the file which stores the
+                                  alignment to be analyzed,
+                                  required (str)
             - freq_method       - frequencies' estimation method,
-                                required (str)
-            - align_weights     - sequences' weights, optional (list of float)
+                                  required (str)
+            - align_weights     - sequences' weights,
+                                  optional (list of float)
             - calc_overall_freqs
                                 - if True, we'll also calculate the overall
-                                frequencies for each residue, optional (bool)
+                                  frequencies for each residue,
+                                  optional (bool)
+
+        Return a tuple. If we do not want to calculate the overalls
+        frequencies for each residue (calc_overall_freqs should be False
+        in this case), the returned tuple will not contain them. Otherwise,
+        the tuple will include them.
         """
-        def calculate_section_frequencies(num_section, filename, freq_method,
-                                          align_weights=None,
+        def calculate_section_frequencies(self, num_section, filename,
+                                          freq_method, align_weights=None,
                                           calc_overall_freqs=False):
             """
             Calculate frequencies of the given section (usually more than a
             single column) of a set of sequences.
 
             Arguments:
-                - num_section       - number of section to be analyzed. It is
-                                    needed to be able to sort the returned
-                                    results by each of the processes,
-                                    required (int)
-                - align             - set of sequences to be analyzed,
-                                    required (MultipleSeqAlignment)
-                - freq_method       - frequencies' estimation method,
-                                    required (str)
-                - align_weights     - sequences' weights,
-                                    optional (list of float)
+                - num_section   - number of section to be analyzed. It is
+                                  needed to be able to sort the returned
+                                  results by each of the processes,
+                                  required (int)
+                - filename      - filename of the file which stores the
+                                  alignment to be analyzed,
+                                  required (str)
+                - freq_method   - frequencies' estimation method,
+                                  required (str)
+                - align_weights - sequences' weights,
+                                  optional (list of float)
                 - calc_overall_freqs
-                                    - if True, we'll also calculate the overall
-                                    frequencies for each residue,
-                                    optional (bool)
+                                - if True, we'll also calculate the overall
+                                  frequencies for each residue,
+                                  optional (bool)
+
+            Return a tuple. If we do not want to calculate the overalls
+            frequencies for each residue (calc_overall_freqs should be False
+            in this case), the returned tuple will not contain them. Otherwise,
+            the tuple will include them.
             """
-            def unweighted_frequencies(filename, section, freqs,
+            def unweighted_frequencies(self, filename, section, freqs,
                                        calc_overall_freqs=False):
                 """
                 Estimate frequencies using the unweighted frequencies' method.
 
                 Arguments:
-                    - align             - set of sequences to be analyzed,
-                                        required (MultipleSeqAlignment)
-                    - section           - section of each sequence to be
-                                        analyzed,
-                                        required (tuple)
-                    - freqs             - estimated residues' frequencies for
-                                        each column,
-                                        required (dict of lists of int)
+                    - filename  - filename of the file which stores the
+                                  alignment to be analyzed,
+                                  required (str)
+                    - section   - section of each sequence to be analyzed,
+                                  required (tuple)
+                    - freqs     - estimated residues' frequencies for each
+                                  column,
+                                  required (dict of lists of int)
                     - calc_overall_freqs
-                                        - if True, we'll also calculate the
-                                        overall frequencies for each residue,
-                                        optional (bool)
+                                - if True, we'll also calculate the overall
+                                  frequencies for each residue,
+                                  optional (bool)
+
+                Return a tuple. If we do not want to calculate the overalls
+                frequencies for each residue (calc_overall_freqs should be False
+                in this case), the returned tuple will not contain them.
+                Otherwise, the tuple will include them.
                 """
-                def calculate_without_overall_freqs(filename, section, freqs):
+                def calculate_without_overall_freqs(self, filename, section,
+                                                    freqs):
                     """
                     Estimate only frequencies for each column.
 
                     Arguments:
-                        - align             - set of sequences to be analyzed,
-                                            required (MultipleSeqAlignment)
-                        - section           - section of each sequence to be
-                                            analyzed,
-                                            required (tuple)
-                        - freqs             - estimated residues' frequencies
-                                            for each column,
-                                            required (dict of lists of int)
+                        - filename
+                                - filename of the file which stores the
+                                  alignment to be analyzed,
+                                  required (str)
+                        - section
+                                - section of each sequence to be analyzed,
+                                  required (tuple)
+                        - freqs - estimated residues' frequencies for each
+                                  column,
+                                  required (dict of lists of int)
+
+                    Return a tuple containing just the frequencies.
                     """
                     align = AlignIO.read(filename,'fasta')
                     start_column, end_column = _check_section(align, 'columns',
-                                                            section)
+                                                              section)
                     for record in align:
                         for j, residue in \
                         enumerate(record.seq[start_column:end_column].lower()):
-                            for elem in elem_weights[residue][0]:
+                            for elem in self._elem_weights[residue][0]:
                                 try:
                                     freqs[elem][j] = (freqs[elem][j] +
-                                                    elem_weights[residue][1])
+                                                self._elem_weights[residue][1])
                                 except TypeError:
                                     raise TypeError(('"freqs" argument should '
                                                      'be a dict of lists of '
@@ -385,35 +431,40 @@ class Conservation_Index(object):
 
                     return (freqs, )
 
-                def calculate_with_overall_freqs(filename, section, freqs):
+                def calculate_with_overall_freqs(self, filename, section, freqs):
                     """
                     Estimate not only frequencies for each column, but also the
                     overall frequencies for each residue.
 
                     Arguments:
-                        - align             - set of sequences to be analyzed,
-                                            required (MultipleSeqAlignment)
-                        - section           - section of each sequence to be
-                                            analyzed,
-                                            required (tuple)
-                        - freqs             - estimated residues' frequencies
-                                            for each column,
-                                            required (dict of lists of int)
+                        - filename
+                                - filename of the file which stores the
+                                  alignment to be analyzed,
+                                  required (str)
+                        - section
+                                - section of each sequence to be analyzed,
+                                  required (tuple)
+                        - freqs - estimated residues' frequencies for each
+                                  column,
+                                  required (dict of lists of int)
+
+                    Return a tuple containing both frequencies and the overalls
+                    frequencies for each residue.
                     """
                     align = AlignIO.read(filename,'fasta')
                     total_columns = align.get_alignment_length()
                     start_column, end_column = _check_section(align, 'columns',
-                                                            section)
+                                                              section)
                     for record in align:
                         for j, residue in \
                         enumerate(record.seq[start_column:end_column].lower()):
-                            for elem in elem_weights[residue][0]:
+                            for elem in self._elem_weights[residue][0]:
                                 try:
                                     freqs[elem][j] = (freqs[elem][j] +
-                                                    elem_weights[residue][1])
+                                                self._elem_weights[residue][1])
                                     overall_freqs[elem] = (overall_freqs[elem] +
-                                                    elem_weights[residue][1] /
-                                                    total_columns)
+                                                self._elem_weights[residue][1] /
+                                                total_columns)
                                 except TypeError:
                                     raise TypeError(('"freqs" argument should '
                                                      'be a dict of lists of '
@@ -428,55 +479,66 @@ class Conservation_Index(object):
                     return calculate_without_overall_freqs(filename, section,
                                                            freqs)
 
-            def weighted_frequencies(filename, section, freqs, align_weights,
-                                     calc_overall_freqs=False):
+            def weighted_frequencies(self, filename, section, freqs,
+                                     align_weights, calc_overall_freqs=False):
                 """
                 Estimate frequencies using the weighted frequencies' method.
 
                 Arguments:
-                    - align             - set of sequences to be analyzed,
-                                        required (MultipleSeqAlignment)
-                    - section           - section of each sequence to be
-                                        analyzed,
-                                        required (tuple)
-                    - freqs             - estimated residues' frequencies for
-                                        each column,
-                                        required (dict of lists of int)
-                    - align_weights     - sequences' weights,
-                                        required (list of float)
+                    - filename  - filename of the file which stores the
+                                  alignment to be analyzed,
+                                  required (str)
+                    - section   - section of each sequence to be analyzed,
+                                  required (tuple)
+                    - freq_method
+                                - frequencies' estimation method,
+                                  required (str)
+                    - align_weights
+                                - sequences' weights,
+                                  optional (list of float)
                     - calc_overall_freqs
-                                        - if True, we'll also calculate the
-                                        overall frequencies for each residue,
-                                        optional (bool)
+                                - if True, we'll also calculate the overall
+                                  frequencies for each residue,
+                                  optional (bool)
+
+                Return a tuple. If we do not want to calculate the overalls
+                frequencies for each residue (calc_overall_freqs should be False
+                in this case), the returned tuple will not contain them.
+                Otherwise, the tuple will include them.
                 """
-                def calculate_without_overall_freqs(filename, section, freqs,
-                                                    align_weights):
+                def calculate_without_overall_freqs(self, filename, section,
+                                                    freqs, align_weights):
                     """
                     Estimate only frequencies for each column.
 
                     Arguments:
-                        - align             - set of sequences to be analyzed,
-                                            required (MultipleSeqAlignment)
-                        - section           - section of each sequence to be
-                                            analyzed,
-                                            required (tuple)
-                        - freqs             - estimated residues' frequencies
-                                            for each column,
-                                            required (dict of lists of int)
-                        - align_weights     - sequences' weights,
-                                            required (list of float)
+                        - filename
+                                - filename of the file which stores the
+                                  alignment to be analyzed,
+                                  required (str)
+                        - section
+                                - section of each sequence to be analyzed,
+                                  required (tuple)
+                        - freqs - estimated residues' frequencies for each
+                                  column,
+                                  required (dict of lists of int)
+                        - align_weights
+                                - sequences' weights,
+                                  required (list of float)
+
+                    Return a tuple containing just the frequencies.
                     """
                     align = AlignIO.read(filename,'fasta')
                     start_column, end_column = _check_section(align, 'columns',
-                                                            section)
+                                                              section)
                     for i, record in enumerate(align):
                         for j, residue in \
                         enumerate(record.seq[start_column:end_column].lower()):
-                            for elem in elem_weights[residue][0]:
+                            for elem in self._elem_weights[residue][0]:
                                 try:
                                     freqs[elem][j] = (freqs[elem][j] +
-                                                    weights[i] *
-                                                    elem_weights[residue][1])
+                                                weights[i] *
+                                                self._elem_weights[residue][1])
                                 except TypeError:
                                     raise TypeError(('"freqs" argument should '
                                                      'be a dict of lists of '
@@ -489,23 +551,29 @@ class Conservation_Index(object):
 
                     return (freqs, )
 
-                def calculate_with_overall_freqs(filename, section, freqs,
+                def calculate_with_overall_freqs(self, filename, section, freqs,
                                                  align_weights):
                     """
                     Estimate not only frequencies for each column, but also the
                     overall frequencies for each residue.
 
                     Arguments:
-                        - align             - set of sequences to be analyzed,
-                                            required (MultipleSeqAlignment)
-                        - section           - section of each sequence to be
-                                            analyzed,
-                                            required (tuple)
-                        - freqs             - estimated residues' frequencies
-                                            for each column,
-                                            required (dict of lists of int)
-                        - align_weights     - sequences' weights,
-                                            required (list of float)
+                        - filename
+                                - filename of the file which stores the
+                                  alignment to be analyzed,
+                                  required (str)
+                        - section
+                                - section of each sequence to be analyzed,
+                                  required (tuple)
+                        - freqs - estimated residues' frequencies for each
+                                  column,
+                                  required (dict of lists of int)
+                        - align_weights
+                                - sequences' weights,
+                                  required (list of float)
+
+                    Return a tuple containing both frequencies and the overalls
+                    frequencies for each residue.
                     """
                     align = AlignIO.read(filename,'fasta')
                     total_columns = align.get_alignment_length()
@@ -514,15 +582,15 @@ class Conservation_Index(object):
                     for i, record in enumerate(align):
                         for j, residue in \
                         enumerate(record.seq[start_column:end_column].lower()):
-                            for elem in elem_weights[residue][0]:
+                            for elem in self._elem_weights[residue][0]:
                                 try:
                                     freqs[elem][j] = (freqs[elem][j] +
-                                                    weights[i] *
-                                                    elem_weights[residue][1])
+                                                weights[i] *
+                                                self._elem_weights[residue][1])
                                     overall_freqs[elem] = (overall_freqs[elem] +
-                                                    weights[i] *
-                                                    elem_weights[residue][1] /
-                                                    total_columns)
+                                                weights[i] *
+                                                self._elem_weights[residue][1] /
+                                                total_columns)
                                 except TypeError:
                                     raise TypeError(('"freqs" argument should '
                                                      'be a dict of lists of '
@@ -542,13 +610,10 @@ class Conservation_Index(object):
                     return calculate_without_overall_freqs(filename, section,
                                                            freqs, weights)
 
-            # FIXME We should probably set a class attribute to store the content of
-            # 'residues'
-            residues = ['-', 'a', 'c', 'g', 't']
-            num_columns = section[1] - section[0]
+            section_length = section[1] - section[0]
             freqs = {}
-            for residue in residues:
-                freqs[residue] = [0.0] * num_columns
+            for residue in self._residues:
+                freqs[residue] = [0.0] * section_length 
 
             if freq_method == 'unweighted':
                 return ((num_section, ) +
@@ -562,19 +627,17 @@ class Conservation_Index(object):
                 raise ValueError(('"freq_method" argument has an invalid value. '
                                     "It should be 'unweighted' or 'weighted'"))
 
-
         if align_weights is None:
             align_weights = []
 
         if not isinstance(filename, str):
-            raise TypeError('"align" argument should be a string')
+            raise TypeError('"filename" argument should be a string')
         if not isinstance(freq_method, str):
             raise TypeError('"freq_method" argument should be a string')
         if not isinstance(align_weights, list):
             raise TypeError('"align_weights" argument should be a list')
         if not isinstance(calc_overall_freqs, bool):
             raise TypeError('"calc_overall_freqs" argument should be a bool')
-
 
         num_columns = AlignIO.read(filename, 'fasta').get_alignment_length()
         num_cores = cpu_count()
@@ -589,73 +652,98 @@ class Conservation_Index(object):
                 if num_columns < end_column:
                     end_column = num_columns
                 section = (start_column, end_column)
-                results.append(pool.apply_async(calculate_section_frequencies,
-                            args=(num_section, filename, section, freqs_method,
-                                  align_weights, calc_overall_freqs)))
+
+                results.append(pool.apply_async(
+                                            self.calculate_section_frequencies,
+                                            args=(num_section, filename,
+                                                  section, freq_method,
+                                                  align_weights,
+                                                  calc_overall_freqs)))
+
                 num_section += 1
 
+            # retrieve the results of each process
             sections_freqs = [result.get() for result in results]
+            # because we want to access the results in order, we have to sort
+            # them previously by num_section.
             sections_freqs.sort()
-            sections_freqs = [section_freqs[1:] for section_freqs in \
-                                                sections_freqs]
 
         columns_freqs = []
         for section_freqs in sections_freqs:
-            columns_freqs += [zip(section_freqs[0].keys(), values)
-                                for values in zip(*(section_freqs[0].values()))]
+            columns_freqs += [zip(section_freqs[1].keys(), values)
+                                for values in zip(*(section_freqs[1].values()))]
 
-        return columns_freqs
+        if calc_overall_freqs:
+            overall_freqs = map(sum, zip(*[section_freqs[2] for section_freqs \
+                                                            in sections_freqs]))
+            return (columns_freqs, overall_freqs)
+        else:
+            return (columns_freqs, )
 
+    @staticmethod
     def calculate_conservation(filename, freqs, ci_method, overall_freqs=None):
         """
         Calculate conservation index of a set of sequences.
 
         Arguments:
-            - align             - set of sequences to be analyzed,
-                                  required (MultipleSeqAlignment)
+            - filename          - filename of the file which stores the
+                                  alignment to be analyzed,
+                                  required (str)
             - freqs             - estimated residues' frequencies for each
                                   column, required (dict of lists of int)
             - ci_method         - conservation index's calculation method,
                                   required (str)
             - overall_freqs     - estimated overall frequencies for each
                                   residue, optional (dict of floats)
+
+        Return a tuple containing just a list with the conservation of each
+        column.
         """
 
-        def calculate_section_conservation(num_section, filename, section, freqs,
-                                           ci_method, overall_freqs=None):
+        def calculate_section_conservation(num_section, filename, section,
+                                           freqs, ci_method,
+                                           overall_freqs=None):
             """
             Calculate conservation index of the given section (usually more than
             a single column) of a set of sequences.
 
             Arguments:
-                - num_section       - number of section to be analyzed. It is
-                                    needed to be able to sort the returned
-                                    results by each of the processes,
-                                    required (int)
-                - align             - set of sequences to be analyzed,
-                                    required (MultipleSeqAlignment)
-                - section           - section of each sequence to be analyzed,
-                                    required (tuple)
-                - freqs             - estimated residues' frequencies for each
-                                    column, required (dict of lists of int)
-                - ci_method         - conservation index's calculation method,
-                                    required (str)
-                - overall_freqs     - estimated overall frequencies for each
-                                    residue, optional (dict of floats)
+                - num_section   - number of section to be analyzed. It is
+                                  needed to be able to sort the returned
+                                  results by each of the processes,
+                                  required (int)
+                - filename      - filename of the file which stores the
+                                  alignment to be analyzed,
+                                  required (str)
+                - section       - section of each sequence to be analyzed,
+                                  required (tuple)
+                - freqs         - estimated residues' frequencies for each
+                                  column, required (dict of lists of int)
+                - ci_method     - conservation index's calculation method,
+                                  required (str)
+                - overall_freqs - estimated overall frequencies for each
+                                  residue, optional (dict of floats)
+
+            Return a tuple containing just a list with the conservation of each
+            column.
             """
             def shannon_entropy(filename, section, freqs):
                 """
                 Estimate conservation index using the Shannon Entropy method.
 
                 Arguments:
-                    - align             - set of sequences to be analyzed,
-                                        required (MultipleSeqAlignment)
-                    - section           - section of each sequence to be
-                                        analyzed,
-                                        required (tuple)
-                    - freqs             - estimated residues' frequencies for
-                                        each column,
-                                        required (dict of lists of int)
+                    - filename  - filename of the file which stores the
+                                  alignment to be analyzed,
+                                  required (str)
+                    - section   - section of each sequence to be
+                                  analyzed,
+                                  required (tuple)
+                    - freqs     - estimated residues' frequencies for each
+                                  column,
+                                  required (dict of lists of int)
+
+                Return a tuple containing just a list with the conservation of
+                each column.
                 """
                 align = AlignIO.read(filename,'fasta')
                 lambda_t = log(min(len(align), len(freqs)))
@@ -663,10 +751,11 @@ class Conservation_Index(object):
                 start_column, end_column = _check_section(align, 'columns',
                                                           section)
 
-                num_columns = end_column - start_column
-                cis = [0.0] * num_columns
+                section_length = end_column - start_column
+                cis = [0.0] * section_length
 
-                for i, freqs_column in enumerate(freqs[start_column:end_column]):
+                for i, freqs_column in \
+                                    enumerate(freqs[start_column:end_column]):
                     for residue, freq in freqs_column:
                         if freq != 0.0:
                             cis[i] += freq * log(freq)
@@ -681,17 +770,22 @@ class Conservation_Index(object):
                 Estimate conservation index using a variance-based measure.
 
                 Arguments:
-                    - align             - set of sequences to be analyzed,
-                                        required (MultipleSeqAlignment)
-                    - section           - section of each sequence to be
-                                        analyzed,
-                                        required (tuple)
-                    - freqs             - estimated residues' frequencies for
-                                        each column,
-                                        required (dict of lists of int)
-                    - overall_freqs     - estimated overall frequencies for each
-                                        residue,
-                                        required (dict of floats)
+                    - filename  - filename of the file which stores the
+                                  alignment to be analyzed,
+                                  required (str)
+                    - section   - section of each sequence to be
+                                  analyzed,
+                                  required (tuple)
+                    - freqs     - estimated residues' frequencies for each
+                                  column,
+                                  required (dict of lists of int)
+                    - overall_freqs
+                                - estimated overall frequencies for each
+                                  residue,
+                                  required (dict of floats)
+
+                Return a tuple containing just a list with the conservation of
+                each column.
                 """
                 align = AlignIO.read(filename,'fasta')
                 num_columns = align.get_alignment_length()
@@ -700,10 +794,11 @@ class Conservation_Index(object):
                 start_column, end_column = _check_section(align, 'columns',
                                                           section)
 
-                num_columns = end_column - start_column
-                cis = [0.0] * num_columns
+                section_length = end_column - start_column
+                cis = [0.0] * section_length 
 
-                for i, freqs_column in enumerate(freqs[start_column:end_column]):
+                for i, freqs_column in \
+                                    enumerate(freqs[start_column:end_column]):
                     for residue, freq in freqs_column:
                         if freq != 0.0:
                             cis[i] += (freq - overall_freqs[residue]) ** 2
@@ -726,9 +821,20 @@ class Conservation_Index(object):
                                   "It should be 'shannon entropy' or "
                                   "'variance'"))
 
+        if not isinstance(filename, str):
+            raise TypeError('"filename" argument should be a string')
+        if not isinstance(ci_method, str):
+            raise TypeError('"ci_method" argument should be a string')
+        if not isinstance(freqs, dict):
+            raise TypeError('"freqs" argument should be a dict')
+        elif not all(isinstance(residue, list) for residue in freqs.values()):
+            raise TypeError('"freqs" argument should be a dict of lists')
+        if not isinstance(calc_overall_freqs, bool):
+            raise TypeError('"calc_overall_freqs" argument should be a bool')
+
         num_columns = AlignIO.read(filename, 'fasta').get_alignment_length()
         set_elem_weights(len(AlignIO.read(filename, 'fasta')), elem_weights,
-                         freqs_method)
+                         freq_method)
 
         num_cores = cpu_count()
         section_size = ceil(num_columns / num_cores)
@@ -741,492 +847,74 @@ class Conservation_Index(object):
                 if num_columns < end_column:
                     end_column = num_columns
                 section = (start_column, end_column)
+
                 results.append(pool.apply_async(calculate_section_conservation,
-                            args=(num_section, filename, section,
-                                    columns_freqs, ci_method, overall_freqs)))
+                                                args=(num_section, filename,
+                                                      section, columns_freqs,
+                                                      ci_method, overall_freqs)))
+
                 num_section += 1
 
+            # retrieve the results of each process
             sections_conservations = [result.get() for result in results]
+            # because we want to access the results in order, we have to sort
+            # them previously by num_section.
             sections_conservations.sort()
-
-        sections_conservations = [section_conservations[1] for section_conservations \
-                                                            in sections_conservations]
 
         columns_conservation = []
         for section_conservations in sections_conservations:
-            columns_conservation.extend(section_conservations
+            columns_conservation.extend(section_conservations[1])
 
         return columns_conservation
 
-    def weigh_align(self, align, section, align_weights):
+    def analyze(self, filename, freq_method, ci_method):
         """
-        Weigh the given section (usually more than a single row) of a set
-        of sequences. Our aim is to compensate for over-representation among
-        multiple aligned sequences.
+        Analyze the set of sequences using every available cpu. Each process
+        will have assigned a different set of columns (also known as section)
+        to analyze on their own.
 
         Arguments:
-            - align             - set of sequences to be analyzed,
-                                  required (MultipleSeqAlignment)
-            - section           - section of each sequence to be analyzed,
-                                  required (tuple)
-            - align_weights     - sequences' weights, required (list of float)
-        """
-        if not isinstance(align, Align.MultipleSeqAlignment):
-            raise TypeError('"align" argument should be a MultipleSeqAlignment')
-        if not isinstance(section, tuple):
-            raise TypeError('"section" argument should be a tuple')
-        if not isinstance(align_weights, list):
-            raise TypeError('"align_weights" argument should be a list')
-
-        start_row, end_row = _check_section(align, 'rows', section)
-        # freqs stores the residues (nucleotides or amino acids) which appear
-        # in each column and how many times they do so
-        freqs = [{} for k in range(0, align.get_alignment_length())]
-        for record in align[start_row:end_row]:
-            for j, residue in enumerate(record.seq.lower()):
-                freqs[j][residue] = freqs[j].get(residue, 0) + 1
-                # for elem in self._elem_weights[residue][0]:
-                #     freqs[j][elem] = freqs[j].get(elem, 0) + \
-                #                      1 / len(self._elem_weights[residue][0])
-
-        # estimate the weight associate with each sequence
-        for i, record in enumerate(align[start_row:end_row]):
-            for j, residue in enumerate(record.seq.lower()):
-                # reps = 0
-                # for elem in self._elem_weights[residue][0]:
-                #     reps += freqs[j][elem] / len(self._elem_weights[residue][0])
-                try:
-                    align_weights[i] += 1 / (len(freqs[j]) * freqs[j][residue])
-                except TypeError:
-                    raise TypeError(('"align_weights" argument should be a '
-                                     'list of ints'))
-
-    def estimate_frequencies(self, align, section, freqs,
-                             freq_method, align_weights=[],
-                             estimate_overall_freqs=False):
-        """
-        Estimate frequencies of the given section (usually more than a single
-        column) of a set of sequences.
-
-        Arguments:
-            - align             - set of sequences to be analyzed,
-                                  required (MultipleSeqAlignment)
-            - section           - section of each sequence to be analyzed,
-                                  required (tuple)
-            - freqs             - estimated residues' frequencies for each
-                                  column, required (dict of lists of int)
+            - filename          - filename of the file which stores the
+                                  alignment to be analyzed,
+                                  required (str)
             - freq_method       - frequencies' estimation method,
                                   required (str)
-            - align_weights     - sequences' weights, optional (list of float)
-            - estimate_overall_freqs
-                                - if True, we'll also estimate the overall
-                                  frequencies for each residue, optional (bool)
-        """
-        def unweighted_frequencies():
-            """
-            Estimate frequencies using the unweighted frequencies' method.
-            """
-            def estimate_without_overall_freqs():
-                """
-                Estimate only frequencies for each column.
-                """
-                for record in align:
-                    for j, residue in enumerate(record.seq[start_column: \
-                                                           end_column].lower()):
-                        for elem in self._elem_weights[residue][0]:
-                            try:
-                                freqs[elem][start_column + j] += \
-                                                self._elem_weights[residue][1]
-                            except TypeError:
-                                raise TypeError(('"freqs" argument should be a '
-                                                 'dict of lists of int'))
-
-            def estimate_with_overall_freqs():
-                """
-                Estimate not only frequencies for each column, but also the
-                overall frequencies for each residue.
-                """
-                overall_freqs = {}
-                for residue in freqs.keys():
-                    overall_freqs[residue] = 0.0
-
-                total_columns = align.get_alignment_length()
-                for record in align:
-                    for j, residue in enumerate(record.seq[start_column: \
-                                                           end_column].lower()):
-                        for elem in self._elem_weights[residue][0]:
-                            try:
-                                freqs[elem][start_column + j] += \
-                                                self._elem_weights[residue][1]
-                                overall_freqs[elem] += \
-                                                self._elem_weights[residue][1] / \
-                                                total_columns 
-                            except TypeError:
-                                raise TypeError(('"freqs" argument should be a '
-                                                 'dict of lists of int'))
-
-                return overall_freqs
-
-            if estimate_overall_freqs:
-                return estimate_with_overall_freqs()
-            else:
-                estimate_without_overall_freqs()
-
-        def weighted_frequencies():
-            """
-            Estimate frequencies using the weighted frequencies' method.
-            """
-            def estimate_without_overall_freqs():
-                """
-                Estimate only frequencies for each column.
-                """
-                for i, record in enumerate(align):
-                    for j, residue in enumerate(record.seq[start_column: \
-                                                           end_column].lower()):
-                        for elem in self._elem_weights[residue][0]:
-                            try:
-                                freqs[elem][j + start_column] += \
-                                            (align_weights[i] * \
-                                             self._elem_weights[residue][1])
-                            except TypeError:
-                                raise TypeError(('"freqs" argument should be '
-                                                 'a dict of lists of int'))
-                            except IndexError:
-                                raise IndexError(('"align_weights" argument '
-                                                  'should have the same size '
-                                                  "as the alignment's length"))
-
-            def estimate_with_overall_freqs():
-                """
-                Estimate not only frequencies for each column, but also the
-                overall frequencies for each residue.
-                """
-                overall_freqs = {}
-                for residue in freqs.keys():
-                    overall_freqs[residue] = 0.0
-
-                for i, record in enumerate(align):
-                    for j, residue in enumerate(record.seq[start_column: \
-                                                           end_column].lower()):
-                        for elem in self._elem_weights[residue][0]:
-                            try:
-                                freqs[elem][j + start_column] += \
-                                            (align_weights[i] * \
-                                             self._elem_weights[residue][1])
-                                overall_freqs[elem] += \
-                                            (align_weights[i] * \
-                                             self._elem_weights[residue][1])
-                            except TypeError:
-                                raise TypeError(('"freqs" argument should be '
-                                                 'a dict of lists of int'))
-                            except IndexError:
-                                raise IndexError(('"align_weights" argument '
-                                                  'should have the same size '
-                                                  "as the alignment's length"))
-
-                return overall_freqs
-
-            if estimate_overall_freqs:
-                return estimate_with_overall_freqs()
-            else:
-                estimate_without_overall_freqs()
-
-        if not isinstance(align, Align.MultipleSeqAlignment):
-            raise TypeError('"align" argument should be a MultipleSeqAlignment')
-        if not isinstance(section, tuple):
-            raise TypeError('"section" argument should be a tuple')
-        if not isinstance(freqs, dict):
-            raise TypeError('"freqs" argument should be a dict')
-        elif not all(isinstance(elem, list) for elem in freqs.values()):
-            raise TypeError('"freqs" argument should be a dict of lists')
-        if not isinstance(freq_method, str):
-            raise TypeError('"freq_method" argument should be a string')
-        if not isinstance(align_weights, list):
-            raise TypeError('"align_weights" argument should be a list')
-        if not isinstance(estimate_overall_freqs, bool):
-            raise TypeError('"estimate_overall_freqs" argument should be a '
-                            'bool')
-
-        start_column, end_column = _check_section(align, 'columns', section)
-
-        if freq_method == 'unweighted':
-            if estimate_overall_freqs:
-                return unweighted_frequencies()
-            else:
-                unweighted_frequencies()
-        elif freq_method == 'weighted':
-            if estimate_overall_freqs:
-                return weighted_frequencies()
-            else:
-                weighted_frequencies()
-        else:
-            raise ValueError(('"freq_method" argument has an invalid value. '
-                              "It should be 'unweighted' or 'weighted'"))
-
-    def estimate_conservation_index(self, align, section, freqs,
-                                     ci_method, cis, align_weights=[],
-                                     overall_freqs={}):
-        """
-        Estimate conservation index of the given section (usually more than a
-        single column) of a set of sequences.
-
-        Arguments:
-            - align             - set of sequences to be analyzed,
-                                  required (MultipleSeqAlignment)
-            - section           - section of each sequence to be analyzed,
-                                  required (tuple)
-            - freqs             - estimated residues' frequencies for each
-                                  column, required (dict of lists of int)
             - ci_method         - conservation index's calculation method,
                                   required (str)
-            - cis               - estimated residues' conservation indices
-                                  for each column, required (list of float)
-            - align_weights     - sequences' weights, optional (list of float)
-            - overall_freqs     - estimated overall frequencies for each
-                                  residue, optional (dict of floats)
+
+        Return a tuple containing both frequencies and conservation.
         """
-        def shannon_entropy():
-            """
-            Estimate conservation index using the Shannon Entropy method.
-            """
-            lambda_t = log(min(len(align), len(freqs.keys())))
-            stats = [zip(freqs.keys(), values) for values in \
-                            zip(*(freqs.values()))]
-
-            for i, freqs_column in enumerate(stats[start_column:end_column]):
-                for residue, freq in freqs_column:
-                    if freq != 0.0:
-                        cis[i + start_column] += \
-                                            freq * log(freq)
-
-                # We want scale the entropy to range [0, 1]
-                cis[i + start_column] = 1 - (-1 * cis[i + start_column] * \
-                                             lambda_t)
-
-        def variance():
-            """
-            Estimate conservation index using a variance-based measure.
-            """
-            num_columns = align.get_alignment_length()
-            max_value = sqrt(2 - 3 / num_columns + 1 / (num_columns ** 2))
-
-            stats = [zip(freqs.keys(), values) for values in \
-                            zip(*(freqs.values()))]
-
-            for i, freqs_column in enumerate(stats[start_column:end_column]):
-                for residue, freq in freqs_column:
-                    if freq != 0.0:
-                        cis[i + start_column] += \
-                                (freq - overall_freqs[residue]) ** 2
-
-                cis[i + start_column] = sqrt(cis[i + start_column]) / max_value 
-
-        if not isinstance(align, Align.MultipleSeqAlignment):
-            raise TypeError('"align" argument should be a MultipleSeqAlignment')
-        if not isinstance(section, tuple):
-            raise TypeError('"section" argument should be a tuple')
-        if not isinstance(freqs, dict):
-            raise TypeError('"freqs" argument should be a dict')
-        elif not all(isinstance(elem, list) for elem in freqs.values()):
-            raise TypeError('"freqs" argument should be a dict of lists')
-        if not isinstance(ci_method, str):
-            raise TypeError('"ci_method" argument should be a string')
-        if not isinstance(cis, list):
-            raise TypeError('"cis" argument should be a list')
-        if not isinstance(align_weights, list):
-            raise TypeError('"align_weights" argument should be a list')
-        if not isinstance(overall_freqs, dict):
-            raise TypeError('"overall_freqs" argument should be a dict')
-
-        start_column, end_column = _check_section(align, 'columns', section)
-
-        if ci_method == 'shannon entropy':
-            shannon_entropy()
-        elif ci_method == 'variance':
-            variance()
-        else:
-            raise ValueError(('"ci_method" argument has an invalid value. '
-                              "It should be 'shannon entropy' or 'variance'"))
-
-
-class CI_Thread(Thread):
-    """
-
-    """
-    def __init__(self, barrier, lock, seqs_type, align, columns_section,
-                 freq_method, freqs, ci_method, cis, rows_section=(),
-                 align_weights=[], overall_freqs={}):
-        """
-        Creates a CI_Thread object.
-
-        Arguments:
-            - barrier           - shared barrier to be used for syncronization
-                                  between threads, required (Barrier)
-            - lock              - shared lock to be used for syncronization
-                                  between threads, required (Lock)
-            - seqs_type         - type of sequences, required (str)
-            - align             - set of sequences to be analyzed,
-                                  required (MultipleSeqAlignment)
-            - columns_section   - section of each sequence to be analyzed
-                                  for the frequencies' count, required (tuple)
-            - freq_method       - frequencies' calculation method,
-                                  required (str)
-            - freqs             - estimated residues' frequencies for each
-                                  column, required (dict of lists of int)
-            - ci_method         - conservation index' calculation method,
-                                  required (str)
-            - cis               - estimated residues' conservation indices
-                                  for each column, required (list of float)
-            - rows_section      - section of each sequence to be analyzed
-                                  for the align's weight, optional (tuple)
-            - align_weights     - sequences' weights, optional (list of float)
-            - overall_freqs     - estimated overall frequencies for each
-                                  residue, optional (dict of floats)
-
-        The type of sequences should be one of those in PhyloDag.Data. The
-        frequencies' stats should be a dict which has as keys the elements of
-        the related alphabet (IUPACUnambiguousDNA for nucleotides and
-        IUPACProtein for amino acids) plus the gap. The values associated with
-        each of these keys should be 0.0. The conservation index for each 
-        column is going to be stored in a list of floats called 'cis' and it
-        should be initialize with as many 0.0 as columns in the alignment.
-        The sequences' weights should be a list of 0.0 with the same size as
-        the number of sequences in the alignment
-        """
-        if not isinstance(barrier, Barrier):
-            raise TypeError('"barrier" argument should be a Barrier')
-        #FIXME Lock is not a type! :(
-        # if not isinstance(lock, Lock):
-        #    raise TypeError('"lock" argument should be a Lock')
-        if not isinstance(seqs_type, str):
-            raise TypeError('"seqs_type" argument should be a string')
-        if seqs_type.lower() not in ['dna', 'protein']:
-            raise ValueError(('"seqs_type" argument has an invalid value. '
-                              "It should be 'nucleotides' or 'amino acids'"))
-        if not isinstance(align, Align.MultipleSeqAlignment):
-            raise TypeError('"align" argument should be a MultipleSeqAlignment')
-        if not isinstance(columns_section, tuple):
-            raise TypeError('"columns_section" argument should be a tuple')
+        if not isinstance(filename, str):
+            raise TypeError('"filename" argument should be a string')
         if not isinstance(freq_method, str):
             raise TypeError('"freq_method" argument should be a string')
-        if freq_method.lower() not in ['unweighted', 'weighted']:
-            raise ValueError(('"freq_method" argument has an invalid value. '
-                              "It should be 'unweighted' or 'weighted'"))
-        if not isinstance(freqs, dict):
-            raise TypeError('"freqs" argument should be a dict')
-        elif not all(isinstance(elem, list) for elem in freqs.values()):
-            raise TypeError('"freqs" argument should be a dict of lists')
         if not isinstance(ci_method, str):
             raise TypeError('"ci_method" argument should be a string')
-        if ci_method.lower() not in ['shannon entropy', 'variance']:
+
+        if freq_method == 'weighted':
+            weights = self.calculate_weights(filename)
+        elif freq_method == 'unweighted':
+            weights = None
+        else:
+            raise ValueError(('"freq_method" argument has an invalid value. '
+                                "It should be 'unweighted' or 'weighted'"))
+
+        if ci_method == 'variance':
+            freqs, overall_freqs = self.calculate_frequencies(filename,
+                                                              freq_method,
+                                                              weights, True)
+            cis = calculate_conservation(filename, freqs, ci_method,
+                                         overall_freqs)
+        elif ci_method == 'shannon entropy':
+            freqs = self.calculate_frequencies(filename, freq_method, weights)
+            cis = calculate_conservation(filename, freqs, ci_method)
+        else:
             raise ValueError(('"ci_method" argument has an invalid value. '
-                              "It should be 'shannon entropy' or 'variance'"))
-        if not isinstance(cis, list):
-            raise TypeError('"cis" argument should be a list')
-        if not isinstance(rows_section, tuple):
-            raise TypeError('"rows_section" argument should be a tuple')
-        if not isinstance(align_weights, list):
-            raise TypeError('"align_weights" argument should be a list')
-        if not isinstance(overall_freqs, dict):
-            raise TypeError('"overall_freqs" argument should be a dict')
+                                "It should be 'shannon entropy' or "
+                                "'variance'"))
 
-        # We assign to each thread the section of the align to be analyzed
-        # by itself and the data structure which stores the results ('freqs')
-        Thread.__init__(self)
-        self._barrier = barrier
-        self._lock = lock
-        self._ci = Conservation_Index(seqs_type)
-        self._align = align
-        self._columns_section = columns_section
-        self._freq_method = freq_method.lower()
-        self._freqs = freqs
-        self._ci_method = ci_method.lower()
-        self._cis = cis
+        return (freqs, cis)
 
-        if self._freq_method == 'weighted':
-            self._rows_section = rows_section
-            self._align_weights = align_weights
-            # We calculate the weight associated with each sequence of the
-            # alignment
-            self._ci.weigh_align(self._align, self._rows_section,
-                                 self._align_weights)
-            # We Initialize the weights' data structures
-            self._ci.set_elem_weights(len(self._align), self._freq_method,
-                                      self._align_weights)
-        else:
-            # We Initialize the weights' data structures
-            self._align_weights = []
-            self._ci.set_elem_weights(len(self._align), self._freq_method)
-
-        if self._ci_method == 'variance':
-            self._overall_freqs = overall_freqs
-        else:
-            self._overall_freqs = []
-
-
-    def run(self):
-        """
-        Function to be called when each thread starts its execution.
-        """
-        def overall_freqs():
-            """
-            Calculate the conservation index using the overall frequencies.
-            """
-            # We are interested in estimating the overall frequencies
-            overall_freqs = self._ci.estimate_frequencies(self._align,
-                                                          self._columns_section,
-                                                          self._freqs,
-                                                          self._freq_method,
-                                                          self._align_weights,
-                                                          True)
-
-            # Wait until all the remaining threads have finished estimating
-            # frequencies
-            with self._lock:
-                for residue in overall_freqs.keys():
-                    self._overall_freqs[residue] += overall_freqs[residue]
-
-            self._barrier.wait()
-
-            self._ci.estimate_conservation_index(self._align,
-                                                 self._columns_section,
-                                                 self._freqs,
-                                                 self._ci_method, self._cis,
-                                                 self._align_weights,
-                                                 self._overall_freqs)
-
-        def no_overall_freqs():
-            """
-            Calculate the conservation index without using the overall
-            frequencies.
-            """
-            # We are not interested in estimating the overall frequencies
-            self._ci.estimate_frequencies(self._align, self._columns_section,
-                                          self._freqs,self._freq_method,
-                                          self._align_weights)
-
-            # Wait until all the remaining threads have finished estimating
-            # frequencies
-            self._barrier.wait()
-
-            self._ci.estimate_conservation_index(self._align,
-                                                 self._columns_section,
-                                                 self._freqs,
-                                                 self._ci_method, self._cis,
-                                                 self._align_weights)
-
-        if self._freq_method == 'weighted':
-            if self._ci_method == 'variance':
-                overall_freqs()
-            else:
-                no_overall_freqs()
-        else: # self_freq_method == 'unweighted'
-            if self._ci_method == 'variance':
-                overall_freqs()
-            else:
-                no_overall_freqs()
-
-        return
 
 class Report:
     def __init__(self, seqs_type, freqs, cis, start_column=0, ITEMS_PER_LINE=50):

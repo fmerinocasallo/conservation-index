@@ -13,7 +13,7 @@ from multiprocessing import cpu_count
 
 from Bio import AlignIO
 
-from _Conservation_Index import CI_Thread, Report
+from _Conservation_Index import Conservation_Index, Report
 
 
 __author__ = 'Francisco Merino'
@@ -62,68 +62,6 @@ def read_arguments():
                         help='give detailed information about the process')
     return parser.parse_args()
 
-def analyze(seqs_type, seqs_filename, freq_method, ci_method):
-    """
-    Analyze the set of sequences using every available cpu. Each column
-    will be process by one of them.
-    """
-    num_cores = cpu_count() 
-
-    align = AlignIO.read(seqs_filename, 'fasta')
-    num_rows = len(align)
-    num_columns = align.get_alignment_length()
-
-    if seqs_type == 'dna':
-        residues = ['-', 'a', 'g', 'c', 't']
-    elif seqs_type == 'protein':
-        residues = ['=', 'q', 'a', 'v', 'l', 'i', 'p', 'f', 'y', 'c', 'm', 'h',
-                    'k', 'r', 'w', 's', 't', 'd', 'e', 'n', 'q', 'b', 'z', '-',
-                    'x']
-    else:
-        raise ValueError('"seqs_type" argument has an invalid value. It '
-                         "should be 'dna' or 'protein'.")
-
-    # Initialize the freqs dictionary which is going to store the frequencies
-    # distribution for each column
-    freqs = {}
-    overall_freqs = {}
-    for residue in residues:
-        freqs[residue] = [0.0] * num_columns
-        overall_freqs[residue] = 0.0
-
-    # Initialize the cis list which is going to store the conservation
-    # for each column
-    cis = [0.0 for k in range(0, num_columns)]
-    # Initialize the align_weights list which is going to store the
-    # weights associated with each sequence of the alignment
-    align_weights = [0.0 for j in range(0, num_rows)]
-
-    start_row = 0
-    start_column = 0
-    rows_section_size = ceil(num_rows / num_cores)
-    columns_section_size = ceil(num_columns / num_cores)
-    threads = []
-    barrier = Barrier(num_cores)
-    lock = Lock()
-    for cpu in range(0, num_cores):
-        column_section = (start_column, start_column + columns_section_size)
-        row_section = (start_row, start_row + rows_section_size)
-        threads.append(CI_Thread(barrier, lock, seqs_type, align,
-                                 column_section, freq_method, freqs,
-                                 ci_method, cis, row_section,
-                                 align_weights, overall_freqs))
-
-        threads[cpu].start()
-
-        start_row += rows_section_size
-        start_column += columns_section_size
-
-    # Wait for all the threads to finish their execution
-    for thread in threads:
-        thread.join()
-
-    return freqs, cis
-
 def main():
     """
     Generate a report based on the analysis of the given alignment. The
@@ -150,8 +88,9 @@ def main():
     else:
         ci_method = args.conservation_method
 
-    freqs, cis = analyze(args.sequence_type, args.input_filename,
-                         args.frequencies_method, ci_method)
+    ci = Conservation_Index(args.sequence_type)
+    freqs, cis = ci.analyze(args.input_filename, args.frequencies_method,
+                            ci_method)
 
     if args.verbose:
         print('done')
@@ -160,7 +99,7 @@ def main():
         print('Generating the report...', end='')
         sys.stdout.flush()
 
-    report = Report(args.sequence_type, freqs, cis, 0)
+    report = Report(args.sequence_type, freqs, cis)
 
     if args.report_type == 'basic':
         with open(output_filename, 'w') as of:
