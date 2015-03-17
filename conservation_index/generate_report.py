@@ -8,8 +8,6 @@ from errno import ENOENT, EIO
 from math import ceil
 from os.path import basename, splitext
 import sys
-from threading import Barrier, Lock
-from multiprocessing import cpu_count
 
 from Bio import AlignIO
 
