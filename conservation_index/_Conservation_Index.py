@@ -71,7 +71,7 @@
 #
 #-------------------------------------------------------------------------------
 """Estimate the CI for each column of the given set of sequences."""
-from collections import Counter
+from collections import Counter, defaultdict
 from functools import reduce
 from math import ceil, log, sqrt
 from multiprocessing import cpu_count, Pool
@@ -231,7 +231,7 @@ class Conservation_Index(object):
                 - weights       - sequences' weights,
                                   required (list of float)
             """
-            weights_sum = sum(seq_weight for seq_weight in align_weights)
+            weights_sum = sum(seq_weight for seq_weight in weights)
 
             for elem, weights in self._elem_weights.items():
                 num_elems = len(weights[0])
@@ -277,13 +277,12 @@ class Conservation_Index(object):
         align = AlignIO.read(filename, 'fasta')
         start_column, end_column = _check_section(align, 'columns', section)
         num_columns = end_column - start_column
-        stats = [{} for k in range(0, num_columns)]
+        stats = [defaultdict(int) for k in range(0, num_columns)]
         # calculate stats (# diff. elems, reps each elem) for each column
         for record in align:
             for num_column, residue in \
                     enumerate(record.seq[start_column:end_column].lower()):
-                stats[num_column][residue] = \
-                                        stats[num_column].get(residue, 0) + 1
+                stats[num_column][residue] += 1
 
         weights = [0.0] * len(align)
         # calculate the weights associated to each column of each sequence
@@ -320,7 +319,7 @@ class Conservation_Index(object):
             for start_column in range(0, num_columns, section_size):
                 section = (start_column, start_column + section_size)
                 results.append(pool.apply_async(self._calculate_section_weights,
-                                                args=(self, filename, section)))
+                                                args=(filename, section)))
 
             # retrieve the results of each process
             sections_weights = [result.get() for result in results]
@@ -331,7 +330,7 @@ class Conservation_Index(object):
         return [sum(seq_weights) for seq_weights in weights]
 
     def _calculate_section_frequencies(self, num_section, filename, section,
-                                       freq_method, align_weights=None,
+                                       freq_method, weights=None,
                                        calc_overall_freqs=False):
         """
         Calculate frequencies of the given section (usually more than a single
@@ -349,7 +348,7 @@ class Conservation_Index(object):
                                 required (tuple)
             - freq_method   - frequencies' estimation method,
                                 required (str)
-            - align_weights - sequences' weights,
+            - weights       - sequences' weights,
                                 optional (list of float)
             - calc_overall_freqs
                             - if True, we'll also calculate the overall
@@ -410,8 +409,7 @@ class Conservation_Index(object):
                     enumerate(record.seq[start_column:end_column].lower()):
                         for elem in self._elem_weights[residue][0]:
                             try:
-                                freqs[elem][j] = (freqs[elem][j] +
-                                                self._elem_weights[residue][1])
+                                freqs[elem][j] += self._elem_weights[residue][1]
                             except TypeError:
                                 raise TypeError(('"freqs" argument should be a'
                                                  "dict of lists of 'int'"))
@@ -441,21 +439,19 @@ class Conservation_Index(object):
                                                           section)
                 section_length = section[1] - section[0]
                 freqs = {}
-                overall_freqs = {}
+                overall_freqs = defaultdict(float)
                 for residue in self._residues:
                     freqs[residue] = [0.0] * section_length 
-                    overall_freqs[residue] = 0.0 
 
                 for record in align:
                     for j, residue in \
                     enumerate(record.seq[start_column:end_column].lower()):
                         for elem in self._elem_weights[residue][0]:
                             try:
-                                freqs[elem][j] = (freqs[elem][j] +
-                                                self._elem_weights[residue][1])
-                                overall_freqs[elem] = (overall_freqs[elem] +
-                                            self._elem_weights[residue][1] /
-                                            total_columns)
+                                freqs[elem][j] = self._elem_weights[residue][1]
+                                overall_freqs[elem] += \
+                                            (self._elem_weights[residue][1] /
+                                             total_columns)
                             except TypeError:
                                 raise TypeError(('"freqs" argument should be a'
                                                  "dict of lists of 'int'"))
@@ -467,7 +463,7 @@ class Conservation_Index(object):
             else:
                 return calculate_without_overall_freqs(self, filename, section)
 
-        def weighted_frequencies(self, filename, section, align_weights,
+        def weighted_frequencies(self, filename, section, weights,
                                  calc_overall_freqs=False):
             """
             Estimate frequencies using the weighted frequencies' method.
@@ -478,8 +474,7 @@ class Conservation_Index(object):
                                 required (str)
                 - section   - section of each sequence to be analyzed,
                                 required (tuple)
-                - align_weights
-                            - sequences' weights,
+                - weights   - sequences' weights,
                                 optional (list of float)
                 - calc_overall_freqs
                             - if True, we'll also calculate the overall
@@ -492,7 +487,7 @@ class Conservation_Index(object):
             the tuple will include them.
             """
             def calculate_without_overall_freqs(self, filename, section,
-                                                align_weights):
+                                                weights):
                 """
                 Estimate only frequencies for each column.
 
@@ -523,9 +518,8 @@ class Conservation_Index(object):
                     enumerate(record.seq[start_column:end_column].lower()):
                         for elem in self._elem_weights[residue][0]:
                             try:
-                                freqs[elem][j] = (freqs[elem][j] +
-                                                weights[i] *
-                                                self._elem_weights[residue][1])
+                                freqs[elem][j] = (weights[i] *
+                                                  self._elem_weights[residue][1])
                             except TypeError:
                                 raise TypeError(('"freqs" argument should be a'
                                                  "dict of lists of 'int'"))
@@ -537,7 +531,7 @@ class Conservation_Index(object):
                 return (freqs, )
 
             def calculate_with_overall_freqs(self, filename, section,
-                                             align_weights):
+                                             weights):
                 """
                 Estimate not only frequencies for each column, but also the
                 overall frequencies for each residue.
@@ -563,23 +557,19 @@ class Conservation_Index(object):
                                                           section)
                 section_length = section[1] - section[0]
                 freqs = {}
-                overall_freqs = {}
+                overall_freqs = defaultdict(float)
                 for residue in self._residues:
                     freqs[residue] = [0.0] * section_length 
-                    overall_freqs[residue] = [0.0]
 
                 for i, record in enumerate(align):
                     for j, residue in \
                     enumerate(record.seq[start_column:end_column].lower()):
                         for elem in self._elem_weights[residue][0]:
                             try:
-                                freqs[elem][j] = (freqs[elem][j] +
-                                                weights[i] *
-                                                self._elem_weights[residue][1])
-                                overall_freqs[elem] = (overall_freqs[elem] +
-                                                weights[i] *
-                                                self._elem_weights[residue][1] /
-                                                total_columns)
+                                freqs[elem][j] = self._elem_weights[residue][1]
+                                overall_freqs[elem] += \
+                                            (self._elem_weights[residue][1] /
+                                             total_columns)
                             except TypeError:
                                 raise TypeError(('"freqs" argument should be a'
                                                  "dict of lists of 'int'"))
@@ -591,14 +581,14 @@ class Conservation_Index(object):
                 return (freqs, overall_freqs)
 
             if calc_overall_freqs:
-                return self.calculate_with_overall_freqs(filename, section,
-                                                         weights)
+                return calculate_with_overall_freqs(self, filename, section,
+                                                    weights)
             else:
-                return self.calculate_without_overall_freqs(filename, section,
-                                                            weights)
+                return calculate_without_overall_freqs(self, filename, section,
+                                                       weights)
 
-        if align_weights is None:
-            align_weights = []
+        if weights is None:
+            weights = []
 
         if not isinstance(num_section, int):
             raise TypeError('"num_section" argument should be a int')
@@ -608,8 +598,8 @@ class Conservation_Index(object):
             raise TypeError('"section" argument should be a tuple')
         if not isinstance(freq_method, str):
             raise TypeError('"freq_method" argument should be a string')
-        if not isinstance(align_weights, list):
-            raise TypeError('"align_weights" argument should be a list')
+        if not isinstance(weights, list):
+            raise TypeError('"weights" argument should be a list')
         if not isinstance(calc_overall_freqs, bool):
             raise TypeError('"calc_overall_freqs" argument should be a bool')
 
@@ -806,7 +796,7 @@ class Conservation_Index(object):
             cis = [0.0] * section_length 
 
             for i, freqs_column in \
-                                enumerate(column_freqs[start_column:end_column]):
+                                enumerate(freqs[start_column:end_column]):
                 for residue, freq in freqs_column:
                     if freq != 0.0:
                         cis[i] += (freq - overall_freqs[residue]) ** 2
@@ -954,11 +944,14 @@ class Report:
         Creates a Report object.
 
         Arguments:
-            - seqs_type         - type of sequences, required (str)
+            - seqs_type         - type of sequences,
+                                  required (str)
             - freqs             - estimated residues' frequencies for each
-                                  column, required (dict of lists of int)
+                                  column,
+                                  required (dict of lists of int)
             - cis               - estimated conservation indices for each
-                                  column, required (list of float)
+                                  column,
+                                  required (list of float)
             - start_column      - absolute position of the 1st column,
                                   optional (int)
             - ITEMS_PER_LINE    - number of columns per line,
@@ -992,7 +985,7 @@ class Report:
 
     @staticmethod
     def _check_condition(report_type, condition, threshold, stats_column,
-                         wanted_columns, condition_met=''):
+                         wanted_columns, condition_met=None):
         """
         Check if the current column meet the given condition. If so, we
         store its frequencies distribution to include it afterwards in
@@ -1000,17 +993,22 @@ class Report:
         analysis.
 
         Arguments:
-            - report_type       - type of report, required (str)
-            - condition         - condition to be met, required (str)
+            - report_type       - type of report,
+                                  required (str)
+            - condition         - condition to be met,
+                                  required (str)
             - threshold         - threshold to consider a column of interest,
                                   required (float)
             - stats_column      - list containing the results of the analysis
-                                  previously done, required(list)
+                                  previously done,
+                                  required(list)
             - wanted_columns    - summary of the columns meeting the
-                                  condition given, required (str)
+                                  condition given,
+                                  required (list)
             - condition_met     - set of symbols indicating which of the
                                   columns of the consensus sequence meet the
-                                  given condition, optional (str)
+                                  given condition,
+                                  optional (list)
         """
         def summarize_column(wanted_columns):
             """
@@ -1018,66 +1016,62 @@ class Report:
             the given alignment for the current column.
 
             Arguments:
-                - wanted_columns- summary of the columns meeting the
-                                  condition given, required (str)
+                - wanted_columns
+                                - summary of the columns meeting the
+                                  condition given,
+                                  required (list)
             """
             sorted_freqs = sorted(stats_column[2], key=itemgetter(0))
             #FIXME Should I print elem.upper()?
             distribution = ("'{:s}': {:8.4f}%"
                             ''.format(elem[0], elem[1] * 100) \
-                                      for elem in sorted_freqs \
+                                      for elem in sorted_freqs
                                       if elem[1] * 100 > 0.0)
             #FIXME Remember to use the mod operator when printing
             # the column
-            wanted_columns += ('> {:5d}: {:5.4f} ({:s})\n'
-                               ''.format(stats_column[0],
-                                         stats_column[1],
-                                         ', '.join(distribution)))
+            wanted_columns.append('> {:5d}: {:5.4f} ({:s})\n'
+                                  ''.format(stats_column[0], stats_column[1],
+                                            ', '.join(distribution)))
 
-            return wanted_columns
+        if condition_met is None:
+            condition_met = []
 
-        #FIXME Should I check this, again?
-        # if not isinstance(report_type, str):
-        #      raise TypeError('"report_type" argument should be a string')
-        # if not isinstance(condition, str):
-        #      raise TypeError('"condition" argument should be a string')
-        # if not isinstance(threshold, float):
-        #     raise TypeError('"threshold" argument should be a float')
-        # if not isinstance(stats_column, list):
-        #     raise TypeError('"stats_column" argument should be a list')
-        # if not isinstance(wanted_columns, str):
-        #     raise TypeError('"wanted_columns" argument should be a string')
-        # if not isinstance(condition_met, str):
-        #     raise TypeError('"condition_met" argument should be a string')
+        if not isinstance(report_type, str):
+            raise TypeError('"report_type" argument should be a string')
+        if report_type not in ['basic', 'detailed']:
+            raise ValueError(('"report_type" argument has an invalid'
+                              "value. It should be 'basic' or 'detailed'"))
+        if not isinstance(condition, str):
+            raise TypeError('"condition" argument should be a string')
+        if not isinstance(threshold, float):
+            raise TypeError('"threshold" argument should be a float')
+        if not isinstance(stats_column, tuple):
+            raise TypeError('"stats_column" argument should be a list')
+        if not isinstance(wanted_columns, list):
+            raise TypeError('"wanted_columns" argument should be a list')
+        if not isinstance(condition_met, list):
+            raise TypeError('"condition_met" argument should be a list')
 
         if condition == 'greater':
             if stats_column[1] > threshold:
                 if report_type == 'basic':
-                    condition_met += '+'
-                wanted_columns = summarize_column(wanted_columns)
+                    condition_met.append('+')
+                summarize_column(wanted_columns)
             else:
                 if report_type == 'basic':
-                    condition_met += '-'
+                    condition_met.append('-')
         elif condition == 'less':
             if stats_column[1] < threshold:
                 if report_type == 'basic':
-                    condition_met += '+'
-                wanted_columns = summarize_column(wanted_columns)
+                    condition_met.append('+')
+                summarize_column(wanted_columns)
             else:
                 if report_type == 'basic':
-                    condition_met += '-'
+                    condition_met.append('-')
         else:
             raise ValueError(('"condition" argument has an invalid '
                               "value. It should be 'greater' or "
                               "'less'"))
-
-        if report_type == 'basic':
-            return condition_met, wanted_columns
-        elif report_type == 'detailed':
-            return wanted_columns
-        else:
-            raise ValueError(('"report_type" argument has an invalid'
-                              "value. It should be 'basic' or 'detailed'"))
 
     def _summarize_wanted_columns(self, summary, condition, threshold,
                                   wanted_columns):
@@ -1089,77 +1083,73 @@ class Report:
 
         Arguments:
             - summary           - content of the report been generated,
-                                  required (str)
+                                  required (list)
             - condition         - condition to be met, required (str)
             - threshold         - threshold to consider a column of
                                   interest, required (float)
             - wanted_columns    - summary of the columns meeting the
-                                  condition given, required (str)
+                                  condition given, required (list)
         """
-        if not isinstance(summary, str):
-            raise TypeError('"summary" argument should be a string')
+        if not isinstance(summary, list):
+            raise TypeError('"summary" argument should be a list')
         if not isinstance(condition, str):
             raise TypeError('"condition" argument should be a string')
         if not isinstance(threshold, float):
             raise TypeError('"threshold" argument should be a float')
-        if not isinstance(wanted_columns, str):
-            raise TypeError('"wanted_columns" argument should be a string')
+        if not isinstance(wanted_columns, list):
+            raise TypeError('"wanted_columns" argument should be a list')
 
+        #FIXME What if we just do num_wanted_columns = len(wanted_columns)?
+        wanted_columns = "".join(wanted_columns)
         num_wanted_columns = wanted_columns.count('>')
         if num_wanted_columns > 0:
             if num_wanted_columns > 1:
                 if condition == 'greater':
-                    summary += ('\nThere are {:d} columns with a high '
-                                'degree of conservation (>{:6.2f}%) in '
-                                'the {:s} sequences:\n\n'
-                                ''.format(num_wanted_columns,
-                                          threshold * 100,
-                                          self._seqs_type))
+                    summary.append('\nThere are {:d} columns with a high '
+                                   'degree of conservation (>{:6.2f}%) in '
+                                   'the {:s} sequences:\n\n'
+                                   ''.format(num_wanted_columns, threshold * 100,
+                                             self._seqs_type))
                 elif condition == 'less':
-                    summary += ('\nThere are {:d} columns with a high '
-                                'degree of variation (<{:6.2f}%) in the '
-                                '{:s} sequences:\n\n'
-                                ''.format(num_wanted_columns,
-                                          threshold * 100,
-                                          self._seqs_type))
+                    summary.append('\nThere are {:d} columns with a high '
+                                   'degree of variation (<{:6.2f}%) in the '
+                                   '{:s} sequences:\n\n'
+                                   ''.format(num_wanted_columns, threshold * 100,
+                                             self._seqs_type))
                 else:
                     raise ValueError(('"condition" argument has an '
                                       'invalid value. It should be '
                                       "'greater' or 'less'"))
             else:
                 if condition == 'greater':
-                    summary += ('\nThere is 1 column with a high degree '
-                                'of conservation (>{:6.2f}%) in the {:s} '
-                                'sequences:\n\n'
-                                ''.format(threshold * 100,
-                                          self._seqs_type))
+                    summary.append('\nThere is 1 column with a high degree '
+                                   'of conservation (>{:6.2f}%) in the {:s} '
+                                   'sequences:\n\n'
+                                   ''.format(threshold * 100, self._seqs_type))
                 elif condition == 'less':
-                    summary += ('\nThere is 1 column with a high degree '
-                                'of variation (<{:6.2f}%) in the {:s} '
-                                'sequences:\n\n'
-                                ''.format(threshold * 100,
-                                          self._seqs_type))
+                    summary.append('\nThere is 1 column with a high degree '
+                                   'of variation (<{:6.2f}%) in the {:s} '
+                                   'sequences:\n\n'
+                                   ''.format(threshold * 100, self._seqs_type))
                 else:
                     raise ValueError(('"condition" argument has an '
                                       'invalid value. It should be '
                                       "'greater' or 'less'"))
-            summary += wanted_columns
+            summary.append(wanted_columns)
         else:
             if condition == 'greater':
-                summary += ('\nThere are not any columns with a high degree '
-                            'of conservation (>{:6.2f}%) in the {:s} '
-                            'sequences.'
-                            ''.format(threshold * 100, self._seqs_type))
+                summary.append('\nThere are not any columns with a high degree '
+                               'of conservation (>{:6.2f}%) in the {:s} '
+                               'sequences.'
+                               ''.format(threshold * 100, self._seqs_type))
             elif condition == 'less':
-                summary += ('\nThere are not any columns with a high degree '
-                            'of variation (<{:6.2f}%) in the {:s} sequences.'
-                            ''.format(threshold * 100, self._seqs_type))
+                summary.append('\nThere are not any columns with a high degree '
+                               'of variation (<{:6.2f}%) in the {:s} sequences.'
+                               ''.format(threshold * 100, self._seqs_type))
             else:
                 raise ValueError(('"condition" argument has an invalid '
                                   "value. It should be 'greater' or "
                                   "'less'"))
-
-        return summary
 
     def generate_basic(self, condition, threshold):
         """
@@ -1190,36 +1180,36 @@ class Report:
                          [list(zip(self._freqs.keys(), values))
                                   for values in zip(*(self._freqs.values()))]))
 
-        consensus_seq = ''
-        condition_met = ''
-        wanted_columns = ''
-        summary = ''
+        consensus_seq = []
+        condition_met = []
+        wanted_columns = []
+        summary = []
         for stats_column in stats:
             # If we have reach the given number of residues per line of the
             # report, we update the summary been generated accordingly
             if (stats_column[0] - self._start_column) % \
                 self._ITEMS_PER_LINE == 0:
-                summary += consensus_seq + condition_met 
-                summary += '\n{:5d}:\t'.format(stats_column[0])
-                consensus_seq = ''
-                condition_met = '\n      \t'
+                summary += consensus_seq + condition_met
+                summary.append('\n{:5d}:\t'.format(stats_column[0]))
+                consensus_seq = []
+                condition_met = ['\n      \t']
 
-            consensus_seq += max(stats_column[2], key=itemgetter(1))[0]
+            consensus_seq.append(max(stats_column[2], key=itemgetter(1))[0])
 
-            condition_met, \
-            wanted_columns = self._check_condition('basic', condition,
-                                                   threshold, stats_column,
-                                                   wanted_columns,
-                                                   condition_met)
+            self._check_condition('basic', condition, threshold, stats_column,
+                                  wanted_columns, condition_met)
 
         # We have to append the last section of the consensus sequence at
         # the end of the report been generated 
-        summary += consensus_seq + condition_met + '\n'
+        summary += consensus_seq + condition_met + ['\n']
 
-        summary = self._summarize_wanted_columns(summary, condition,
-                                                 threshold, wanted_columns)
+        self._summarize_wanted_columns(summary, condition, threshold,
+                                       wanted_columns)
 
-        return summary[1:]
+        # We want to get rid of the first '\n'
+        summary[0] = summary[0][1:]
+
+        return "".join(summary)
 
     def generate_detailed(self, condition, threshold):
         """
@@ -1253,23 +1243,25 @@ class Report:
                          [list(zip(self._freqs.keys(), values))
                                   for values in zip(*(self._freqs.values()))]))
 
-        wanted_columns = ''
-        summary = ''
+        wanted_columns = []
+        summary = []
         for stats_column in stats:
-            summary += '\n{:5d}:\t{:5.4f}\t\t'.format(stats_column[0],
-                                                   stats_column[1])
+            summary.append('\n{:5d}:\t{:5.4f}\t\t'.format(stats_column[0],
+                                                          stats_column[1]))
             sorted_freqs = sorted(stats_column[2], key=itemgetter(0))
             #FIXME Should I print elem.upper()?
-            summary += '\t'.join(("'{:s}':\t{:8.4f}%"
-                                  ''.format(elem[0], elem[1]*100))
-                                  for elem in sorted_freqs \
-                                  if elem[0] != '-')
-            wanted_columns = self._check_condition('detailed', condition,
-                                                   threshold, stats_column,
-                                                   wanted_columns)
+            summary.append('\t'.join(("'{:s}':\t{:8.4f}%"
+                                      ''.format(elem[0], elem[1]*100))
+                                                for elem in sorted_freqs \
+                                                if elem[0] != '-'))
+            self._check_condition('detailed', condition, threshold, stats_column,
+                                  wanted_columns)
 
-        summary = self._summarize_wanted_columns(summary, condition,
-                                                 threshold, wanted_columns)
+        self._summarize_wanted_columns(summary, condition, threshold,
+                                       wanted_columns)
 
-        return summary[1:]
+        # We want to get rid of the first '\n'
+        summary[0] = summary[0][1:]
+
+        return "".join(summary)
 
