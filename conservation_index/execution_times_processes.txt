@@ -1,0 +1,1120 @@
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.5
+Execution stats: 106.53 600012
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 107.29 599976
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.90
+Execution stats: 105.22 599920
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.95
+Execution stats: 105.03 600072
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 107.79 600084
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.5
+Execution stats: 106.93 600012
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.75
+Execution stats: 106.87 600060
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.90
+Execution stats: 106.24 599884
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.95
+Execution stats: 105.60 599996
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.99
+Execution stats: 106.73 600048
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.5
+Execution stats: 136.64 600004
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 135.83 600060
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.90
+Execution stats: 134.88 600040
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.95
+Execution stats: 134.27 600028
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 134.19 599976
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.5
+Execution stats: 133.96 599988
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.75
+Execution stats: 138.31 600024
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.90
+Execution stats: 134.09 599936
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.95
+Execution stats: 138.31 600024
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.99
+Execution stats: 136.05 599960
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.5
+Execution stats: 256.98 1154720
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 260.04 1154620
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.90
+Execution stats: 261.96 1154744
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.95
+Execution stats: 254.80 1154628
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 260.11 1154780
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.5
+Execution stats: 257.13 1154680
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.75
+Execution stats: 263.83 1154684
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.90
+Execution stats: 262.43 1154624
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.95
+Execution stats: 257.67 1154740
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.99
+Execution stats: 256.46 1154772
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.5
+Execution stats: 292.30 1154748
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 286.44 1154700
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.90
+Execution stats: 279.84 1154624
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.95
+Execution stats: 286.28 1154692
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 284.78 1154680
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.5
+Execution stats: 284.09 1154624
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.75
+Execution stats: 283.99 1154692
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.90
+Execution stats: 279.96 1154760
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.95
+Execution stats: 281.97 1154776
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.99
+Execution stats: 281.78 1154692
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.5
+Execution stats: 106.21 600100
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 107.03 600120
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.90
+Execution stats: 106.95 599984
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.95
+Execution stats: 106.91 599968
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 106.19 599972
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.5
+Execution stats: 105.04 599968
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.75
+Execution stats: 104.77 600088
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.90
+Execution stats: 106.07 599984
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.95
+Execution stats: 104.96 599972
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.99
+Execution stats: 104.39 600016
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.5
+Execution stats: 134.57 600024
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 135.53 600052
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.90
+Execution stats: 141.21 599996
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.95
+Execution stats: 132.78 600020
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 134.34 600036
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.5
+Execution stats: 134.27 599996
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.75
+Execution stats: 133.59 599980
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.90
+Execution stats: 132.92 599996
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.95
+Execution stats: 134.81 599996
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.99
+Execution stats: 137.92 599972
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.5
+Execution stats: 259.08 1154628
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 258.81 1154740
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.90
+Execution stats: 259.25 1154676
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.95
+Execution stats: 257.08 1154696
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 258.62 1154696
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.5
+Execution stats: 257.98 1154624
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.75
+Execution stats: 262.37 1154748
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.90
+Execution stats: 258.16 1154692
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.95
+Execution stats: 257.55 1154688
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.99
+Execution stats: 259.74 1154740
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.5
+Execution stats: 283.65 1154776
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 283.69 1154688
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.90
+Execution stats: 291.84 1154784
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.95
+Execution stats: 284.95 1154628
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 281.99 1154632
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.5
+Execution stats: 285.68 1154708
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.75
+Execution stats: 286.35 1154696
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.90
+Execution stats: 283.76 1154764
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.95
+Execution stats: 282.29 1154768
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.99
+Execution stats: 284.48 1154728
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.5
+Execution stats: 107.31 604104
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 108.57 604020
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.90
+Execution stats: 106.36 603988
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.95
+Execution stats: 106.82 604128
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 108.20 603988
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.5
+Execution stats: 106.22 603984
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.75
+Execution stats: 105.81 604128
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.90
+Execution stats: 109.36 604020
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.95
+Execution stats: 106.22 604140
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.99
+Execution stats: 106.76 604004
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.5
+Execution stats: 137.67 604228
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 136.61 604232
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.90
+Execution stats: 139.78 604304
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.95
+Execution stats: 137.84 604348
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 135.51 604296
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.5
+Execution stats: 134.52 604220
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.75
+Execution stats: 139.23 604308
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.90
+Execution stats: 134.99 604264
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.95
+Execution stats: 136.59 604304
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.99
+Execution stats: 140.06 604252
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.5
+Execution stats: 261.83 1162892
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 260.24 1162984
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.90
+Execution stats: 266.12 1163032
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.95
+Execution stats: 267.85 1163016
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 261.54 1162884
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.5
+Execution stats: 264.13 1162948
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.75
+Execution stats: 262.41 1162880
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.90
+Execution stats: 263.69 1162976
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.95
+Execution stats: 269.70 1163008
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.99
+Execution stats: 267.07 1163104
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.5
+Execution stats: 285.17 1162980
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 290.20 1162948
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.90
+Execution stats: 295.42 1162944
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.95
+Execution stats: 293.39 1162960
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 287.59 1163004
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.5
+Execution stats: 291.88 1162956
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.75
+Execution stats: 289.26 1163036
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.90
+Execution stats: 287.83 1162952
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.95
+Execution stats: 283.90 1162940
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.99
+Execution stats: 288.90 1162888
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.5
+Execution stats: 107.33 604088
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 106.66 604120
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.90
+Execution stats: 107.27 604000
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.95
+Execution stats: 109.49 604028
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 107.92 604132
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.5
+Execution stats: 108.66 604164
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.75
+Execution stats: 106.43 604024
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.90
+Execution stats: 108.95 604036
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.95
+Execution stats: 106.26 604116
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.99
+Execution stats: 108.72 604104
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.5
+Execution stats: 136.20 604296
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 134.45 604144
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.90
+Execution stats: 134.85 604232
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.95
+Execution stats: 136.43 604280
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 139.82 604244
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.5
+Execution stats: 135.15 604324
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.75
+Execution stats: 135.45 604240
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.90
+Execution stats: 134.12 604188
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.95
+Execution stats: 135.71 604304
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.99
+Execution stats: 133.62 604252
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.5
+Execution stats: 260.44 1163004
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 258.89 1163008
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.90
+Execution stats: 264.24 1162964
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.95
+Execution stats: 262.61 1162892
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 258.81 1163036
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.5
+Execution stats: 263.03 1163032
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.75
+Execution stats: 258.98 1163040
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.90
+Execution stats: 263.35 1163012
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.95
+Execution stats: 266.63 1162960
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.99
+Execution stats: 262.22 1162964
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.5
+Execution stats: 287.41 1162952
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 285.29 1162968
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.90
+Execution stats: 285.77 1162972
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.95
+Execution stats: 280.78 1163044
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 288.11 1162952
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.5
+Execution stats: 280.67 1163004
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.75
+Execution stats: 290.86 1162968
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.90
+Execution stats: 281.18 1163036
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.95
+Execution stats: 287.44 1163036
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/hmtDNA/hmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.99
+Execution stats: 284.21 1163084
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.5
+Execution stats: 24.86 170696
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 24.71 170732
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.90
+Execution stats: 24.99 170648
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.95
+Execution stats: 24.64 170692
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 24.80 170596
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.5
+Execution stats: 24.44 170644
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.75
+Execution stats: 24.86 170652
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.90
+Execution stats: 24.47 170660
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.95
+Execution stats: 24.94 170824
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.99
+Execution stats: 24.76 170816
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.5
+Execution stats: 30.63 170716
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 30.57 170736
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.90
+Execution stats: 30.80 170764
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.95
+Execution stats: 31.19 170684
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 30.35 170760
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.5
+Execution stats: 31.46 170852
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.75
+Execution stats: 30.65 170748
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.90
+Execution stats: 30.77 170760
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.95
+Execution stats: 30.54 170684
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.99
+Execution stats: 30.62 170748
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.5
+Execution stats: 61.34 262992
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 62.34 262888
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.90
+Execution stats: 62.80 262948
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.95
+Execution stats: 62.98 262892
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 61.35 262972
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.5
+Execution stats: 61.49 263008
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.75
+Execution stats: 61.21 263008
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.90
+Execution stats: 61.52 262892
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.95
+Execution stats: 61.47 263016
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.99
+Execution stats: 60.49 263080
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.5
+Execution stats: 67.53 262972
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 68.47 263028
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.90
+Execution stats: 67.89 262940
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.95
+Execution stats: 68.07 263028
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 67.08 263012
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.5
+Execution stats: 66.97 262884
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.75
+Execution stats: 67.77 263036
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.90
+Execution stats: 67.36 262956
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.95
+Execution stats: 67.93 262980
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.99
+Execution stats: 66.66 262944
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.5
+Execution stats: 24.72 175928
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 24.93 174252
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.90
+Execution stats: 25.11 174200
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.95
+Execution stats: 24.61 172872
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 24.86 174472
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.5
+Execution stats: 24.87 170708
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.75
+Execution stats: 24.97 170748
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.90
+Execution stats: 25.11 170784
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.95
+Execution stats: 24.67 172004
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.99
+Execution stats: 24.59 172376
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.5
+Execution stats: 30.66 171756
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 30.61 170668
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.90
+Execution stats: 30.09 171116
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.95
+Execution stats: 30.28 170692
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 30.59 170796
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.5
+Execution stats: 30.98 174572
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.75
+Execution stats: 30.41 175660
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.90
+Execution stats: 30.33 176004
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.95
+Execution stats: 30.54 175512
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.99
+Execution stats: 30.61 176464
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.5
+Execution stats: 61.78 262868
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 61.66 262884
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.90
+Execution stats: 61.31 263100
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.95
+Execution stats: 60.77 262948
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 62.17 263100
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.5
+Execution stats: 61.00 262944
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.75
+Execution stats: 61.60 263096
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.90
+Execution stats: 61.73 262884
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.95
+Execution stats: 60.50 262948
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.99
+Execution stats: 61.88 262968
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.5
+Execution stats: 67.19 263040
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 67.50 263004
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.90
+Execution stats: 68.09 263036
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.95
+Execution stats: 66.69 262892
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 67.50 263092
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.5
+Execution stats: 67.94 263012
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.75
+Execution stats: 67.30 262992
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.90
+Execution stats: 66.94 262888
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.95
+Execution stats: 67.35 262952
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.99
+Execution stats: 67.66 263000
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.5
+Execution stats: 28.45 180568
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 28.22 180636
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.90
+Execution stats: 28.21 180500
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.95
+Execution stats: 27.93 180624
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 28.31 180592
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.5
+Execution stats: 28.44 180508
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.75
+Execution stats: 27.56 180676
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.90
+Execution stats: 27.78 180556
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.95
+Execution stats: 28.10 180520
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.99
+Execution stats: 27.96 180556
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.5
+Execution stats: 33.04 180564
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 33.06 180616
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.90
+Execution stats: 32.24 180608
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.95
+Execution stats: 32.57 180612
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 33.64 180540
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.5
+Execution stats: 32.12 180592
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.75
+Execution stats: 32.54 180608
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.90
+Execution stats: 32.34 180636
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.95
+Execution stats: 32.43 180540
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.99
+Execution stats: 33.32 180552
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.5
+Execution stats: 65.19 278464
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 65.11 278556
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.90
+Execution stats: 65.48 278392
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.95
+Execution stats: 65.39 278556
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 64.78 278528
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.5
+Execution stats: 64.93 278460
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.75
+Execution stats: 65.93 278496
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.90
+Execution stats: 66.27 278472
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.95
+Execution stats: 64.73 278496
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.99
+Execution stats: 65.13 278408
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.5
+Execution stats: 71.75 278464
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 71.22 278612
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.90
+Execution stats: 71.41 278472
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.95
+Execution stats: 71.56 278560
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 71.12 278456
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.5
+Execution stats: 71.60 278456
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.75
+Execution stats: 71.61 278504
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.90
+Execution stats: 72.51 278400
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.95
+Execution stats: 72.12 278472
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.99
+Execution stats: 71.01 278608
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.5
+Execution stats: 28.87 183372
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 28.18 186404
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.90
+Execution stats: 28.00 185056
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.95
+Execution stats: 27.87 183996
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 27.94 181428
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.5
+Execution stats: 28.27 180540
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.75
+Execution stats: 27.88 180916
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.90
+Execution stats: 27.80 181072
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.95
+Execution stats: 27.74 182408
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.99
+Execution stats: 28.09 182024
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.5
+Execution stats: 32.75 181564
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 32.31 180600
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.90
+Execution stats: 32.40 180508
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.95
+Execution stats: 32.57 180584
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 32.50 180772
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.5
+Execution stats: 33.54 184032
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.75
+Execution stats: 32.83 186288
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.90
+Execution stats: 32.56 186472
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.95
+Execution stats: 32.86 183756
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.99
+Execution stats: 32.17 186308
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.5
+Execution stats: 65.15 278416
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 66.26 278480
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.90
+Execution stats: 65.68 278408
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.95
+Execution stats: 65.33 278548
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 64.93 278604
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.5
+Execution stats: 66.14 278508
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.75
+Execution stats: 65.54 278412
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.90
+Execution stats: 64.75 278520
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.95
+Execution stats: 65.07 278616
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.99
+Execution stats: 65.28 278512
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.5
+Execution stats: 71.49 278624
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 72.45 278408
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.90
+Execution stats: 71.35 278448
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.95
+Execution stats: 72.25 278520
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 70.62 278468
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.5
+Execution stats: 71.19 278496
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.75
+Execution stats: 72.96 278468
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.90
+Execution stats: 71.03 278460
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.95
+Execution stats: 72.41 278484
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/mmtDNA/mmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.99
+Execution stats: 71.74 278520
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.5
+Execution stats: 2.69 46504
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 2.65 46676
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.90
+Execution stats: 2.60 46728
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.95
+Execution stats: 2.55 46256
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 2.58 46488
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.5
+Execution stats: 2.48 46192
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.75
+Execution stats: 2.48 46148
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.90
+Execution stats: 2.56 46340
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.95
+Execution stats: 2.56 46332
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.99
+Execution stats: 2.60 46480
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.5
+Execution stats: 3.17 46176
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 3.11 46132
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.90
+Execution stats: 3.08 46132
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.95
+Execution stats: 3.08 46160
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 2.97 46184
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.5
+Execution stats: 3.13 46192
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.75
+Execution stats: 3.22 46192
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.90
+Execution stats: 3.30 46576
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.95
+Execution stats: 3.22 46116
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.99
+Execution stats: 3.12 46416
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.5
+Execution stats: 5.75 47212
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 5.61 47464
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.90
+Execution stats: 5.66 46492
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.95
+Execution stats: 5.54 46372
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 5.50 46376
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.5
+Execution stats: 5.48 46316
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.75
+Execution stats: 5.62 46360
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.90
+Execution stats: 5.56 46240
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.95
+Execution stats: 5.94 46296
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.99
+Execution stats: 5.72 46508
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.5
+Execution stats: 6.00 46452
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 6.07 46160
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.90
+Execution stats: 6.11 46504
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.95
+Execution stats: 6.12 46484
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 5.96 46440
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.5
+Execution stats: 6.21 47712
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.75
+Execution stats: 6.27 47160
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.90
+Execution stats: 6.31 47032
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.95
+Execution stats: 6.11 47168
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.99
+Execution stats: 6.24 47248
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.5
+Execution stats: 2.76 50272
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 2.75 50160
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.90
+Execution stats: 2.71 50836
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.95
+Execution stats: 2.71 50372
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 2.66 49800
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.5
+Execution stats: 2.60 47000
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.75
+Execution stats: 2.60 48260
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.90
+Execution stats: 2.64 48608
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.95
+Execution stats: 2.67 48556
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.99
+Execution stats: 2.69 47988
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.5
+Execution stats: 3.21 50652
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 3.20 48648
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.90
+Execution stats: 3.20 48604
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.95
+Execution stats: 3.20 48648
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 3.20 48184
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.5
+Execution stats: 3.17 50140
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.75
+Execution stats: 3.35 50692
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.90
+Execution stats: 3.35 51332
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.95
+Execution stats: 3.34 50764
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.99
+Execution stats: 3.34 49828
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.5
+Execution stats: 5.73 54088
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 5.76 51792
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.90
+Execution stats: 5.77 50372
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.95
+Execution stats: 5.76 50192
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 5.62 49380
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.5
+Execution stats: 5.75 49084
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.75
+Execution stats: 5.53 48828
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.90
+Execution stats: 5.64 49480
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.95
+Execution stats: 5.66 50268
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.99
+Execution stats: 5.70 50648
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.5
+Execution stats: 6.13 48728
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 6.13 48952
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.90
+Execution stats: 6.17 49012
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.95
+Execution stats: 6.10 48572
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 6.12 50576
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.5
+Execution stats: 6.32 51316
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.75
+Execution stats: 6.37 54184
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.90
+Execution stats: 6.37 51256
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.95
+Execution stats: 6.27 51164
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_auto.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.99
+Execution stats: 6.23 53952
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.5
+Execution stats: 2.64 47008
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 2.61 46732
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.90
+Execution stats: 2.58 46276
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.95
+Execution stats: 2.56 46144
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 2.56 46156
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.5
+Execution stats: 2.48 46204
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.75
+Execution stats: 2.48 46124
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.90
+Execution stats: 2.52 46200
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.95
+Execution stats: 2.54 46192
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.99
+Execution stats: 2.58 46056
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.5
+Execution stats: 3.17 46248
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 3.18 46232
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.90
+Execution stats: 3.08 46204
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.95
+Execution stats: 3.08 46144
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 2.97 46344
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.5
+Execution stats: 3.16 46140
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.75
+Execution stats: 3.11 47028
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.90
+Execution stats: 3.11 47256
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.95
+Execution stats: 3.22 47168
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.99
+Execution stats: 3.22 47160
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.5
+Execution stats: 5.63 47248
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 5.61 47240
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.90
+Execution stats: 5.57 46216
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.95
+Execution stats: 5.54 46212
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 5.50 46156
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.5
+Execution stats: 5.48 46204
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.75
+Execution stats: 5.62 46232
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.90
+Execution stats: 5.52 46084
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.95
+Execution stats: 5.68 46304
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.99
+Execution stats: 5.48 46712
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.5
+Execution stats: 5.97 46364
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 6.20 46320
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.90
+Execution stats: 6.17 46328
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.95
+Execution stats: 6.07 46288
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 5.96 46284
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.5
+Execution stats: 6.14 47148
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.75
+Execution stats: 6.23 47064
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.90
+Execution stats: 6.11 47308
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.95
+Execution stats: 6.14 47416
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.99
+Execution stats: 6.21 47112
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.5
+Execution stats: 2.83 50820
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 2.74 50076
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.90
+Execution stats: 2.70 50568
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.95
+Execution stats: 2.68 49984
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 2.66 49760
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.5
+Execution stats: 2.70 48056
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.75
+Execution stats: 2.64 47692
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.90
+Execution stats: 2.63 47020
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.95
+Execution stats: 2.81 48724
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.99
+Execution stats: 2.68 49376
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.5
+Execution stats: 3.31 49964
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 3.20 48780
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.90
+Execution stats: 3.20 48128
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.95
+Execution stats: 3.31 47972
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 3.21 48832
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.5
+Execution stats: 3.15 49588
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.75
+Execution stats: 3.34 50912
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.90
+Execution stats: 3.40 51164
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.95
+Execution stats: 3.34 50928
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.99
+Execution stats: 3.25 51160
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.5
+Execution stats: 5.73 54224
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 5.81 54068
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.90
+Execution stats: 5.71 50260
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.95
+Execution stats: 5.65 49792
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 5.62 49268
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.5
+Execution stats: 5.59 48484
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.75
+Execution stats: 5.62 49452
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.90
+Execution stats: 5.75 51628
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.95
+Execution stats: 5.71 50012
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.99
+Execution stats: 5.69 50836
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.5
+Execution stats: 6.19 48756
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 6.22 48632
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.90
+Execution stats: 6.19 48724
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.95
+Execution stats: 6.09 48820
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 6.09 48492
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.5
+Execution stats: 6.35 51316
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.75
+Execution stats: 6.23 51184
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.90
+Execution stats: 6.24 53844
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.95
+Execution stats: 6.28 53724
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_linsi.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.99
+Execution stats: 6.22 51228
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.5
+Execution stats: 2.73 46744
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 2.63 47900
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.90
+Execution stats: 2.59 46672
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.95
+Execution stats: 2.66 47608
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 2.54 46652
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.5
+Execution stats: 2.48 46632
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.75
+Execution stats: 2.58 46756
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.90
+Execution stats: 2.52 46792
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.95
+Execution stats: 2.54 46880
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm entropy -co less -th 0.99
+Execution stats: 2.67 46804
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.5
+Execution stats: 3.20 46900
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 3.08 46796
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.90
+Execution stats: 3.08 46816
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.95
+Execution stats: 3.08 46776
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 3.08 46720
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.5
+Execution stats: 3.24 46676
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.75
+Execution stats: 3.23 46808
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.90
+Execution stats: 3.25 47708
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.95
+Execution stats: 3.23 46732
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm unweighted -cm variance -co less -th 0.99
+Execution stats: 3.24 48024
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.5
+Execution stats: 5.72 48588
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 5.75 47944
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.90
+Execution stats: 5.67 47700
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.95
+Execution stats: 5.65 46844
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 5.73 47044
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.5
+Execution stats: 5.57 46808
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.75
+Execution stats: 5.69 46964
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.90
+Execution stats: 5.62 46652
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.95
+Execution stats: 5.69 47020
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm entropy -co less -th 0.99
+Execution stats: 5.68 47296
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.5
+Execution stats: 6.17 46748
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 6.11 46728
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.90
+Execution stats: 6.28 46696
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.95
+Execution stats: 6.18 46716
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 6.14 47012
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.5
+Execution stats: 6.25 47860
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.75
+Execution stats: 6.32 47940
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.90
+Execution stats: 6.21 47932
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.95
+Execution stats: 6.24 48616
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt basic -fm weighted -cm variance -co less -th 0.99
+Execution stats: 6.26 47876
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.5
+Execution stats: 2.85 52652
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 2.77 50404
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.90
+Execution stats: 2.72 50532
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.95
+Execution stats: 2.69 50312
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 2.76 48504
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.5
+Execution stats: 2.61 48168
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.75
+Execution stats: 2.61 48480
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.90
+Execution stats: 2.65 49216
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.95
+Execution stats: 2.67 49968
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm entropy -co less -th 0.99
+Execution stats: 2.73 50140
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.5
+Execution stats: 3.33 50208
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 3.21 49360
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.90
+Execution stats: 3.22 50080
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.95
+Execution stats: 3.37 48508
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 3.25 49332
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.5
+Execution stats: 3.37 50432
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.75
+Execution stats: 3.35 51144
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.90
+Execution stats: 3.36 50448
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.95
+Execution stats: 3.35 51520
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm unweighted -cm variance -co less -th 0.99
+Execution stats: 3.35 52888
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.5
+Execution stats: 5.97 51856
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 5.86 54632
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.90
+Execution stats: 5.91 51948
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.95
+Execution stats: 5.85 50416
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 5.73 49888
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.5
+Execution stats: 5.82 49388
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.75
+Execution stats: 5.72 49236
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.90
+Execution stats: 5.75 50472
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.95
+Execution stats: 5.80 50808
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm entropy -co less -th 0.99
+Execution stats: 5.82 51844
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.5
+Execution stats: 6.20 49572
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 6.20 50108
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.90
+Execution stats: 6.33 49440
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.95
+Execution stats: 6.33 49536
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 6.23 49796
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.5
+Execution stats: 6.44 55776
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.75
+Execution stats: 6.49 51812
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.90
+Execution stats: 6.64 52024
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.95
+Execution stats: 6.25 54768
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /var/tmp/franxesk/conservation_index/data/dbs/pmtDNA/pmtDNA_2014_12_04_aligned_mafft_parttree.fasta -st dna -rt detailed -fm weighted -cm variance -co less -th 0.99
+Execution stats: 6.45 51860

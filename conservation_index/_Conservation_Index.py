@@ -170,7 +170,7 @@ class Conservation_Index(object):
             self._residues = ['=', 'g', 'a', 'v', 'l', 'i', 'p', 'f', 'y', 'c',
                               'm', 'h', 'k', 'r', 'w', 's', 't', 'd', 'e', 'n',
                               'q', '-', 'x']
-            self._elem_weights = {'=': [['='],0],
+            self._elem_weights = {'=': [['='], 0],
                                   'g': [['g'], 0],
                                   'a': [['a'], 0],
                                   'v': [['v'], 0],
@@ -213,10 +213,14 @@ class Conservation_Index(object):
             - weights           - sequences' weights,
                                   optional (list of float)
         """
-        def unweighted_frequencies(self):
+        def unweighted_frequencies(self, num_seqs):
             """
             Set the correct element's weight for the unweighted frequencies'
             method.
+
+            Arguments:
+                - num_seqs      - number of sequences to be analyzed,
+                                  required (int)
             """
             for elem, weights in self._elem_weights.items():
                 num_elems = len(weights[0])
@@ -249,7 +253,7 @@ class Conservation_Index(object):
 
         num_seqs = len(AlignIO.read(filename, 'fasta'))
         if freq_method == 'unweighted':
-            unweighted_frequencies(self)
+            unweighted_frequencies(self, num_seqs)
         elif freq_method == 'weighted':
             weighted_frequencies(self, weights)
         else:
@@ -448,7 +452,7 @@ class Conservation_Index(object):
                     enumerate(record.seq[start_column:end_column].lower()):
                         for elem in self._elem_weights[residue][0]:
                             try:
-                                freqs[elem][j] = self._elem_weights[residue][1]
+                                freqs[elem][j] += self._elem_weights[residue][1]
                                 overall_freqs[elem] += \
                                             (self._elem_weights[residue][1] /
                                              total_columns)
@@ -518,8 +522,8 @@ class Conservation_Index(object):
                     enumerate(record.seq[start_column:end_column].lower()):
                         for elem in self._elem_weights[residue][0]:
                             try:
-                                freqs[elem][j] = (weights[i] *
-                                                  self._elem_weights[residue][1])
+                                freqs[elem][j] += (weights[i] *
+                                                   self._elem_weights[residue][1])
                             except TypeError:
                                 raise TypeError(('"freqs" argument should be a'
                                                  "dict of lists of 'int'"))
@@ -566,7 +570,7 @@ class Conservation_Index(object):
                     enumerate(record.seq[start_column:end_column].lower()):
                         for elem in self._elem_weights[residue][0]:
                             try:
-                                freqs[elem][j] = self._elem_weights[residue][1]
+                                freqs[elem][j] += self._elem_weights[residue][1]
                                 overall_freqs[elem] += \
                                             (self._elem_weights[residue][1] /
                                              total_columns)
@@ -1010,7 +1014,7 @@ class Report:
                                   given condition,
                                   optional (list)
         """
-        def summarize_column(wanted_columns):
+        def summarize_column(stats_column, wanted_columns):
             """
             Summarize the info previously retrieve through the analysis of
             the given alignment for the current column.
@@ -1056,7 +1060,7 @@ class Report:
             if stats_column[1] > threshold:
                 if report_type == 'basic':
                     condition_met.append('+')
-                summarize_column(wanted_columns)
+                summarize_column(stats_column, wanted_columns)
             else:
                 if report_type == 'basic':
                     condition_met.append('-')
@@ -1064,7 +1068,7 @@ class Report:
             if stats_column[1] < threshold:
                 if report_type == 'basic':
                     condition_met.append('+')
-                summarize_column(wanted_columns)
+                summarize_column(stats_column, wanted_columns)
             else:
                 if report_type == 'basic':
                     condition_met.append('-')
@@ -1099,9 +1103,7 @@ class Report:
         if not isinstance(wanted_columns, list):
             raise TypeError('"wanted_columns" argument should be a list')
 
-        #FIXME What if we just do num_wanted_columns = len(wanted_columns)?
-        wanted_columns = "".join(wanted_columns)
-        num_wanted_columns = wanted_columns.count('>')
+        num_wanted_columns = len(wanted_columns)
         if num_wanted_columns > 0:
             if num_wanted_columns > 1:
                 if condition == 'greater':
@@ -1135,7 +1137,8 @@ class Report:
                     raise ValueError(('"condition" argument has an '
                                       'invalid value. It should be '
                                       "'greater' or 'less'"))
-            summary.append(wanted_columns)
+
+            summary.append(''.join(wanted_columns))
         else:
             if condition == 'greater':
                 summary.append('\nThere are not any columns with a high degree '
@@ -1201,7 +1204,7 @@ class Report:
 
         # We have to append the last section of the consensus sequence at
         # the end of the report been generated 
-        summary += consensus_seq + condition_met + ['\n']
+        summary += consensus_seq + condition_met + ['\n\n']
 
         self._summarize_wanted_columns(summary, condition, threshold,
                                        wanted_columns)
@@ -1257,6 +1260,7 @@ class Report:
             self._check_condition('detailed', condition, threshold, stats_column,
                                   wanted_columns)
 
+        summary.append('\n\n')
         self._summarize_wanted_columns(summary, condition, threshold,
                                        wanted_columns)
 
