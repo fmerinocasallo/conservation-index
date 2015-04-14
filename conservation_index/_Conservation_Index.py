@@ -77,22 +77,28 @@ from math import ceil, log, sqrt
 from multiprocessing import cpu_count, Pool
 from operator import add, itemgetter
 
-from Bio import Align, AlignIO
+from Bio import Align, AlignIO, SeqIO
 
-def _check_section(align, section_type, section):
+# PREV: def _check_section(align, section_type, section):
+def _check_section(filename, section_type, section):
     """
     Check if the given section is well formated. Return its boundaries.
 
     Arguments:
-        - align                 - set of sequences to be analyzed,
-                                  required (MultipleSeqAlignment)
+        # PREV: - align                 - set of sequences to be analyzed,
+        # PREV:                           required (MultipleSeqAlignment)
+        - filename          - filename of the file which stores the
+                                  alignment to be analyzed,
+                                  required (str)
         - section_type          - type of section to be checked,
                                   required (str)
         - section               - section of each sequence to be analyzed,
                                   required (tuple)
     """
-    if not isinstance(align, Align.MultipleSeqAlignment):
-        raise TypeError('"align" argument should be a MultipleSeqAlignment')
+    # PREV: if not isinstance(align, Align.MultipleSeqAlignment):
+    # PREV:     raise TypeError('"align" argument should be a MultipleSeqAlignment')
+    if not isinstance(filename, str):
+        raise TypeError('"filename" argument should be a string')
     if not isinstance(section_type, str):
         raise TypeError('"section_type" argument should be a string')
     if not isinstance(section, tuple):
@@ -110,12 +116,14 @@ def _check_section(align, section_type, section):
                    'so I will keep it that way'))
 
         if section_type == 'rows':
-            num_rows = len(align)
-
+            # PREV: num_rows = len(align)
+            num_rows = sum(1 for _ in SeqIO.parse(filename, 'fasta'))
+            
             return section[0], num_rows if num_rows < section[1] \
                                         else section[1]
         elif section_type == 'columns':
-            num_columns = align.get_alignment_length()
+            # PREV: num_columns = align.get_alignment_length()
+            num_columns = len(next(SeqIO.parse(filename, 'fasta')).seq)
 
             return section[0], num_columns if num_columns < section[1] \
                                           else section[1]
@@ -251,7 +259,8 @@ class Conservation_Index(object):
         if not isinstance(weights, list):
             raise TypeError('"weights" argument should be a list')
 
-        num_seqs = len(AlignIO.read(filename, 'fasta'))
+        # PREV: num_seqs = len(AlignIO.read(filename, 'fasta'))
+        num_seqs = sum(1 for _ in SeqIO.parse(filename, 'fasta'))
         if freq_method == 'unweighted':
             unweighted_frequencies(self, num_seqs)
         elif freq_method == 'weighted':
@@ -278,19 +287,24 @@ class Conservation_Index(object):
         if not isinstance(section, tuple):
             raise TypeError('"section" argument should be a tuple')
 
-        align = AlignIO.read(filename, 'fasta')
-        start_column, end_column = _check_section(align, 'columns', section)
+        # PREV: align = AlignIO.read(filename, 'fasta')
+        # PREV: start_column, end_column = _check_section(align, 'columns', section)
+        start_column, end_column = _check_section(filename, 'columns', section)
         num_columns = end_column - start_column
         stats = [defaultdict(int) for k in range(0, num_columns)]
         # calculate stats (# diff. elems, reps each elem) for each column
-        for record in align:
+        # PREV: for record in align:
+        weights = []
+        for record in SeqIO.parse(filename, 'fasta'):
             for num_column, residue in \
                     enumerate(record.seq[start_column:end_column].lower()):
                 stats[num_column][residue] += 1
+            weights.append(0.0)
 
-        weights = [0.0] * len(align)
+        # PREV: weights = [0.0] * len(align)
         # calculate the weights associated to each column of each sequence
-        for num_seq, record in enumerate(align):
+        # PREV: for num_seq, record in enumerate(align):
+        for num_seq, record in enumerate(SeqIO.parse(filename, 'fasta')):
             for num_column, residue in \
                     enumerate(record.seq[start_column:end_column].lower()):
                 weights[num_seq] += 1 / (len(stats[num_column]) *
@@ -311,10 +325,11 @@ class Conservation_Index(object):
         if not isinstance(filename, str):
             raise TypeError('"filename" argument should be a string.')
 
-        align = AlignIO.read(filename, 'fasta')
+        # PREV: align = AlignIO.read(filename, 'fasta')
 
         num_cores = cpu_count()
-        num_columns = align.get_alignment_length()
+        # PREV: num_columns = align.get_alignment_length()
+        num_columns = len(next(SeqIO.parse(filename, 'fasta')).seq)
         section_size = ceil(num_columns / num_cores)
 
         num_section = 0
@@ -400,15 +415,17 @@ class Conservation_Index(object):
 
                 Return a tuple containing just the frequencies.
                 """
-                align = AlignIO.read(filename,'fasta')
-                start_column, end_column = _check_section(align, 'columns',
+                # PREV: align = AlignIO.read(filename,'fasta')
+                # PREV: start_column, end_column = _check_section(align, 'columns',
+                start_column, end_column = _check_section(filename, 'columns',
                                                           section)
-                section_length = section[1] - section[0]
+                section_length = end_column - start_column
                 freqs = {}
                 for residue in self._residues:
                     freqs[residue] = [0.0] * section_length 
 
-                for record in align:
+                # PREV: for record in align:
+                for record in SeqIO.parse(filename, 'fasta'):
                     for j, residue in \
                     enumerate(record.seq[start_column:end_column].lower()):
                         for elem in self._elem_weights[residue][0]:
@@ -437,17 +454,20 @@ class Conservation_Index(object):
                 Return a tuple containing both frequencies and the overalls
                 frequencies for each residue.
                 """
-                align = AlignIO.read(filename,'fasta')
-                total_columns = align.get_alignment_length()
-                start_column, end_column = _check_section(align, 'columns',
+                # PREV: align = AlignIO.read(filename,'fasta')
+                # PREV: total_columns = align.get_alignment_length()
+                # PREV: start_column, end_column = _check_section(align, 'columns',
+                start_column, end_column = _check_section(filename, 'columns',
                                                           section)
-                section_length = section[1] - section[0]
+                section_length = end_column - start_column
                 freqs = {}
                 overall_freqs = defaultdict(float)
                 for residue in self._residues:
                     freqs[residue] = [0.0] * section_length 
 
-                for record in align:
+                total_columns = len(next(SeqIO.parse(filename, 'fasta')).seq)
+                # PREV: for record in align:
+                for record in SeqIO.parse(filename, 'fasta'):
                     for j, residue in \
                     enumerate(record.seq[start_column:end_column].lower()):
                         for elem in self._elem_weights[residue][0]:
@@ -509,15 +529,17 @@ class Conservation_Index(object):
 
                 Return a tuple containing just the frequencies.
                 """
-                align = AlignIO.read(filename,'fasta')
-                start_column, end_column = _check_section(align, 'columns',
-                                                            section)
-                section_length = section[1] - section[0]
+                # PREV: align = AlignIO.read(filename,'fasta')
+                # PREV: start_column, end_column = _check_section(align, 'columns',
+                start_column, end_column = _check_section(filename, 'columns',
+                                                          section)
+                section_length = end_column - start_column
                 freqs = {}
                 for residue in self._residues:
                     freqs[residue] = [0.0] * section_length 
 
-                for i, record in enumerate(align):
+                # PREV: for i, record in enumerate(align):
+                for i, record in enumerate(SeqIO.parse(filename, 'fasta')):
                     for j, residue in \
                     enumerate(record.seq[start_column:end_column].lower()):
                         for elem in self._elem_weights[residue][0]:
@@ -556,16 +578,19 @@ class Conservation_Index(object):
                 frequencies for each residue.
                 """
                 align = AlignIO.read(filename,'fasta')
-                total_columns = align.get_alignment_length()
-                start_column, end_column = _check_section(align, 'columns',
+                # PREV: total_columns = align.get_alignment_length()
+                # PREV: start_column, end_column = _check_section(align, 'columns',
+                start_column, end_column = _check_section(filename, 'columns',
                                                           section)
-                section_length = section[1] - section[0]
+                section_length = end_column - start_column
                 freqs = {}
                 overall_freqs = defaultdict(float)
                 for residue in self._residues:
                     freqs[residue] = [0.0] * section_length 
 
-                for i, record in enumerate(align):
+                total_columns = len(next(SeqIO.parse(filename, 'fasta')).seq)
+                # PREV: for i, record in enumerate(align):
+                for i, record in enumerate(SeqIO.parse(filename, 'fasta')):
                     for j, residue in \
                     enumerate(record.seq[start_column:end_column].lower()):
                         for elem in self._elem_weights[residue][0]:
@@ -655,7 +680,8 @@ class Conservation_Index(object):
         if not isinstance(calc_overall_freqs, bool):
             raise TypeError('"calc_overall_freqs" argument should be a bool')
 
-        num_columns = AlignIO.read(filename, 'fasta').get_alignment_length()
+        # PREV: num_columns = AlignIO.read(filename, 'fasta').get_alignment_length()
+        num_columns = len(next(SeqIO.parse(filename, 'fasta')).seq)
         num_cores = cpu_count()
         section_size = ceil(num_columns / num_cores)
 
@@ -747,10 +773,13 @@ class Conservation_Index(object):
             Return a tuple containing just a list with the conservation of
             each column.
             """
-            align = AlignIO.read(filename,'fasta')
-            lambda_t = log(min(len(align), len(freqs)))
+            # PREV: align = AlignIO.read(filename,'fasta')
+            num_rows = sum(1 for _ in SeqIO.parse(filename, 'fasta'))
+            # PREV: lambda_t = log(min(len(align), len(freqs)))
+            lambda_t = log(min(num_rows, len(freqs)))
 
-            start_column, end_column = _check_section(align, 'columns',
+            # PREV: start_column, end_column = _check_section(align, 'columns',
+            start_column, end_column = _check_section(filename, 'columns',
                                                       section)
 
             section_length = end_column - start_column
@@ -789,11 +818,13 @@ class Conservation_Index(object):
             Return a tuple containing just a list with the conservation of
             each column.
             """
-            align = AlignIO.read(filename,'fasta')
-            num_columns = align.get_alignment_length()
+            # PREV: align = AlignIO.read(filename,'fasta')
+            # PREV: num_columns = align.get_alignment_length()
+            num_columns = len(next(SeqIO.parse(filename, 'fasta')).seq)
             max_value = sqrt(2 - 3 / num_columns + 1 / (num_columns ** 2))
 
-            start_column, end_column = _check_section(align, 'columns',
+            # PREV: start_column, end_column = _check_section(align, 'columns',
+            start_column, end_column = _check_section(filename, 'columns',
                                                       section)
 
             section_length = end_column - start_column
@@ -859,8 +890,8 @@ class Conservation_Index(object):
         if not isinstance(overall_freqs, dict):
             raise TypeError('"overall_freqs" argument should be a dictionary')
 
-        num_columns = AlignIO.read(filename, 'fasta').get_alignment_length()
-
+        # PREV: num_columns = AlignIO.read(filename, 'fasta').get_alignment_length()
+        num_columns = len(next(SeqIO.parse(filename, 'fasta')).seq)
         num_cores = cpu_count()
         section_size = ceil(num_columns / num_cores)
 
