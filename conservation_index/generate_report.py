@@ -109,7 +109,7 @@ def main():
         with open(''.join(output_filename), 'w') as of:
             of.write(report.generate_basic(args.condition, args.threshold))
     else:
-        with open(output_filename , 'w') as of:
+        with open(''.join(output_filename) , 'w') as of:
             of.write(report.generate_detailed(args.condition, args.threshold))
 
     if args.verbose:

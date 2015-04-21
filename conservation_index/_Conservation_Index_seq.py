@@ -14,7 +14,7 @@
 #   MODIFICATIONS :  Started using generators in order to improve the performance
 #                    of the system. Not only does the memory usage decrease but
 #                    also the execution time.
-# 
+#
 #   DATE :  11/Mar/2015
 #   VERSION :  v4.2
 #   AUTHOR(s) :  F. Merino-Casallo
@@ -86,52 +86,6 @@ from operator import add, itemgetter
 
 from Bio import Align, AlignIO, SeqIO
 
-def _check_section(filename, section_type, section):
-    """
-    Check if the given section is well formated. Return its boundaries.
-
-    Arguments:
-        - filename              - filename of the file which stores the
-                                  alignment to be analyzed,
-                                  required (str)
-        - section_type          - type of section to be checked,
-                                  required (str)
-        - section               - section of each sequence to be analyzed,
-                                  required (tuple)
-    """
-    if not isinstance(filename, str):
-        raise TypeError('"filename" argument should be a string')
-    if not isinstance(section_type, str):
-        raise TypeError('"section_type" argument should be a string')
-    if not isinstance(section, tuple):
-        raise TypeError('"section" argument should be a tuple')
-    try:
-        if section[0] < 0:
-            raise ValueError(('"section" argument has an invalid value. '
-                              "It should start with a positive integer'"))
-        if section[1] < 0:
-            raise ValueError(('"section" argument has an invalid value. '
-                              "It should finish with a positive integer'"))
-        if section[0] > section[1]:
-            print(('"section" argument include an inverse range '
-                   '(x, y with x > y). I am sure you know what you are doing '
-                   'so I will keep it that way'))
-
-        if section_type == 'rows':
-            num_rows = sum(1 for _ in SeqIO.parse(filename, 'fasta'))
-            
-            return section[0], num_rows if num_rows < section[1] \
-                                        else section[1]
-        elif section_type == 'columns':
-            num_columns = len(next(SeqIO.parse(filename, 'fasta')).seq)
-
-            return section[0], num_columns if num_columns < section[1] \
-                                          else section[1]
-        else:
-            raise ValueError(('"section_type" argument has an invalid value. '
-                              "It should be 'rows' or 'columns'"))
-    except TypeError:
-       raise TypeError('"section" argument should be a tuple of integers')
 
 class Conservation_Index(object):
     """
@@ -268,94 +222,45 @@ class Conservation_Index(object):
             raise ValueError(('"freq_method" argument has an invalid value. '
                               "It should be 'unweighted' or 'weighted'"))
 
-    def _calculate_section_weights(self, filename, section):
+    def calculate_weights(self, filename):
         """
-        Weigh the given section (usually more than a single column) of a set
-        of aligned sequences. Our aim is to compensate for over-
-        representation among multiple aligned sequences.
+        Weigh the given set of aligned sequences. Our aim is to compensate for
+        over-representation among multiple aligned sequences.
 
         Arguments:
             - filename          - filename of the file which stores the
                                   alignment to be analyzed,
                                   required (str)
-            - section           - section of each sequence to be analyzed,
-                                  required (tuple)
         """
         if not isinstance(filename, str):
             raise TypeError('"filename" argument should be a string.')
-        if not isinstance(section, tuple):
-            raise TypeError('"section" argument should be a tuple')
 
-        start_column, end_column = _check_section(filename, 'columns', section)
-        num_columns = end_column - start_column
+        num_columns = len(next(SeqIO.parse(filename, 'fasta')).seq)
         stats = [defaultdict(int) for _ in range(0, num_columns)]
         # calculate stats (# diff. elems, reps each elem) for each column
         weights = []
         for record in SeqIO.parse(filename, 'fasta'):
-            for num_column, residue in \
-                    enumerate(record.seq[start_column:end_column].lower()):
+            for num_column, residue in enumerate(record.seq.lower()):
                 stats[num_column][residue] += 1
             weights.append(0.0)
 
         # calculate the weights associated to each column of each sequence
         for num_seq, record in enumerate(SeqIO.parse(filename, 'fasta')):
-            for num_column, residue in \
-                    enumerate(record.seq[start_column:end_column].lower()):
+            for num_column, residue in enumerate(record.seq.lower()):
                 weights[num_seq] += 1 / (len(stats[num_column]) *
                                          stats[num_column][residue])
 
         return weights
 
-    def calculate_weights(self, filename):
+    def calculate_frequencies(self, filename, freq_method, weights=None,
+                              calc_overall_freqs=False):
         """
-        Weigh a set of aligned sequences. Our aim is to compensate for over-
-        representation among multiple aligned sequences.
+        Calculate frequencies of the given set of sequences.
 
         Arguments:
-            - filename          - filename of the file which stores the
-                                  alignment to be analyzed,
-                                  required (str)
-        """
-        if not isinstance(filename, str):
-            raise TypeError('"filename" argument should be a string.')
-
-        num_cores = cpu_count()
-        num_columns = len(next(SeqIO.parse(filename, 'fasta')).seq)
-        section_size = ceil(num_columns / num_cores)
-
-        num_section = 0
-        with Pool(processes=num_cores) as pool:
-            results = []
-            for start_column in range(0, num_columns, section_size):
-                section = (start_column, start_column + section_size)
-                results.append(pool.apply_async(self._calculate_section_weights,
-                                                args=(filename, section)))
-
-            # retrieve the results of each process
-            sections_weights = [result.get() for result in results]
-
-        weights = zip(*[section_weights for section_weights in \
-                                            sections_weights])
-
-        return [sum(seq_weight) for seq_weight in weights]
-
-    def _calculate_section_frequencies(self, num_section, filename, section,
-                                       freq_method, weights=None,
-                                       calc_overall_freqs=False):
-        """
-        Calculate frequencies of the given section (usually more than a single
-        column) of a set of sequences.
-
-        Arguments:
-            - num_section       - number of section to be analyzed. It is needed to
-                                  be able to sort the returned results by each of
-                                  the processes,
-                                  required (int)
             - filename          - filename of the file which stores the alignment
                                   to be analyzed,
                                   required (str)
-            - section           - section of each sequence to be analyzed,
-                                  required (tuple)
             - freq_method       - frequencies' estimation method,
                                   required (str)
             - weights           - sequences' weights,
@@ -370,8 +275,7 @@ class Conservation_Index(object):
         returned tuple will not contain them. Otherwise, the tuple will include
         them.
         """
-        def unweighted_frequencies(self, filename, section,
-                                   calc_overall_freqs=False):
+        def unweighted_frequencies(self, filename, calc_overall_freqs=False):
             """
             Estimate frequencies using the unweighted frequencies' method.
 
@@ -379,8 +283,6 @@ class Conservation_Index(object):
                 - filename      - filename of the file which stores the
                                   alignment to be analyzed,
                                   required (str)
-                - section       - section of each sequence to be analyzed,
-                                  required (tuple)
                 - calc_overall_freqs
                                 - if True, we'll also calculate the overall
                                   frequencies for each residue,
@@ -391,30 +293,24 @@ class Conservation_Index(object):
             this case), the returned tuple will not contain them. Otherwise,
             the tuple will include them.
             """
-            def calculate_without_overall_freqs(self, filename, section):
+            def calculate_without_overall_freqs(self, filename):
                 """
                 Estimate only frequencies for each column.
 
                 Arguments:
-                    - filename
-                                - filename of the file which stores the alignment
+                    - filename  - filename of the file which stores the alignment
                                   to be analyzed,
                                   required (str)
-                    - section   - section of each sequence to be analyzed,
-                                  required (tuple)
 
                 Return a tuple containing just the frequencies.
                 """
-                start_column, end_column = _check_section(filename, 'columns',
-                                                          section)
-                section_length = end_column - start_column
+                num_columns = len(next(SeqIO.parse(filename, 'fasta')).seq)
                 freqs = {}
                 for residue in self._residues:
-                    freqs[residue] = [0.0] * section_length 
+                    freqs[residue] = [0.0] * num_columns
 
                 for record in SeqIO.parse(filename, 'fasta'):
-                    for j, residue in \
-                    enumerate(record.seq[start_column:end_column].lower()):
+                    for j, residue in enumerate(record.seq.lower()):
                         for elem in self._elem_weights[residue][0]:
                             try:
                                 freqs[elem][j] += self._elem_weights[residue][1]
@@ -424,7 +320,7 @@ class Conservation_Index(object):
 
                 return (freqs, )
 
-            def calculate_with_overall_freqs(self, filename, section):
+            def calculate_with_overall_freqs(self, filename):
                 """
                 Estimate not only frequencies for each column, but also the
                 overall frequencies for each residue.
@@ -433,30 +329,24 @@ class Conservation_Index(object):
                     - filename  - filename of the file which stores the alignment
                                   to be analyzed,
                                   required (str)
-                    - section   - section of each sequence to be analyzed,
-                                  required (tuple)
 
                 Return a tuple containing both frequencies and the overalls
                 frequencies for each residue.
                 """
-                start_column, end_column = _check_section(filename, 'columns',
-                                                          section)
-                section_length = end_column - start_column
+                num_columns = len(next(SeqIO.parse(filename, 'fasta')).seq)
                 freqs = {}
                 overall_freqs = defaultdict(float)
                 for residue in self._residues:
-                    freqs[residue] = [0.0] * section_length 
+                    freqs[residue] = [0.0] * num_columns
 
-                total_columns = len(next(SeqIO.parse(filename, 'fasta')).seq)
                 for record in SeqIO.parse(filename, 'fasta'):
-                    for j, residue in \
-                    enumerate(record.seq[start_column:end_column].lower()):
+                    for j, residue in enumerate(record.seq.lower()):
                         for elem in self._elem_weights[residue][0]:
                             try:
                                 freqs[elem][j] += self._elem_weights[residue][1]
                                 overall_freqs[elem] += \
                                             (self._elem_weights[residue][1] /
-                                             total_columns)
+                                             num_columns)
                             except TypeError:
                                 raise TypeError(('"freqs" argument should be a'
                                                  "dict of lists of 'int'"))
@@ -468,7 +358,7 @@ class Conservation_Index(object):
             else:
                 return calculate_without_overall_freqs(self, filename, section)
 
-        def weighted_frequencies(self, filename, section, weights,
+        def weighted_frequencies(self, filename, weights,
                                  calc_overall_freqs=False):
             """
             Estimate frequencies using the weighted frequencies' method.
@@ -477,8 +367,6 @@ class Conservation_Index(object):
                 - filename      - filename of the file which stores the alignment
                                   to be analyzed,
                                   required (str)
-                - section       - section of each sequence to be analyzed,
-                                  required (tuple)
                 - weights       - sequences' weights,
                                   optional (list of float)
                 - calc_overall_freqs
@@ -491,8 +379,7 @@ class Conservation_Index(object):
             in this case), the returned tuple will not contain them. Otherwise,
             the tuple will include them.
             """
-            def calculate_without_overall_freqs(self, filename, section,
-                                                weights):
+            def calculate_without_overall_freqs(self, filename, weights):
                 """
                 Estimate only frequencies for each column.
 
@@ -500,24 +387,19 @@ class Conservation_Index(object):
                     - filename  - filename of the file which stores the alignment
                                   to be analyzed,
                                   required (str)
-                    - section   - section of each sequence to be analyzed,
-                                  required (tuple)
                     - align_weights
                                 - sequences' weights,
                                   required (list of float)
 
                 Return a tuple containing just the frequencies.
                 """
-                start_column, end_column = _check_section(filename, 'columns',
-                                                          section)
-                section_length = end_column - start_column
+                num_columns = len(next(SeqIO.parse(filename, 'fasta')).seq)
                 freqs = {}
                 for residue in self._residues:
-                    freqs[residue] = [0.0] * section_length 
+                    freqs[residue] = [0.0] * num_columns
 
                 for i, record in enumerate(SeqIO.parse(filename, 'fasta')):
-                    for j, residue in \
-                    enumerate(record.seq[start_column:end_column].lower()):
+                    for j, residue in enumerate(record.seq.lower()):
                         for elem in self._elem_weights[residue][0]:
                             try:
                                 freqs[elem][j] += (weights[i] *
@@ -532,8 +414,7 @@ class Conservation_Index(object):
 
                 return (freqs, )
 
-            def calculate_with_overall_freqs(self, filename, section,
-                                             weights):
+            def calculate_with_overall_freqs(self, filename, weights):
                 """
                 Estimate not only frequencies for each column, but also the
                 overall frequencies for each residue.
@@ -542,8 +423,6 @@ class Conservation_Index(object):
                     - filename  - filename of the file which stores the alignment
                                   to be analyzed,
                                   required (str)
-                    - section   - section of each sequence to be analyzed,
-                                  required (tuple)
                     - align_weights
                                 - sequences' weights,
                                   required (list of float)
@@ -551,18 +430,14 @@ class Conservation_Index(object):
                 Return a tuple containing both frequencies and the overalls
                 frequencies for each residue.
                 """
-                start_column, end_column = _check_section(filename, 'columns',
-                                                          section)
-                section_length = end_column - start_column
+                num_columns = len(next(SeqIO.parse(filename, 'fasta')).seq)
                 freqs = {}
                 overall_freqs = defaultdict(float)
                 for residue in self._residues:
-                    freqs[residue] = [0.0] * section_length 
+                    freqs[residue] = [0.0] * num_columns
 
-                total_columns = len(next(SeqIO.parse(filename, 'fasta')).seq)
                 for i, record in enumerate(SeqIO.parse(filename, 'fasta')):
-                    for j, residue in \
-                    enumerate(record.seq[start_column:end_column].lower()):
+                    for j, residue in enumerate(record.seq.lower()):
                         for elem in self._elem_weights[residue][0]:
                             try:
                                 freqs[elem][j] += self._elem_weights[residue][1]
@@ -580,21 +455,15 @@ class Conservation_Index(object):
                 return (freqs, overall_freqs)
 
             if calc_overall_freqs:
-                return calculate_with_overall_freqs(self, filename, section,
-                                                    weights)
+                return calculate_with_overall_freqs(self, filename, weights)
             else:
-                return calculate_without_overall_freqs(self, filename, section,
-                                                       weights)
+                return calculate_without_overall_freqs(self, filename, weights)
 
         if weights is None:
             weights = []
 
-        if not isinstance(num_section, int):
-            raise TypeError('"num_section" argument should be a int')
         if not isinstance(filename, str):
             raise TypeError('"filename" argument should be a string')
-        if not isinstance(section, tuple):
-            raise TypeError('"section" argument should be a tuple')
         if not isinstance(freq_method, str):
             raise TypeError('"freq_method" argument should be a string')
         if not isinstance(weights, list):
@@ -603,117 +472,23 @@ class Conservation_Index(object):
             raise TypeError('"calc_overall_freqs" argument should be a bool')
 
         if freq_method == 'unweighted':
-            return ((num_section, ) +
-                    unweighted_frequencies(self, filename, section,
-                                           calc_overall_freqs))
+            return unweighted_frequencies(self, filename, calc_overall_freqs)
         elif freq_method == 'weighted':
-            return ((num_section, ) +
-                    weighted_frequencies(self, filename, section,
-                                         weights, calc_overall_freqs))
+            return weighted_frequencies(self, filename, weights,
+                                        calc_overall_freqs)
         else:
             raise ValueError(('"freq_method" argument has an invalid value. '
                                 "It should be 'unweighted' or 'weighted'"))
 
-
-    def calculate_frequencies(self, filename, freq_method, align_weights=None,
-                              calc_overall_freqs=False):
+    def calculate_conservation(self, filename, freqs, ci_method,
+                               overall_freqs=None):
         """
-        Calculate frequencies of a set of aligned sequences.
+        Calculate conservation index of the given set of sequences.
 
         Arguments:
             - filename          - filename of the file which stores the
                                   alignment to be analyzed,
                                   required (str)
-            - freq_method       - frequencies' estimation method,
-                                  required (str)
-            - align_weights     - sequences' weights,
-                                  optional (list of float)
-            - calc_overall_freqs
-                                - if True, we'll also calculate the overall
-                                  frequencies for each residue,
-                                  optional (bool)
-
-        Return a tuple. If we do not want to calculate the overalls
-        frequencies for each residue (calc_overall_freqs should be False
-        in this case), the returned tuple will not contain them. Otherwise,
-        the tuple will include them.
-        """
-        if align_weights is None:
-            align_weights = []
-
-        if not isinstance(filename, str):
-            raise TypeError('"filename" argument should be a string')
-        if not isinstance(freq_method, str):
-            raise TypeError('"freq_method" argument should be a string')
-        if not isinstance(align_weights, list):
-            raise TypeError('"align_weights" argument should be a list')
-        if not isinstance(calc_overall_freqs, bool):
-            raise TypeError('"calc_overall_freqs" argument should be a bool')
-
-        num_columns = len(next(SeqIO.parse(filename, 'fasta')).seq)
-        num_cores = cpu_count()
-        section_size = ceil(num_columns / num_cores)
-
-        num_section = 0
-        with Pool(processes=num_cores) as pool:
-            results = []
-            num_section = 0
-            for start_column in range(0, num_columns, section_size):
-                end_column = start_column + section_size
-                if num_columns < end_column:
-                    end_column = num_columns
-                section = (start_column, end_column)
-
-                results.append(pool.apply_async(
-                                        self._calculate_section_frequencies,
-                                        args=(num_section, filename,
-                                              section, freq_method,
-                                              align_weights,
-                                              calc_overall_freqs)))
-
-                num_section += 1
-
-            # retrieve the results of each process
-            sections_freqs = [result.get() for result in results]
-            # because we want to access the results in order, we have to sort
-            # them previously by num_section.
-            sections_freqs.sort()
-
-        # recreate the original data structure which stores the residues'
-        # frequencies for each column
-        columns_freqs = {}
-        for residue in self._residues:
-            columns_freqs[residue] = []
-
-        for section_freqs in sections_freqs:
-            for residue, freqs in section_freqs[1].items():
-                columns_freqs[residue].extend(freqs)
-
-        if calc_overall_freqs:
-            overall_freqs = dict(reduce(add, map(Counter, [section_freqs[2] \
-                                        for section_freqs in sections_freqs])))
-
-            return (columns_freqs, overall_freqs)
-        else:
-            return (columns_freqs, )
-
-    def _calculate_section_conservation(self, num_section, filename, section,
-                                        freqs, ci_method,
-                                        overall_freqs=None):
-        """
-        Calculate conservation index of the given section (usually more than
-        a single column) of a set of sequences.
-
-        Arguments:
-            - num_section       - number of section to be analyzed. It is
-                                  needed to be able to sort the returned
-                                  results by each of the processes,
-                                  required (int)
-            - filename          - filename of the file which stores the
-                                  alignment to be analyzed,
-                                  required (str)
-            - section           - section of each sequence to be analyzed,
-                                  required (tuple)
             - freqs             - estimated residues' frequencies for each
                                   column, required (dict of lists of int)
             - ci_method         - conservation index's calculation method,
@@ -724,7 +499,7 @@ class Conservation_Index(object):
         Return a tuple containing just a list with the conservation of each
         column.
         """
-        def shannon_entropy(filename, section, freqs):
+        def shannon_entropy(filename, freqs):
             """
             Estimate conservation index using the Shannon Entropy method.
 
@@ -732,9 +507,6 @@ class Conservation_Index(object):
                 - filename      - filename of the file which stores the
                                   alignment to be analyzed,
                                   required (str)
-                - section       - section of each sequence to be
-                                  analyzed,
-                                  required (tuple)
                 - freqs         - estimated residues' frequencies for each
                                   column,
                                   required (dict of lists of int)
@@ -745,14 +517,9 @@ class Conservation_Index(object):
             num_rows = sum(1 for _ in SeqIO.parse(filename, 'fasta'))
             lambda_t = log(min(num_rows, len(freqs)))
 
-            start_column, end_column = _check_section(filename, 'columns',
-                                                      section)
-
-            section_length = end_column - start_column
-            cis = [0.0] * section_length
-
-            for i, freqs_column in \
-                                enumerate(freqs[start_column:end_column]):
+            num_columns = len(next(SeqIO.parse(filename, 'fasta')).seq)
+            cis = [0.0] * num_columns
+            for i, freqs_column in enumerate(freqs):
                 for residue, freq in freqs_column:
                     if freq != 0.0:
                         cis[i] += freq * log(freq)
@@ -762,7 +529,7 @@ class Conservation_Index(object):
 
             return (cis, )
 
-        def variance(filename, section, freqs, overall_freqs):
+        def variance(filename, freqs, overall_freqs):
             """
             Estimate conservation index using a variance-based measure.
 
@@ -770,9 +537,6 @@ class Conservation_Index(object):
                 - filename      - filename of the file which stores the
                                   alignment to be analyzed,
                                   required (str)
-                - section       - section of each sequence to be
-                                  analyzed,
-                                  required (tuple)
                 - freqs         - estimated residues' frequencies for each
                                   column,
                                   required (dict of lists of int)
@@ -787,14 +551,8 @@ class Conservation_Index(object):
             num_columns = len(next(SeqIO.parse(filename, 'fasta')).seq)
             max_value = sqrt(2 - 3 / num_columns + 1 / (num_columns ** 2))
 
-            start_column, end_column = _check_section(filename, 'columns',
-                                                      section)
-
-            section_length = end_column - start_column
-            cis = [0.0] * section_length 
-
-            for i, freqs_column in \
-                                enumerate(freqs[start_column:end_column]):
+            cis = [0.0] * num_columns
+            for i, freqs_column in enumerate(freqs):
                 for residue, freq in freqs_column:
                     if freq != 0.0:
                         cis[i] += (freq - overall_freqs[residue]) ** 2
@@ -810,86 +568,17 @@ class Conservation_Index(object):
             overall_freqs = {}
 
         if ci_method == 'shannon entropy':
-            return ((num_section, ) + shannon_entropy(filename, section,
-                                                      columns_freqs))
+            return shannon_entropy(filename, columns_freqs)
         elif ci_method == 'variance':
-            return ((num_section, ) + variance(filename, section, columns_freqs,
-                                               overall_freqs))
+            return variance(filename, columns_freqs, overall_freqs)
         else:
             raise ValueError(('"ci_method" argument has an invalid value. '
                                 "It should be 'shannon entropy' or "
                                 "'variance'"))
 
-    def calculate_conservation(self, filename, freqs, ci_method,
-                               overall_freqs=None):
-        """
-        Calculate conservation index of a set of sequences.
-
-        Arguments:
-            - filename          - filename of the file which stores the
-                                  alignment to be analyzed,
-                                  required (str)
-            - freqs             - estimated residues' frequencies for each
-                                  column, required (dict of lists of int)
-            - ci_method         - conservation index's calculation method,
-                                  required (str)
-            - overall_freqs     - estimated overall frequencies for each
-                                  residue, optional (dict of floats)
-
-        Return a tuple containing just a list with the conservation of each
-        column.
-        """
-        if overall_freqs is None:
-            overall_freqs = {}
-
-        if not isinstance(filename, str):
-            raise TypeError('"filename" argument should be a string')
-        if not isinstance(ci_method, str):
-            raise TypeError('"ci_method" argument should be a string')
-        if not isinstance(freqs, dict):
-            raise TypeError('"freqs" argument should be a dictionary')
-        elif not all(isinstance(residue, list) for residue in freqs.values()):
-            raise TypeError('"freqs" argument should be a dictionary of lists')
-        if not isinstance(overall_freqs, dict):
-            raise TypeError('"overall_freqs" argument should be a dictionary')
-
-        num_columns = len(next(SeqIO.parse(filename, 'fasta')).seq)
-        num_cores = cpu_count()
-        section_size = ceil(num_columns / num_cores)
-
-        with Pool(processes=num_cores) as pool:
-            results = []
-            num_section = 0
-            for start_column in range(0, num_columns, section_size):
-                end_column = start_column + section_size
-                if num_columns < end_column:
-                    end_column = num_columns
-                section = (start_column, end_column)
-
-                results.append(pool.apply_async(
-                                        self._calculate_section_conservation,
-                                        args=(num_section, filename, section,
-                                              freqs, ci_method, overall_freqs)))
-
-                num_section += 1
-
-            # retrieve the results of each process
-            sections_conservations = [result.get() for result in results]
-            # because we want to access the results in order, we have to sort
-            # them previously by num_section.
-            sections_conservations.sort()
-
-        columns_conservation = []
-        for section_conservations in sections_conservations:
-            columns_conservation.extend(section_conservations[1])
-
-        return (columns_conservation, )
-
     def analyze(self, filename, freq_method, ci_method):
         """
-        Analyze the set of sequences using every available cpu. Each process
-        will have assigned a different set of columns (also known as section)
-        to analyze on their own.
+        Analyze the set of sequences using only one cpu. 
 
         Arguments:
             - filename          - filename of the file which stores the
