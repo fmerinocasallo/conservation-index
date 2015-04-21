@@ -72,11 +72,17 @@ def main():
 
     # Set the new text file's filename which is going to store the report
     input_filename, input_extension = splitext(args.input_filename)
-    output_filename = (args.output_directory + basename(input_filename) +
-                       '_' + args.frequencies_method +
-                       '_' + args.conservation_method +
-                       '_' + args.condition + '_' + str(args.threshold) +
-                       '_' + args.report_type + '.txt')
+    output_filename = []
+    if args.output_directory:
+        output_filename += args.output_directory + '/'
+
+    output_filename += (basename(input_filename) +
+                        '_' + args.frequencies_method +
+                        '_' + args.conservation_method +
+                        '_' + args.condition + '_' + 
+                        str(args.threshold) +
+                        # '{:1.2f}'.format(args.threshold) +
+                        '_' + args.report_type + '.txt')
     if args.verbose:
         print('Starting analysis of the given alignment...', end='')
         sys.stdout.flush()
@@ -100,7 +106,7 @@ def main():
     report = Report(args.sequence_type, freqs, cis)
 
     if args.report_type == 'basic':
-        with open(output_filename, 'w') as of:
+        with open(''.join(output_filename), 'w') as of:
             of.write(report.generate_basic(args.condition, args.threshold))
     else:
         with open(output_filename , 'w') as of:

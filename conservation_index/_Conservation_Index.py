@@ -330,7 +330,7 @@ class Conservation_Index(object):
         weights = zip(*[section_weights for section_weights in \
                                             sections_weights])
 
-        return [sum(seq_weights) for seq_weights in weights]
+        return [sum(seq_weight) for seq_weight in weights]
 
     def _calculate_section_frequencies(self, num_section, filename, section,
                                        freq_method, weights=None,
@@ -551,7 +551,6 @@ class Conservation_Index(object):
                 Return a tuple containing both frequencies and the overalls
                 frequencies for each residue.
                 """
-                align = AlignIO.read(filename,'fasta')
                 start_column, end_column = _check_section(filename, 'columns',
                                                           section)
                 section_length = end_column - start_column
@@ -1014,6 +1013,9 @@ class Report:
             the given alignment for the current column.
 
             Arguments:
+                - stats_column  - list containing the results of the analysis
+                                  previously done,
+                                  required(list)
                 - wanted_columns
                                 - summary of the columns meeting the
                                   condition given,
@@ -1023,8 +1025,9 @@ class Report:
             #FIXME Should I print elem.upper()?
             distribution = ("'{:s}': {:8.4f}%"
                             ''.format(elem[0], elem[1] * 100) \
-                                      for elem in sorted_freqs
+                                      for elem in sorted_freqs 
                                       if elem[1] * 100 > 0.0)
+
             #FIXME Remember to use the mod operator when printing
             # the column
             wanted_columns.append('> {:5d}: {:5.4f} ({:s})\n'
@@ -1175,7 +1178,7 @@ class Report:
         stats = list(zip(num_columns,
                          self._cis,
                          [list(zip(self._freqs.keys(), values))
-                                  for values in zip(*(self._freqs.values()))]))
+                                   for values in zip(*(self._freqs.values()))]))
 
         consensus_seq = []
         condition_met = []
