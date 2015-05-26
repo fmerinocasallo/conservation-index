@@ -354,9 +354,9 @@ class Conservation_Index(object):
                 return (freqs, overall_freqs)
 
             if calc_overall_freqs:
-                return calculate_with_overall_freqs(self, filename, section)
+                return calculate_with_overall_freqs(self, filename)
             else:
-                return calculate_without_overall_freqs(self, filename, section)
+                return calculate_without_overall_freqs(self, filename)
 
         def weighted_frequencies(self, filename, weights,
                                  calc_overall_freqs=False):
@@ -443,7 +443,7 @@ class Conservation_Index(object):
                                 freqs[elem][j] += self._elem_weights[residue][1]
                                 overall_freqs[elem] += \
                                             (self._elem_weights[residue][1] /
-                                             total_columns)
+                                             num_columns)
                             except TypeError:
                                 raise TypeError(('"freqs" argument should be a'
                                                  "dict of lists of 'int'"))
