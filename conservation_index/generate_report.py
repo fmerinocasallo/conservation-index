@@ -35,8 +35,7 @@ def read_arguments():
                         help=('filename of the file storing the alignment to '
                               'be analyzed (FASTA format to be aligned)'))
     parser.add_argument('-st', '--sequence_type', required=True,
-                        # choices=['dna', 'protein'],
-                        choices=['dna'],
+                        choices=['dna', 'protein'],
                         help='type of sequences in the alignment')
     parser.add_argument('-rt', '--report_type', required=True,
                         choices=['basic', 'detailed'],
@@ -79,9 +78,8 @@ def main():
     output_filename += (basename(input_filename) +
                         '_' + args.frequencies_method +
                         '_' + args.conservation_method +
-                        '_' + args.condition + '_' + 
-                        str(args.threshold) +
-                        # '{:1.2f}'.format(args.threshold) +
+                        '_' + args.condition +
+                        '_' + '{:1.2f}'.format(args.threshold) +
                         '_' + args.report_type + '.txt')
     if args.verbose:
         print('Starting analysis of the given alignment...', end='')
