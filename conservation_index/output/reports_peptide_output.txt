@@ -1,0 +1,1201 @@
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.36 21992
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.32 22180
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.32 22092
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.32 22044
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.32 22128
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.32 22188
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.32 22080
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.32 22028
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.31 22132
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.32 22248
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.42 22200
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.42 22196
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.42 22048
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.42 22172
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.42 22224
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.42 22100
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.42 22016
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.42 22176
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.42 22088
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.42 22052
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.32 22384
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.33 22352
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.32 22368
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.33 22256
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.33 22316
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.32 22428
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.33 22344
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.32 22364
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.32 22260
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.32 22284
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.43 22452
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.43 22432
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.43 22416
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.43 22356
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.43 22520
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.43 22468
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.43 22468
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.43 22380
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.43 22416
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.43 22360
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.32 21956
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.33 22000
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.32 21984
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.32 21956
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.32 22104
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.32 22224
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.32 21904
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.32 22088
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.31 22084
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.31 22024
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.42 22160
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.42 22124
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.42 22044
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.42 22300
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.43 22136
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.42 22152
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.42 22040
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.42 22036
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.42 22156
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.42 21964
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.33 22276
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.32 22428
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.32 22392
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.32 22448
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.32 22368
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.32 22276
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.32 22352
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.32 22364
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.32 22320
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.32 22244
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.43 22468
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.43 22416
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.43 22408
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.44 22368
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.43 22380
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.44 22408
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.43 22520
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.43 22292
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.43 22448
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.43 22416
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.32 21988
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.32 22024
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.32 21984
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.32 21948
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.32 22112
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.32 22192
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.32 22084
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.32 22144
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.32 21912
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.31 21960
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.42 22160
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.42 22156
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.42 22164
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.42 22152
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.42 22144
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.42 22028
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.42 22132
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.42 22144
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.42 22100
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.42 21952
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.32 22348
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.32 22276
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.33 22304
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.32 22376
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.32 22348
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.32 22464
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.32 22404
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.32 22296
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.32 22336
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.32 22340
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.43 22416
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.42 22416
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.43 22444
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.43 22424
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.43 22492
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.43 22348
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.43 22384
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.43 22520
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.43 22420
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.42 22504
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.32 22092
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.31 22148
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.32 22028
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.33 22024
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.32 22024
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.32 22020
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.32 21996
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.32 22104
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.31 21980
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.32 22120
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.42 22240
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.42 22132
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.42 22184
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.42 22040
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.42 22072
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.42 22372
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.42 22044
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.42 22168
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.42 21924
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.42 22192
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.34 22344
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.34 22460
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.32 22384
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.32 22312
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.32 22452
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.33 22344
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.32 22288
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.33 22440
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.32 22324
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.32 22236
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.43 22464
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.43 22384
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.43 22372
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.44 22512
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.42 22356
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.42 22552
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.43 22468
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.43 22300
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.43 22456
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.42 22360
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.32 22172
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.32 22104
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.32 22312
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.32 22112
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.31 21976
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.32 22264
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.32 22136
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.31 22216
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.32 21864
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.32 21980
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.42 22316
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.42 22308
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.42 22236
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.42 22152
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.42 22044
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.42 22332
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.42 22184
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.43 22076
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.43 22056
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.42 22084
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.33 22432
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.33 22456
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.34 22588
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.34 22512
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.32 22268
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.32 22484
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.32 22676
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.32 22400
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.32 22340
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.32 22416
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.43 22448
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.43 22552
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.43 22560
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.43 22476
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.42 22312
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.43 22488
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.43 22628
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.43 22664
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.42 22352
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.43 22488
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.32 22040
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.32 22376
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.32 22304
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.32 22220
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.31 22004
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.32 22380
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.32 22116
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.32 22180
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.32 22084
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.32 22088
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.43 22220
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.42 22260
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.42 22080
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.42 21972
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.42 21932
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.42 22388
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.42 22308
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.42 22072
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.42 22080
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.43 22180
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.33 22504
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.32 22560
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.34 22592
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.33 22504
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.33 22256
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.33 22496
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.32 22632
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.33 22408
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.32 22272
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.32 22432
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.43 22636
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.43 22508
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.43 22524
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.43 22484
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.43 22400
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.43 22544
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.43 22408
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.43 22560
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.42 22352
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.43 22276
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.32 22216
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.32 22304
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.32 22312
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.32 22308
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.31 22072
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.32 22436
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.32 22160
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.31 22288
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.32 22192
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.32 21992
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.42 22192
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.42 22072
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.43 22256
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.42 22256
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.42 22048
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.43 22392
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.43 22116
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.43 22072
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.42 22060
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.42 21984
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.33 22552
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.32 22568
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.32 22452
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.33 22372
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.33 22432
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.32 22496
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.32 22532
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.32 22400
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.33 22392
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.32 22292
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.43 22564
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.43 22536
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.43 22400
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.43 22428
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.42 22484
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.43 22620
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.43 22544
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.43 22516
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.43 22664
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.43 22628
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.32 22096
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.32 22068
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.32 22100
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.32 22140
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.32 22052
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.32 22352
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.32 22328
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.32 22180
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.32 22108
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.33 22076
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.43 22356
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.43 22260
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.43 22340
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.42 22340
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.42 22324
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.42 22424
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.42 22100
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.42 22352
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.42 22204
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.42 22196
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.32 22632
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.32 22684
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.32 22544
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.33 22484
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.32 22448
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.32 22608
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.32 22516
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.32 22476
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.32 22356
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.32 22408
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.44 22724
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.43 22760
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.43 22836
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.43 22860
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.42 22588
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.43 22764
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.43 22804
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.43 22836
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.43 22660
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.42 22676
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.32 22232
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.32 22168
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.32 22404
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.32 22212
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.31 22140
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.32 22356
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.32 22300
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.32 22168
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.31 22260
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.31 22308
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.42 22408
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.42 22384
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.42 22400
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.42 22376
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.42 22404
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.43 22444
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.42 22332
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.42 22424
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.42 22384
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.42 22400
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.32 22592
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.33 22600
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.33 22544
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.33 22492
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.32 22404
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.32 22892
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.32 22756
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.32 22588
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.32 22648
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.32 22616
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.43 22836
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.43 22844
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.43 22816
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.43 22724
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.43 22756
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.43 22756
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.43 22916
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.43 22792
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.42 22784
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_clustalo.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.42 22812
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.35 22360
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.34 22400
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.32 22248
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.32 22432
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.34 22244
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.34 22380
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.32 22376
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.32 22420
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.31 22384
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.32 22260
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.43 22332
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.44 22304
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.42 22344
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.43 22480
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.42 22228
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.42 22488
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.42 22500
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.43 22440
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.42 22308
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.42 22312
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.32 22744
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.33 22732
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.32 22780
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.32 22520
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.33 22696
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.32 22868
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.33 22748
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.32 22716
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.32 22680
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.32 22784
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.43 22708
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.43 22728
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.43 22892
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.43 22744
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.43 22704
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.43 22912
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.43 22736
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.43 22736
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.43 22852
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.42 22808
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.32 22356
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.32 22372
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.32 22420
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.32 22332
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.32 22244
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.32 22420
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.32 22404
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.32 22428
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.32 22208
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.31 22364
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.42 22512
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.42 22364
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.43 22456
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.42 22428
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.42 22168
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.42 22508
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.42 22444
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.43 22392
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.43 22328
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.43 22400
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.32 22752
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.32 22744
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.32 22832
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.32 22816
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.33 22732
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.33 22884
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.33 22784
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.32 22836
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.32 22776
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.33 22692
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.43 22804
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.44 22900
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.43 22908
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.43 22884
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.42 22736
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.44 22752
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.44 22748
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.43 22720
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.42 22824
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_linsi.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.42 22728
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.32 22328
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.32 22416
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.32 22388
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.32 22420
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.32 22264
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.32 22456
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.32 22384
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.32 22440
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.32 22364
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.32 22280
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.42 22464
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.42 22472
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.42 22344
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.42 22340
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.42 22228
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.42 22416
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.42 22512
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.43 22332
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.42 22436
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.42 22328
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.33 22820
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.32 22736
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.32 22680
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.33 22748
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.33 22760
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.32 22792
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.33 22876
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.32 22688
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.33 22620
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.32 22780
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.43 22924
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.43 22740
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.43 22816
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.43 22892
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.43 22716
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.43 22864
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.43 22856
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.43 22888
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.42 22848
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_mafft_parttree.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.43 22816
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.42 22484
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.32 22172
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.32 22000
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.32 22072
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.31 22156
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.32 22180
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.32 22144
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.32 22044
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.31 21960
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.31 22004
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.42 22188
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.43 22172
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.43 22240
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.42 22268
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.42 22216
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.43 22164
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.42 22128
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.42 22140
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.42 22192
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.44 22008
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.34 22324
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.32 22368
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.32 22420
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.32 22324
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.33 22216
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.32 22284
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.32 22224
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.32 22516
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.32 22300
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.33 22328
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.43 22400
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.43 22388
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.43 22436
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.43 22436
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.43 22472
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.43 22424
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.43 22360
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.43 22348
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.43 22104
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/hmtDNA/seqs_hmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.42 22340
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.32 22024
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.32 22096
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.32 22192
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.32 22056
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.32 22060
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.32 22160
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.32 22204
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.32 22056
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.32 22072
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.32 21912
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.42 22208
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.42 22192
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.42 22116
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.42 22168
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.42 22032
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.42 22212
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.42 22100
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.42 22200
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.42 22120
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.43 22160
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.33 22408
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.34 22508
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.33 22608
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.33 22528
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.32 22448
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.33 22372
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.32 22424
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.33 22300
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.32 22548
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.33 22500
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.43 22700
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.43 22472
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.43 22548
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.43 22572
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.43 22488
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.43 22424
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.43 22392
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.43 22456
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.43 22372
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/pmtDNA/seqs_pmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.42 22432
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.32 22120
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.32 22296
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.32 22136
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.32 22324
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.32 22100
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.32 22324
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.32 22196
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.32 22312
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.31 22024
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.32 22100
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.42 22068
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.42 22204
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.42 22236
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.43 22148
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.42 22112
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.43 22364
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.43 22352
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.42 22308
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.42 22060
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt basic -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.42 21980
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.01
+Execution stats: 0.32 22612
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.25
+Execution stats: 0.33 22424
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.50
+Execution stats: 0.32 22464
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.75
+Execution stats: 0.32 22424
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm entropy -co greater -th 0.99
+Execution stats: 0.33 22372
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.01
+Execution stats: 0.33 22548
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.25
+Execution stats: 0.33 22472
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.50
+Execution stats: 0.33 22624
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.75
+Execution stats: 0.32 22460
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm unweighted -cm variance -co greater -th 0.99
+Execution stats: 0.32 22428
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.01
+Execution stats: 0.43 22668
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.25
+Execution stats: 0.43 22612
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.50
+Execution stats: 0.43 22432
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.75
+Execution stats: 0.43 22544
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm entropy -co greater -th 0.99
+Execution stats: 0.43 22380
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.01
+Execution stats: 0.43 22580
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.25
+Execution stats: 0.43 22472
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.50
+Execution stats: 0.44 22660
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.75
+Execution stats: 0.43 22348
+/usr/bin/time -f "%e %M" python3.4 generate_report.py -if /home/franxesk/Public/400_seqs/data/dbs/mmtDNA/seqs_mmtDNA_ND2_peptide_aligned_with_muscle_auto.fasta -st protein -rt detailed -fm weighted -cm variance -co greater -th 0.99
+Execution stats: 0.42 22524
+echo -e "What are you waiting for?\! Go check the results\!" | mailx -v -s "[13:55:46][2015-07-17] Conservation analysis completed!" francisco.merinocasallo+reports@gmail.com > /dev/null
