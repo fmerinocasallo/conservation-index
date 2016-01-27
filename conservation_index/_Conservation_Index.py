@@ -281,6 +281,10 @@ class Conservation_Index(object):
                                   required (str)
             - section           - section of each sequence to be analyzed,
                                   required (tuple)
+
+        Returns:
+            list
+                list of weights associated with each aligned sequence
         """
         if not isinstance(filename, str):
             raise TypeError('"filename" argument should be a string.')
@@ -316,6 +320,10 @@ class Conservation_Index(object):
             - filename          - filename of the file which stores the
                                   alignment to be analyzed,
                                   required (str)
+
+        Returns:
+            list
+                list of weights associated with each aligned sequence
         """
         if not isinstance(filename, str):
             raise TypeError('"filename" argument should be a string.')
@@ -366,7 +374,7 @@ class Conservation_Index(object):
                                   frequencies for each residue,
                                   optional (bool)
 
-        Return a tuple. If we do not want to calculate the overalls frequencies
+        Returns a tuple. If we do not want to calculate the overalls frequencies
         for each residue (calc_overall_freqs should be False in this case), the
         returned tuple will not contain them. Otherwise, the tuple will include
         them.
@@ -387,7 +395,7 @@ class Conservation_Index(object):
                                   frequencies for each residue,
                                   optional (bool)
 
-            Return a tuple. If we do not want to calculate the overalls
+            Returns a tuple. If we do not want to calculate the overalls
             frequencies for each residue (calc_overall_freqs should be False in
             this case), the returned tuple will not contain them. Otherwise,
             the tuple will include them.
@@ -404,7 +412,7 @@ class Conservation_Index(object):
                     - section   - section of each sequence to be analyzed,
                                   required (tuple)
 
-                Return a tuple containing just the frequencies.
+                Returns a tuple containing just the frequencies.
                 """
                 start_column, end_column = _check_section(filename, 'columns',
                                                           section)
@@ -437,7 +445,7 @@ class Conservation_Index(object):
                     - section   - section of each sequence to be analyzed,
                                   required (tuple)
 
-                Return a tuple containing both frequencies and the overalls
+                Returns a tuple containing both frequencies and the overalls
                 frequencies for each residue.
                 """
                 start_column, end_column = _check_section(filename, 'columns',
@@ -487,7 +495,7 @@ class Conservation_Index(object):
                                   frequencies for each residue,
                                   optional (bool)
 
-            Return a tuple. If we do not want to calculate the overalls
+            Returns a tuple. If we do not want to calculate the overalls
             frequencies for each residue (calc_overall_freqs should be False
             in this case), the returned tuple will not contain them. Otherwise,
             the tuple will include them.
@@ -507,7 +515,7 @@ class Conservation_Index(object):
                                 - sequences' weights,
                                   required (list of float)
 
-                Return a tuple containing just the frequencies.
+                Returns a tuple containing just the frequencies.
                 """
                 start_column, end_column = _check_section(filename, 'columns',
                                                           section)
@@ -545,11 +553,10 @@ class Conservation_Index(object):
                                   required (str)
                     - section   - section of each sequence to be analyzed,
                                   required (tuple)
-                    - align_weights
-                                - sequences' weights,
+                    - weights   - sequences' weights,
                                   required (list of float)
 
-                Return a tuple containing both frequencies and the overalls
+                Returns a tuple containing both frequencies and the overalls
                 frequencies for each residue.
                 """
                 start_column, end_column = _check_section(filename, 'columns',
@@ -566,17 +573,20 @@ class Conservation_Index(object):
                     enumerate(record.seq[start_column:end_column].lower()):
                         for elem in self._elem_weights[residue][0]:
                             try:
-                                freqs[elem][j] += self._elem_weights[residue][1]
+                                freqs[elem][j] += (weights[i] *
+                                                   self._elem_weights[residue][1])
+                                # freqs[elem][j] += self._elem_weights[residue][1]
                                 overall_freqs[elem] += \
-                                            (self._elem_weights[residue][1] /
+                                            (weights[i] *
+                                             self._elem_weights[residue][1] /
                                              total_columns)
                             except TypeError:
                                 raise TypeError(('"freqs" argument should be a'
                                                  "dict of lists of 'int'"))
                             except IndexError:
-                                raise IndexError(('"align_weights" argument '
-                                                  'should have the same size '
-                                                  "as the alignment's length"))
+                                raise IndexError(('"weights" argument should '
+                                                  'have the same size as the '
+                                                  "alignment's length"))
 
                 return (freqs, overall_freqs)
 
@@ -634,7 +644,7 @@ class Conservation_Index(object):
                                   frequencies for each residue,
                                   optional (bool)
 
-        Return a tuple. If we do not want to calculate the overalls
+        Returns a tuple. If we do not want to calculate the overalls
         frequencies for each residue (calc_overall_freqs should be False
         in this case), the returned tuple will not contain them. Otherwise,
         the tuple will include them.
@@ -722,7 +732,7 @@ class Conservation_Index(object):
             - overall_freqs     - estimated overall frequencies for each
                                   residue, optional (dict of floats)
 
-        Return a tuple containing just a list with the conservation of each
+        Returns a tuple containing just a list with the conservation of each
         column.
         """
         def shannon_entropy(filename, section, freqs):
@@ -740,11 +750,14 @@ class Conservation_Index(object):
                                   column,
                                   required (dict of lists of int)
 
-            Return a tuple containing just a list with the conservation of
+            Returns a tuple containing just a list with the conservation of
             each column.
             """
             num_rows = sum(1 for _ in SeqIO.parse(filename, 'fasta'))
-            lambda_t = log(min(num_rows, len(freqs)))
+            lambda_t = log(min(num_rows, len(freqs)), 2)
+
+            if lambda_t == 0.0 :
+                print('num_rows: {:f}, len_freqs: {:f}'.format(num_rows, len(freqs)))
 
             start_column, end_column = _check_section(filename, 'columns',
                                                       section)
@@ -756,7 +769,7 @@ class Conservation_Index(object):
                                 enumerate(freqs[start_column:end_column]):
                 for residue, freq in freqs_column:
                     if freq != 0.0:
-                        cis[i] += freq * log(freq)
+                        cis[i] += freq * log(freq, 2)
 
                 # We want scale the entropy to range [0, 1]
                 cis[i] = 1 - (-1 * cis[i] / lambda_t)
@@ -782,7 +795,7 @@ class Conservation_Index(object):
                                   residue,
                                   required (dict of floats)
 
-            Return a tuple containing just a list with the conservation of
+            Returns a tuple containing just a list with the conservation of
             each column.
             """
             num_columns = len(next(SeqIO.parse(filename, 'fasta')).seq)
@@ -837,7 +850,7 @@ class Conservation_Index(object):
             - overall_freqs     - estimated overall frequencies for each
                                   residue, optional (dict of floats)
 
-        Return a tuple containing just a list with the conservation of each
+        Returns a tuple containing just a list with the conservation of each
         column.
         """
         if overall_freqs is None:
@@ -901,7 +914,7 @@ class Conservation_Index(object):
             - ci_method         - conservation index's calculation method,
                                   required (str)
 
-        Return a tuple containing both frequencies and conservation.
+        Returns a tuple containing both frequencies and conservation.
         """
         if not isinstance(filename, str):
             raise TypeError('"filename" argument should be a string')
@@ -1055,7 +1068,7 @@ class Report:
             raise TypeError('"condition_met" argument should be a list')
 
         if condition == 'greater':
-            if stats_column[1] > threshold:
+            if round(stats_column[1], 5) > threshold:
                 if report_type == 'basic':
                     condition_met.append('+')
                 summarize_column(stats_column, wanted_columns)
@@ -1063,7 +1076,7 @@ class Report:
                 if report_type == 'basic':
                     condition_met.append('-')
         elif condition == 'less':
-            if stats_column[1] < threshold:
+            if round(stats_column[1], 5) < threshold:
                 if report_type == 'basic':
                     condition_met.append('+')
                 summarize_column(stats_column, wanted_columns)
