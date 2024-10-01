@@ -1,6 +1,6 @@
 ## Conservation-Index
 
-####Licensing:
+#### Licensing:
     Conservation-Index
     Copyright (C) 2015  Francisco Merino-Casallo (fmerino@unizar.es)
 
@@ -17,7 +17,7 @@
     You should have received a copy of the GNU Affero General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-####Citation:
+#### Citation:
 Merino-Casallo, Francisco; Alvarez-Jarreta, Jorge; Mayordomo, Elvira
 Conservation in mitochondrial DNA: Parallelized estimation and alignment influence.
 
